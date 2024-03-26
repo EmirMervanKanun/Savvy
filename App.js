@@ -17,8 +17,7 @@ export default function App() {
 
 function onPressLearnMore() {
   // set the View background color to red
-  var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-  App.setBackgroundColor(randomColor);
+  console-log("Knopf gedrückt")
 
   console.log('LOG ist ein LÜGER');
 }
