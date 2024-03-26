@@ -17,7 +17,7 @@ export default function App() {
 
 function onPressLearnMore() {
   // set the View background color to red
-  console-log("Knopf gedrückt")
+  console.log("Knopf gedrückt")
 
   console.log('LOG ist ein LÜGER');
 }
