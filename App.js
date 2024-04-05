@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TextInput} from 'react-native';
+import { Alert, StyleSheet, Text, View, Button, Image, TextInput} from 'react-native';
+import {TabBar} from './Components/TabBar.js';
+import {TabBarIcon} from './Components/TabBarIcon.js';
 
-
-var background;
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hallo Tina : Was geht AAHAAHAAHAHAAAB!</Text> 
-      <Text style={styles.text}> Verliere nie mehr den Überblick. Wie viel Willst du Sparen?" </Text>
+      <Text style={styles.text}>Hallo Andac : Was geht AAHAAHAAHAHAAAB!</Text> 
+      <Text style={styles.text}> Verliere nie mehr den Überblick. Wie viel Willst du Sparen?</Text>
       <TextInput style={styles.text}> </TextInput>
       <Button onPress={onPressLearnMore} title=" Eimn Milliooiolnen Sparn "></Button>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -17,9 +18,7 @@ export default function App() {
 
 function onPressLearnMore() {
   // set the View background color to red
-  console.log("Knopf gedrückt")
-
-  console.log('LOG ist ein LÜGER');
+  Alert.alert('Wer den Button gedrückt hat ist Dumm');
 }
 const styles = StyleSheet.create({
   container: {
