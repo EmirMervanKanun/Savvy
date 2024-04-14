@@ -1,36 +1,90 @@
-import { StatusBar } from 'expo-status-bar';
-import { Alert, StyleSheet, Text, View, Button, Image, TextInput} from 'react-native';
-import {TabBar} from './Components/TabBar.js';
-import {TabBarIcon} from './Components/TabBarIcon.js';
+import { View, Image, Text} from 'react-native';
+import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+const screenOptions = {
+  tabBarShowLabel: false,
+  headerShown: false,
+  tabBarStyle: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0,
+    elevation: 0,
+    height: 60,
+    backgroundColor: "#d5dff4",
+  }
+};
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hallo Andac : Was geht AAHAAHAAHAHAAAB!</Text> 
-      <Text style={styles.text}> Verliere nie mehr den Überblick. Wie viel Willst du Sparen?</Text>
-      <TextInput style={styles.text}> </TextInput>
-      <Button onPress={onPressLearnMore} title=" Eimn Milliooiolnen Sparn "></Button>
-
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={screenOptions}>
+        <Tab.Screen 
+          name="Hauptmenü" 
+          component={Home}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <View style={{alignItems: "center", justifyContent: "center"}}>
+                  <Image source={ focused ? require('./Icons/HauptmenüFocused.png'): require('./Icons/HauptmenüUnfocused.png')}
+                    style={{ width: 30, height: 30, }} 
+                  />
+                  <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Hauptmenü</Text>
+                </View>
+              )
+            },
+          }} />
+        <Tab.Screen 
+          name="Sparziele" 
+          component={Budget}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <View style={{alignItems: "center", justifyContent: "center"}}>
+                  <Image source={ focused ? require('./Icons/SparzieleFocused.png'): require('./Icons/SparzieleUnfocused.png')}
+                    style={{ width: 30, height: 30, }} 
+                  />
+                  <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Sparziele</Text>
+                </View>
+              )
+            },
+          }} />
+        <Tab.Screen name="Plus" component={AddTransaction} />
+        <Tab.Screen 
+          name="Dauerauftrag" 
+          component={FixedTransactions}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <View style={{alignItems: "center", justifyContent: "center"}}>
+                  <Image source={ focused ? require('./Icons/DauerauftragFocused.png'): require('./Icons/DauerauftragUnfocused.png')}
+                    style={{ width: 30, height: 30, }} 
+                  />
+                  <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Dauerauftrag</Text>
+                </View>
+              )
+            },
+          }} />
+        <Tab.Screen 
+          name="Transaktionen" 
+          component={TransactionsList}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <View style={{alignItems: "center", justifyContent: "center"}}>
+                  <Image source={ focused ? require('./Icons/AusgabenFocused.png'): require('./Icons/AusgabenUnfocused.png')}
+                    style={{ width: 30, height: 30, }} 
+                  />
+                  <Text style={{fontSize: 11, color: focused ? "#424874": "#a1a6cc" }}>Transaktionen</Text>
+                </View>
+              )
+            },
+          }} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-function onPressLearnMore() {
-  // set the View background color to red
-  Alert.alert('Wer den Button gedrückt hat ist Dumm');
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 30,
-  },
-  text: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
