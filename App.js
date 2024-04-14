@@ -88,7 +88,7 @@ export default function App() {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
                   <Image source={ focused ? require('./Icons/DauerauftragFocused.png'): require('./Icons/DauerauftragUnfocused.png')}
-                    style={{ width: 30, height: 30, }} 
+                    style={{ width: 33, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Dauerauftrag</Text>
                 </View>
