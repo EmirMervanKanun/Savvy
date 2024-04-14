@@ -1,4 +1,4 @@
-import { View, Image, Text} from 'react-native';
+import { View, Image, Text, Platform} from 'react-native';
 import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -15,6 +15,8 @@ const screenOptions = {
     elevation: 0,
     height: 60,
     backgroundColor: "#d5dff4",
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
   }
 };
 
@@ -53,7 +55,31 @@ export default function App() {
               )
             },
           }} />
-        <Tab.Screen name="Plus" component={AddTransaction} />
+        <Tab.Screen 
+          name="Plus" 
+          component={AddTransaction}
+          options={{
+            tabBarIcon : ({focused}) => {
+              return (
+                <View 
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: focused ? "#424874": "#a1a6cc",
+                  border: 100,
+                  width: 40,
+                  height: 40,
+                  top: -30,
+                  borderRadius: 20,
+                }}
+                >
+                  <Image source={ focused ? require('./Icons/PlusFocused.png'): require('./Icons/PlusUnfocused.png')}
+                    style={{ width: 20.8, height: 20.8, }} 
+                  />
+                </View>
+              )
+            },
+          }} />
         <Tab.Screen 
           name="Dauerauftrag" 
           component={FixedTransactions}
