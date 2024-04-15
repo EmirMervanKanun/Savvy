@@ -1,7 +1,8 @@
-import { View, Image, Text, Platform} from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Svg, { Path } from 'react-native-svg';
 
 const Tab = createBottomTabNavigator();
 const screenOptions = {
@@ -55,27 +56,42 @@ export default function App() {
               )
             },
           }} />
-        <Tab.Screen 
+        <Tab.Screen
           name="Plus" 
           component={AddTransaction}
           options={{
-            tabBarIcon : ({focused}) => {
+            tabBarIcon: ({focused}) => {
               return (
-                <View 
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: focused ? "#424874": "#a1a6cc",
-                  border: 100,
-                  width: 40,
-                  height: 40,
-                  top: -30,
-                  borderRadius: 20,
-                }}
-                >
-                  <Image source={ focused ? require('./Icons/PlusFocused.png'): require('./Icons/PlusUnfocused.png')}
-                    style={{ width: 20.8, height: 20.8, }} 
-                  />
+                <View style={{ flex: 1, alignItems: "center"}}>
+                  <View style={{ flexDirection: 'row', position: 'absolute', top: 0}}>
+                    <View style={{ flex: 1, backgroundColor: '#d5dff4'}}></View>
+                    <Svg
+                      width={75}
+                      height={61}
+                      viewBox='0 0 75 61'
+                      style={{backgroundColor: '#fff',}}
+                    >
+                      <Path
+                        d="M75.2 0v61H0V0c4.1 0 7.4 3.1 7.9 7.1C10 21.7 22.5 33 37.7 33c15.2 0 27.7-11.3 29.7-25.9.5-4 3.9-7.1 7.9-7.1h-.1z"
+                        fill={'#d5dff4'}
+                      />
+                    </Svg>
+                    <View style={{ flex: 1, backgroundColor: '#d5dff4'}}></View>
+                  </View>
+                  <View 
+                      style={{
+                        top: -22.5,
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: 50,
+                        height: 50,
+                        borderRadius: 25,
+                        backgroundColor: focused ? "#424874": "#a1a6cc",
+                      }}
+                  >
+                    <Image source={ focused ? require('./Icons/PlusFocused.png'): require('./Icons/PlusUnfocused.png')}
+                      style={{ width: 20.8, height: 20.8, }}/>
+                  </View>
                 </View>
               )
             },
