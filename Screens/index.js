@@ -1,8 +1,8 @@
-import Home from "./Home";
-import Budget from "./Budget";
+import Home from "./Navigation/Home";
+import Budget from "./Navigation/Budget";
 import AddTransaction from "./AddTransaction";
-import FixedTransactions from "./FixedTransactions";
-import TransactionsList from "./TransactionsList";
+import FixedTransactions from "./Navigation/FixedTransactions";
+import TransactionsList from "./Navigation/TransactionsList";
 
 export {
     Home,

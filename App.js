@@ -34,7 +34,7 @@ export default function App() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('./Icons/HauptmenüFocused.png'): require('./Icons/HauptmenüUnfocused.png')}
+                  <Image source={ focused ? require('./Icons/NavBar/HauptmenüFocused.png'): require('./Icons/NavBar/HauptmenüUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Hauptmenü</Text>
@@ -49,7 +49,7 @@ export default function App() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('./Icons/SparzieleFocused.png'): require('./Icons/SparzieleUnfocused.png')}
+                  <Image source={ focused ? require('./Icons/NavBar/SparzieleFocused.png'): require('./Icons/NavBar/SparzieleUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Sparziele</Text>
@@ -90,7 +90,7 @@ export default function App() {
                         backgroundColor: focused ? "#424874": "#a1a6cc",
                       }}
                   >
-                    <Image source={ focused ? require('./Icons/PlusFocused.png'): require('./Icons/PlusUnfocused.png')}
+                    <Image source={ focused ? require('./Icons/NavBar/PlusFocused.png'): require('./Icons/NavBar/PlusUnfocused.png')}
                       style={{ width: 20.8, height: 20.8, }}/>
                   </View>
                 </View>
@@ -104,7 +104,7 @@ export default function App() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('./Icons/DauerauftragFocused.png'): require('./Icons/DauerauftragUnfocused.png')}
+                  <Image source={ focused ? require('./Icons/NavBar/DauerauftragFocused.png'): require('./Icons/NavBar/DauerauftragUnfocused.png')}
                     style={{ width: 33, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Dauerauftrag</Text>
@@ -119,7 +119,7 @@ export default function App() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('./Icons/AusgabenFocused.png'): require('./Icons/AusgabenUnfocused.png')}
+                  <Image source={ focused ? require('./Icons/NavBar/AusgabenFocused.png'): require('./Icons/NavBar/AusgabenUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
                   <Text style={{fontSize: 11, color: focused ? "#424874": "#a1a6cc" }}>Transaktionen</Text>
