@@ -18,6 +18,7 @@ const screenOptions = {
     backgroundColor: "#d5dff4",
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
+    borderTopWidth: 0,
   }
 };
 
