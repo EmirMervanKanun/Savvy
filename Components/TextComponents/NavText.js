@@ -13,7 +13,7 @@ const NavText=({children}) => {
 const styles = StyleSheet.create({
   nav: {
     fontSize: 11,
-    fontWeight: 'bold',
+    fontFamily: 'Sora-SemiBold',
   },
 });
 

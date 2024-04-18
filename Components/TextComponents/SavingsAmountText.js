@@ -13,7 +13,7 @@ const SavingsAmountText=({children}) => {
 const styles = StyleSheet.create({
   savam: {
     fontSize: 14,
-    fontWeight: 'bold',
+    fontFamily: 'Sora-SemiBold',
   },
 });
 

@@ -12,8 +12,8 @@ const ButtonText=({children}) => {
 
 const styles = StyleSheet.create({
   button: {
+    fontFamily: 'Sora-SemiBold',
     fontSize: 15,
-    fontWeight: 'bold',
   },
 });
 

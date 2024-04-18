@@ -8,8 +8,7 @@ const OurFont= ({children}) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: 'Roboto',
-    fontSize: 50,
+    fontFamily: 'Sora-Regular',
   },
 });
 

@@ -12,8 +12,8 @@ const TitelAmountText=({children}) => {
 
 const styles = StyleSheet.create({
   titelAmount: {
+    fontFamily: 'Sora-Bold',
     fontSize: 15,
-    fontWeight: 'bold',
   },
 });
 

@@ -1,3 +1,4 @@
+import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View} from 'react-native';
 import Header from './Components/TextComponents/Header.js';
@@ -11,9 +12,16 @@ import PlaceholderText from './Components/TextComponents/PlaceholderText.js';
 import SavingsAmountText from './Components/TextComponents/SavingsAmountText.js';
 
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+    'Sora-Regular': require('./assets/Fonts/Sora-Regular.ttf'),
+    'Sora-Bold': require('./assets/Fonts/Sora-Bold.ttf'),
+    'Sora-SemiBold': require('./assets/Fonts/Sora-SemiBold.ttf')
+  });
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
   return (
     <View style={styles.container}>
-      <Text>Hallo Welt!</Text>
       <RadioDefaultText>Hallo Welt!</RadioDefaultText>
       <NavText>Hallo Welt!</NavText>
       <DateText>Hallo Welt!</DateText>

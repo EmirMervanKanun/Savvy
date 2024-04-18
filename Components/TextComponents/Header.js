@@ -12,8 +12,8 @@ const Header=({children}) => {
 
 const styles = StyleSheet.create({
   header: {
+    fontFamily: 'Sora-Bold',
     fontSize: 20,
-    fontWeight: 'bold',
     lineHeight: 24,
   },
 });
