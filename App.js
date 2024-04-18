@@ -1,4 +1,4 @@
-import { View, Image, Text } from 'react-native';
+import { ImageBackground, View, Image, Text } from 'react-native';
 import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -25,6 +25,7 @@ const screenOptions = {
 
 export default function App() {
   return (
+    <ImageBackground source={require('./assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen 
@@ -129,5 +130,6 @@ export default function App() {
           }} />
       </Tab.Navigator>
     </NavigationContainer>
+    </ImageBackground>
   );
 }
