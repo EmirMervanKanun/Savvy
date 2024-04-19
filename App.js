@@ -1,5 +1,11 @@
+import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
+import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Svg, { Path } from 'react-native-svg';
 import { useFonts } from 'expo-font';
 
+import { StyleSheet, Text, View} from 'react-native';
 import Header from './Components/TextComponents/Header.js';
 import OurFont from './Components/TextComponents/OurFont.js';
 import RadioDefaultText from './Components/TextComponents/RadioDefaultText.js';
@@ -35,7 +41,7 @@ const screenOptions = {
 };
 
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
+  onst [fontsLoaded, fontError] = useFonts({
     'Sora-Regular': require('./assets/Fonts/Sora-Regular.ttf'),
     'Sora-Bold': require('./assets/Fonts/Sora-Bold.ttf'),
     'Sora-SemiBold': require('./assets/Fonts/Sora-SemiBold.ttf')
