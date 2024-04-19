@@ -35,7 +35,7 @@ const screenOptions = {
 };
 
 export default function App() {
-  onst [fontsLoaded, fontError] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     'Sora-Regular': require('./assets/Fonts/Sora-Regular.ttf'),
     'Sora-Bold': require('./assets/Fonts/Sora-Bold.ttf'),
     'Sora-SemiBold': require('./assets/Fonts/Sora-SemiBold.ttf')
