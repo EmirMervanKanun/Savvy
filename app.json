@@ -1,11 +1,21 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/Fonts/Sora-Bold.ttf", 
+                    "./assets/Fonts/Sora-Regular.ttf", 
+                    "./assets/Fonts/Sora-SemiBold.ttf"]
+        }
+      ]
+    ],
     "name": "Budget",
     "slug": "Budget",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/Budget_Logo.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -26,5 +36,6 @@
     "web": {
       "favicon": "./assets/Budget_Logo.png"
     }
+    
   }
 }
