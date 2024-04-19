@@ -4,8 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
 import { useFonts } from 'expo-font';
-
-import { StyleSheet, Text, View} from 'react-native';
 import Header from './Components/TextComponents/Header.js';
 import OurFont from './Components/TextComponents/OurFont.js';
 import RadioDefaultText from './Components/TextComponents/RadioDefaultText.js';
@@ -15,11 +13,7 @@ import ButtonText from './Components/TextComponents/ButtonText.js';
 import TitelAmountText from './Components/TextComponents/TitelAmountText.js';
 import PlaceholderText from './Components/TextComponents/PlaceholderText.js';
 import SavingsAmountText from './Components/TextComponents/SavingsAmountText.js';
-import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
-import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Svg, { Path } from 'react-native-svg';
+
 
 
 const Tab = createBottomTabNavigator();
