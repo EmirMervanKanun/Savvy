@@ -3,16 +3,7 @@ import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
-import { useFonts } from 'expo-font';
-import Header from '../TextComponents/Header.js';
-import OurFont from '../TextComponents/OurFont.js';
-import RadioDefaultText from '../TextComponents/RadioDefaultText.js';
-import NavText from '../TextComponents/NavText.js';
-import DateText from '../TextComponents/DateText.js';
-import ButtonText from '../TextComponents/ButtonText.js';
-import TitelAmountText from '../TextComponents/TitelAmountText.js';
-import PlaceholderText from '../TextComponents/PlaceholderText.js';
-import SavingsAmountText from '../TextComponents/SavingsAmountText.js';
+
 
 const Tab = createBottomTabNavigator();
 const screenOptions = {
@@ -33,14 +24,6 @@ const screenOptions = {
 };
 
 export default function Navbar() {
-  const [fontsLoaded, fontError] = useFonts({
-    'Sora-Regular': require('../../assets/Fonts/Sora-Regular.ttf'),
-    'Sora-Bold': require('../../assets/Fonts/Sora-Bold.ttf'),
-    'Sora-SemiBold': require('../../assets/Fonts/Sora-SemiBold.ttf')
-  });
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
   return (
     <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <NavigationContainer>
@@ -52,7 +35,7 @@ export default function Navbar() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../assets/Icons/NavBar/HauptmenüFocused.png'): require('../../assets/Icons/NavBar/HauptmenüUnfocused.png')}
+                  <Image source={ focused ? require('../../Icons/NavBar/HauptmenüFocused.png'): require('../../Icons/NavBar/HauptmenüUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Hauptmenü</Text>
@@ -67,7 +50,7 @@ export default function Navbar() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../assets/Icons/NavBar/SparzieleFocused.png'): require('../../assets/Icons/NavBar/SparzieleUnfocused.png')}
+                  <Image source={ focused ? require('../../Icons/NavBar/SparzieleFocused.png'): require('../../Icons/NavBar/SparzieleUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Sparziele</Text>
@@ -108,7 +91,7 @@ export default function Navbar() {
                         backgroundColor: focused ? "#424874": "#a1a6cc",
                       }}
                   >
-                    <Image source={ focused ? require('../../assets/Icons/NavBar/PlusFocused.png'): require('../../assets/Icons/NavBar/PlusUnfocused.png')}
+                    <Image source={ focused ? require('../../Icons/NavBar/PlusFocused.png'): require('../../Icons/NavBar/PlusUnfocused.png')}
                       style={{ width: 20.8, height: 20.8, }}/>
                   </View>
                 </View>
@@ -122,7 +105,7 @@ export default function Navbar() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../assets/Icons/NavBar/DauerauftragFocused.png'): require('../../assets/Icons/NavBar/DauerauftragUnfocused.png')}
+                  <Image source={ focused ? require('../../Icons/NavBar/DauerauftragFocused.png'): require('../../Icons/NavBar/DauerauftragUnfocused.png')}
                     style={{ width: 33, height: 30, }} 
                   />
                   <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Dauerauftrag</Text>
@@ -137,7 +120,7 @@ export default function Navbar() {
             tabBarIcon: ({focused}) => {
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../assets/Icons/NavBar/AusgabenFocused.png'): require('../../assets/Icons/NavBar/AusgabenUnfocused.png')}
+                  <Image source={ focused ? require('../../Icons/NavBar/AusgabenFocused.png'): require('../../Icons/NavBar/AusgabenUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
                   <Text style={{fontSize: 11, color: focused ? "#424874": "#a1a6cc" }}>Transaktionen</Text>
