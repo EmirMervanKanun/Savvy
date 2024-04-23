@@ -1,6 +1,7 @@
 import { ImageBackground, View, Text } from 'react-native';
 import React from 'react';
-import DropdownComponent from '../../Components/Dropdowns/Dropdown';
+import DropdownComponent from '../../Components/Dropdowns/Wiederholung';
+import RepetitionDropdown from '../../Components/Dropdowns/Repetition';
 
 export default function TransactionsList() {
   return (
@@ -8,6 +9,7 @@ export default function TransactionsList() {
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Transaktionen Liste</Text>
       <DropdownComponent></DropdownComponent>
+      <RepetitionDropdown></RepetitionDropdown>
     </View>
     </ImageBackground>
   );
