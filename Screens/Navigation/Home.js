@@ -1,5 +1,6 @@
-import { ImageBackground, View, Text } from 'react-native';
+import { StyleSheet, ImageBackground, View, Text } from 'react-native';
 import React from 'react';
+
 
 export default function Home() {
   return (
@@ -10,3 +11,9 @@ export default function Home() {
     </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  buttoncolor: {
+    backgroundColor: COLORS.redMid,
+  },
+});
