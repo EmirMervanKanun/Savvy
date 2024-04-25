@@ -7,16 +7,12 @@ import COLORS from "../Farben"
 
 const dropdownData = [
     { label: ' ', value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
-    { label: 'Keine Wiederholung', value: '1' },
-    { label: 'Jährlich', value: '2' },
-    { label: 'Monatlich', value: '3' },
-    { label: 'Alle zwei Wochen', value: '4' },
-    { label: 'Wöchentlich', value: '5' },
-    { label: 'Täglich', value: '6' },
+    { label: 'Euro €', value: '1' },
+    { label: 'USD $', value: '2' },
 ];
 
-const RepetitionDropdown = () => {
-    const placeholder = dropdownData[1].label;      //"keine Wiederholung" ist standardmäßig ausgewählt
+const CurrencyBigDropdown = () => {
+    const placeholder = dropdownData[1].label;      //"Euro €" ist standardmäßig ausgewählt
 
     const [selectedData, setSelectedData] = useState(placeholder);
 
@@ -58,7 +54,7 @@ const RepetitionDropdown = () => {
     );
 }
 
-export default RepetitionDropdown;
+export default CurrencyBigDropdown;
 
 const styles = StyleSheet.create({
     container: {
@@ -92,7 +88,7 @@ const styles = StyleSheet.create({
     },
     dropdownArea: {
         width: 292,
-        height: 180,
+        height: 144,
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         transform:[{translateY:-48}],

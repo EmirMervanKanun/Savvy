@@ -6,19 +6,21 @@ import COLORS from "../Farben"
 
 
 const dropdownData = [
-    { label: ' ', value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
-    { label: 'Keine Wiederholung', value: '1' },
-    { label: 'Jährlich', value: '2' },
-    { label: 'Monatlich', value: '3' },
-    { label: 'Alle zwei Wochen', value: '4' },
-    { label: 'Wöchentlich', value: '5' },
-    { label: 'Täglich', value: '6' },
+    { label: 'Wähle eine Kategorie aus...', icon:null, value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+    { label: 'Lebensmittel', icon:<Image source={require('../../Icons/Categories/groceries.png')} style={{width: 32, height: 32}}/>, value: '1' },
+    { label: 'Miete', icon:<Image source={require('../../Icons/Categories/rent.png')} style={{width: 32, height: 32}}/>, value: '2' },
+    { label: 'Klamotten', icon:<Image source={require('../../Icons/Categories/clothes.png')} style={{width: 32, height: 32}}/>, value: '3' },
+    { label: 'Technik', icon:<Image source={require('../../Icons/Categories/devices.png')} style={{width: 32, height: 32}}/>, value: '4' },
+    { label: 'Transportmittel', icon:<Image source={require('../../Icons/Categories/transportation.png')} style={{width: 32, height: 32}}/>, value: '5' },
+    { label: 'Medikamente', icon:<Image source={require('../../Icons/Categories/medication.png')} style={{width: 32, height: 32}}/>, value: '6' },
+    { label: 'Haustier', icon:<Image source={require('../../Icons/Categories/pets.png')} style={{width: 32, height: 32}}/>, value: '7' },
 ];
 
-const RepetitionDropdown = () => {
-    const placeholder = dropdownData[1].label;      //"keine Wiederholung" ist standardmäßig ausgewählt
+const CategoriesDropdown = () => {
+    const placeholder = dropdownData[0].label;      //"Wähle eine Kategorie aus..." ist standardmäßig ausgewählt
 
     const [selectedData, setSelectedData] = useState(placeholder);
+    const [selectedIcon, setSelectedIcon] = useState(dropdownData[0].icon);
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -29,7 +31,11 @@ const RepetitionDropdown = () => {
             <TouchableOpacity
                 style={styles.dropdownSelector}
                 onPress={() => {setIsClicked(!isClicked);}}>
-            <ButtonText>{selectedData}</ButtonText>
+                
+                <View style={styles.dropdownAuswahl}>
+                    <View>{selectedIcon}</View>
+                    <ButtonText style={styles.text}>{selectedData}</ButtonText>
+                </View>
 
             {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
                 <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
@@ -44,9 +50,13 @@ const RepetitionDropdown = () => {
                         return(
                             <TouchableOpacity style={styles.dropdownItem} onPress={()=>{
                                 setSelectedData(item.label);
+                                setSelectedIcon(item.icon);
                                 setIsClicked(false);
                             }}>
-                                <PlaceholderText>{item.label}</PlaceholderText>
+                                <View style={styles.itemContent}> 
+                                    <View>{item.icon}</View>
+                                    <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
+                                </View>
                             </TouchableOpacity>
                         )
                     }}/>
@@ -58,13 +68,20 @@ const RepetitionDropdown = () => {
     );
 }
 
-export default RepetitionDropdown;
+export default CategoriesDropdown;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
     },
+    text: {
+    },
+    dropdownAuswahl: {
+        flexDirection: 'row',
+        gap: 8,
+        alignItems: 'center',
+    },    
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
@@ -101,9 +118,16 @@ const styles = StyleSheet.create({
     dropdownItem: {
         width: 260,
         height: 48,
-        justifyContent: 'center',
+        justifyContent: 'center',    
         alignSelf: 'center',
         borderBottomWidth: 0.2,
         borderBottomColor: COLORS.schriftMid,
     },
+    itemContent: {
+        flexDirection: 'row',
+        gap: 8,
+        alignItems: 'center',
+    },
+    itemText: {
+    }
 });
