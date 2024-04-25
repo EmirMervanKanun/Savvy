@@ -1,8 +1,8 @@
 import { StyleSheet, ImageBackground, View, Text } from 'react-native';
 import React from 'react';
 import ButtonBig from '../../Components/Buttons/Buttons.js';
-import {ButtonMid} from '../../Components/Buttons/Buttons.js';
-import {ButtonSmall} from '../../Components/Buttons/Buttons.js';
+import {ButtonMid,ButtonSmall, ButtonIcon} from '../../Components/Buttons/Buttons.js';
+
 
 export default function Home() {
   return (
@@ -10,8 +10,10 @@ export default function Home() {
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Hauptmenü</Text>
       <ButtonBig text="Los geht's!" />
-      <ButtonMid text="Los geht's!" img={require('../../Icons/NavBar/PlusUnfocused.png')}/>
-      <ButtonSmall text="Los geht's!" img={require('../../Icons/NavBar/PlusUnfocused.png')} isRed='1'/>
+      <ButtonMid text="Bearbeiten" img={require('../../Icons/Button/edit.png')}/>
+      <ButtonSmall text="Löschen" img={require('../../Icons/Button/delete.png')} isRed='1'/>
+      <ButtonIcon img={require('../../Icons/Button/delete.png')} isRed='1'/>
+      <ButtonIcon img={require('../../Icons/Button/save.png')}/>
     </View>
     </ImageBackground>
   );

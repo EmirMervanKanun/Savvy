@@ -47,6 +47,21 @@ export const ButtonSmall=({text, img, isRed}) => {
     );
 }
 
+export const ButtonIcon=({img, isRed}) => {
+    if(isRed == null){
+        return(
+            <View style={styles.containerIcon}>
+                <Image style={styles.image} source={img} />
+            </View>
+        );
+    }
+    return(
+        <View style={styles.containerIconRed}>
+            <Image style={styles.image} source={img} />
+        </View>
+    );
+}
+
 
 const styles = StyleSheet.create({
     containerBig: {
@@ -88,6 +103,24 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.redMid,
         height: 32,
         width: 116,
+        borderRadius: 8,
+    },
+    containerIcon: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLORS.primaryMid,
+        height: 32,
+        width: 32,
+        borderRadius: 8,
+    },
+    containerIconRed: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLORS.redMid,
+        height: 32,
+        width: 32,
         borderRadius: 8,
     },
     buttonText: {
