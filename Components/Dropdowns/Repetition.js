@@ -1,27 +1,59 @@
 import React, {useState} from "react";
-import { StyleSheet, Image, TouchableOpacity, View } from "react-native-web";
+import { StyleSheet, Image, TouchableOpacity, View, FlatList, Pressable } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
+import PlaceholderText from "../TextComponents/PlaceholderText";
+import COLORS from "../Farben"
 
-const data = [
 
+const dropdownData = [
+    { label: ' ', value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+    { label: 'Keine Wiederholung', value: '1' },
+    { label: 'Jährlich', value: '2' },
+    { label: 'Monatlich', value: '3' },
+    { label: 'Alle zwei Wochen', value: '4' },
+    { label: 'Wöchentlich', value: '5' },
+    { label: 'Täglich', value: '6' },
 ];
 
 const RepetitionDropdown = () => {
-    const [selectedData, setSelectedData] = useState('Select Data');
+    const placeholder = dropdownData[1].label;      //"keine Wiederholung" ist standardmäßig ausgewählt
+
+    const [selectedData, setSelectedData] = useState(placeholder);
 
     const [isClicked, setIsClicked] = useState(false);
+
+    const [data, setData] = useState(dropdownData);
 
     return (
         <View style={styles.container}>
             <TouchableOpacity
                 style={styles.dropdownSelector}
-                onPress={() => {
-                    setIsClicked(!isClicked);
-                }}
-            >
+                onPress={() => {setIsClicked(!isClicked);}}>
             <ButtonText>{selectedData}</ButtonText>
-            <Image source={require('./Icons/arrowDropdown.png')} style={styles.icon} />
+
+            {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
+                <Image source={require('./Icons/arrowDropdown.png')} style={styles.icon} />
+            ):(
+                <Image source={require('./Icons/arrowDropup.png')} style={styles.icon} />
+            )}
             </TouchableOpacity>
+             
+            {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
+                <View style={styles.dropdownArea}>
+                    <FlatList data={data} renderItem={({item})=>{
+                        return(
+                            <TouchableOpacity style={styles.dropdownItem} onPress={()=>{
+                                setSelectedData(item.label);
+                                setIsClicked(false);
+                            }}>
+                                <PlaceholderText>{item.label}</PlaceholderText>
+                            </TouchableOpacity>
+                        )
+                    }}/>
+                </View>
+            ):(
+                null
+            )}
         </View>
     );
 }
@@ -32,21 +64,46 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
     },
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         height: 48,
         width: 292,
-        padding: 16,
+        paddingLeft: 16, 
+        paddingRight: 16,
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 16,
         alignItems: 'center',
+        shadowColor: COLORS.primaryDark,
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 1.41,
+        elevation: 5,
+        zIndex: 10,
     },
     icon: {
         width: 24,
         height: 24,
-    }
+    },
+    dropdownArea: {
+        width: 292,
+        height: 180,
+        backgroundColor: COLORS.primaryLight,
+        borderRadius: 15,
+        transform:[{translateY:-48}],
+        
+    },
+    dropdownItem: {
+        width: 260,
+        height: 48,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        borderBottomWidth: 0.2,
+        borderBottomColor: COLORS.schriftMid,
+    },
 });
