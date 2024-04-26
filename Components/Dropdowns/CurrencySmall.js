@@ -6,21 +6,15 @@ import COLORS from "../Farben"
 
 
 const dropdownData = [
-    { label: 'Wähle eine Kategorie aus...', icon:null, value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
-    { label: 'Lebensmittel', icon:<Image source={require('../../Icons/Categories/groceries.png')} style={{width: 32, height: 32}}/>, value: '1' },
-    { label: 'Miete', icon:<Image source={require('../../Icons/Categories/rent.png')} style={{width: 32, height: 32}}/>, value: '2' },
-    { label: 'Klamotten', icon:<Image source={require('../../Icons/Categories/clothes.png')} style={{width: 32, height: 32}}/>, value: '3' },
-    { label: 'Technik', icon:<Image source={require('../../Icons/Categories/devices.png')} style={{width: 32, height: 32}}/>, value: '4' },
-    { label: 'Transportmittel', icon:<Image source={require('../../Icons/Categories/transportation.png')} style={{width: 32, height: 32}}/>, value: '5' },
-    { label: 'Medikamente', icon:<Image source={require('../../Icons/Categories/medication.png')} style={{width: 32, height: 32}}/>, value: '6' },
-    { label: 'Haustier', icon:<Image source={require('../../Icons/Categories/pets.png')} style={{width: 32, height: 32}}/>, value: '7' },
+    { label: ' ', value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+    { label: 'Euro €', value: '1' },
+    { label: 'USD $', value: '2' },
 ];
 
-const CategoriesDropdown = () => {
-    const placeholder = dropdownData[0].label;      //"Wähle eine Kategorie aus..." ist standardmäßig ausgewählt
+const CurrencySmallDropdown = () => {
+    const placeholder = dropdownData[1].label;      //"Euro €" ist standardmäßig ausgewählt
 
     const [selectedData, setSelectedData] = useState(placeholder);
-    const [selectedIcon, setSelectedIcon] = useState(dropdownData[0].icon);
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -31,11 +25,7 @@ const CategoriesDropdown = () => {
             <TouchableOpacity
                 style={styles.dropdownSelector}
                 onPress={() => {setIsClicked(!isClicked);}}>
-                
-                <View style={styles.dropdownAuswahl}>
-                    <View>{selectedIcon}</View>
-                    <ButtonText style={styles.text}>{selectedData}</ButtonText>
-                </View>
+            <ButtonText>{selectedData}</ButtonText>
 
             {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
                 <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
@@ -50,13 +40,9 @@ const CategoriesDropdown = () => {
                         return(
                             <TouchableOpacity style={styles.dropdownItem} onPress={()=>{
                                 setSelectedData(item.label);
-                                setSelectedIcon(item.icon);
                                 setIsClicked(false);
                             }}>
-                                <View style={styles.itemContent}> 
-                                    <View>{item.icon}</View>
-                                    <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
-                                </View>
+                                <PlaceholderText>{item.label}</PlaceholderText>
                             </TouchableOpacity>
                         )
                     }}/>
@@ -68,29 +54,22 @@ const CategoriesDropdown = () => {
     );
 }
 
-export default CategoriesDropdown;
+export default CurrencySmallDropdown;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
     },
-    text: {
-    },
-    dropdownAuswahl: {
-        flexDirection: 'row',
-        gap: 8,
-        alignItems: 'center',
-    },    
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
-        borderRadius: 15,
+        borderRadius: 8,
         height: 48,
-        width: 292,
-        paddingLeft: 16, 
-        paddingRight: 16,
+        width: 90,
+        paddingLeft: 12, 
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
+        gap: 4,
         marginTop: 16,
         alignItems: 'center',
         shadowColor: COLORS.primaryDark,
@@ -108,25 +87,19 @@ const styles = StyleSheet.create({
         height: 24,
     },
     dropdownArea: {
-        width: 292,
-        height: 180,
+        width: 90,
+        height: 144,
         backgroundColor: COLORS.primaryLight,
-        borderRadius: 15,
+        borderRadius: 8,
         transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein
     },
     dropdownItem: {
-        width: 260,
+        width: 80,
         height: 48,
-        justifyContent: 'center',    
+        justifyContent: 'center',
         alignSelf: 'center',
+        alignItems: 'center',
         borderBottomWidth: 0.2,
         borderBottomColor: COLORS.schriftMid,
     },
-    itemContent: {
-        flexDirection: 'row',
-        gap: 8,
-        alignItems: 'center',
-    },
-    itemText: {
-    }
 });

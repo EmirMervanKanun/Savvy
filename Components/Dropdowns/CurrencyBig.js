@@ -91,8 +91,7 @@ const styles = StyleSheet.create({
         height: 144,
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
-        transform:[{translateY:-48}],
-        
+        transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein   
     },
     dropdownItem: {
         width: 260,
