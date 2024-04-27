@@ -9,9 +9,8 @@ export default function Home() {
   <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Hauptmenü</Text>
+      <HomeIncome text="1.000,00 €" img={require('../../Icons/Objects/arrwoIncome.png')}/>
     </View>
     </ImageBackground>
   );
 };
-//<HomeHeader img={require('../../Icons/ProfilePictures/profilePicture1.png')}/>
-//<HomeIncome text="1234,56 €" img={require('../../Icons/Objects/arrwoIncome.png')}/>
