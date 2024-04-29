@@ -15,6 +15,7 @@ const screenOptions = {
       elevation: 0,
       height: 56,
       backgroundColor: "#d5dff4",
+      borderTopWidth: 0,
     }
   };
 
