@@ -9,8 +9,11 @@ const HomeIncome= ({text, img}) => {
         <View style={styles.container}>
             <NavText style={styles.navText}>Einnahmen</NavText>
             <DateText style={styles.dateText}>April</DateText>
-            <Image source={img} style={styles.image} /> 
-            <TitleAmountText style={styles.amountText}>{text}</TitleAmountText>
+            
+            <View style={styles.bildmittext}>
+                <Image source={img} style={styles.image} /> 
+                <TitleAmountText style={styles.amountText}>{text}</TitleAmountText>
+            </View>
         </View>
     );
 }
@@ -28,26 +31,22 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     navText: {
-        flex:1,
         color: COLORS.schriftMid,
-        backgroundColor: COLORS.yellowDark,
-        
     },
     dateText: {
-        flex:1,
         color: COLORS.schriftDark,
     },
+    bildmittext: {
+        flexDirection: 'row',
+        gap: 8,
+        alignItems: 'center',
+        paddingTop: 20,
+    },
     image: {
-        flex:1,
         width: 32,
         height: 32,
-        marginLeft: 0,
-        backgroundColor: COLORS.redDark,
     },
     amountText: {
-        flex:1,
         color: COLORS.greenDark,
-        paddingRight: 0,
-        backgroundColor: COLORS.blueDark,  
     },
 });
