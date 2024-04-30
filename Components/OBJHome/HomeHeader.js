@@ -8,8 +8,9 @@ const HomeHeader= ({img}) => {
     return (
         <View style={styles.container}>
             <View style={styles.personalData}>  
-                <Image source={img} style={styles.image} />
+                <Image source={img} style={styles.imagePerson} />
                 <Text style={{color:COLORS.schriftLight}}><Header>Hallo,Jason!</Header></Text>
+                <ButtonIcon img={require('../../Icons/Sonstiges/settings.png')} style={styles.btnSet}/>
             </View>
             <View style={styles.lineText}>
                 <Text style={{color:COLORS.schriftLight}}><Header>5678,90 €</Header></Text>
@@ -28,9 +29,13 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 70,
         paddingTop:20,
     },
-    image: {
+    imagePerson: {
         width: 70,
         height: 70,
+    },
+    btnSet: {
+        width: 40,
+        height: 40,
     },
     personalData: {
         flexDirection: 'row',
