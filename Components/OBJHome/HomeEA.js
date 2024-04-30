@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, Text } from "react-native";
 import COLORS from '../Farben';
 import TitleAmountText from '../TextComponents/TitelAmountText';
 import NavText from '../TextComponents/NavText';
@@ -7,12 +7,12 @@ import DateText from '../TextComponents/DateText';
 const HomeIncome= ({text, img}) => {
     return (
         <View style={styles.container}>
-            <NavText style={styles.navText}>Einnahmen</NavText>
-            <DateText style={styles.dateText}>April</DateText>
+            <Text style={{color:COLORS.schriftMid}}><NavText>Einnahmen</NavText></Text>
+            <Text style={{color:COLORS.schriftDark}}><DateText>April</DateText></Text>
             
             <View style={styles.bildmittext}>
                 <Image source={img} style={styles.image} /> 
-                <TitleAmountText style={styles.amountText}>{text}</TitleAmountText>
+                <Text style={{color:COLORS.greenDark}}><TitleAmountText>{text}</TitleAmountText></Text>
             </View>
         </View>
     );
@@ -30,12 +30,6 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         padding: 10,
     },
-    navText: {
-        color: COLORS.schriftMid,
-    },
-    dateText: {
-        color: COLORS.schriftDark,
-    },
     bildmittext: {
         flexDirection: 'row',
         gap: 8,
@@ -45,8 +39,5 @@ const styles = StyleSheet.create({
     image: {
         width: 32,
         height: 32,
-    },
-    amountText: {
-        color: COLORS.greenDark,
     },
 });
