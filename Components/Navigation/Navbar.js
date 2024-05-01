@@ -3,6 +3,7 @@ import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
+import NavText from '../TextComponents/NavText';
 
 
 const Tab = createBottomTabNavigator();
@@ -14,8 +15,8 @@ const screenOptions = {
     bottom: 0,
     right: 0,
     left: 0,
-    elevation: 0,
     height: 75,
+    fontSize: 12,
     backgroundColor: "#d5dff4",
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
@@ -25,48 +26,46 @@ const screenOptions = {
 
 export default function Navbar() {
   return (
-    <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen 
           name="Hauptmenü" 
           component={Home}
           options={{
-            tabBarIcon: ({focused}) => {
-              return (
-                <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../Icons/NavBar/HauptmenüFocused.png'): require('../../Icons/NavBar/HauptmenüUnfocused.png')}
-                    style={{ width: 30, height: 30, }} 
-                  />
-                  <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Hauptmenü</Text>
-                </View>
-              )
-            },
-          }} />
+            tabBarIcon: ({focused}) => (
+              <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+                <Image 
+                  source={ focused ? require('../../Icons/NavBar/HauptmenüFocused.png'): require('../../Icons/NavBar/HauptmenüUnfocused.png')}
+                  style={{ width: 30, height: 30, }} 
+                />
+                <Text style={{color: focused ? "#424874": "#a1a6cc" }}><NavText>Hauptmenü</NavText></Text>
+              </View>
+            ),
+          }} 
+        />
         <Tab.Screen 
           name="Sparziele" 
           component={Budget}
           options={{
-            tabBarIcon: ({focused}) => {
-              return (
-                <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../Icons/NavBar/SparzieleFocused.png'): require('../../Icons/NavBar/SparzieleUnfocused.png')}
+            tabBarIcon: ({focused}) => (
+              <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+                  <Image 
+                    source={ focused ? require('../../Icons/NavBar/SparzieleFocused.png'): require('../../Icons/NavBar/SparzieleUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
-                  <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Sparziele</Text>
-                </View>
-              )
-            },
-          }} />
+                  <Text style={{color: focused ? "#424874": "#a1a6cc" }}><NavText>Sparziele</NavText></Text>
+              </View>
+            ),
+          }} 
+        />
         <Tab.Screen
           name="Plus" 
           component={AddTransaction}
           options={{
-            tabBarIcon: ({focused}) => {
-              return (
-                <View style={{ flex: 1, alignItems: "center"}}>
+            tabBarIcon: ({focused}) => (
+              <View style={{ flex: 1, alignItems: "center"}}>
                   <View style={{ flexDirection: 'row', position: 'absolute', top: 0}}>
-                    <View style={{ flex: 1, backgroundColor: '#d5dff4'}}></View>
+                    <View style={{ flex: 1, backgroundColor: '#d5dff4'}} />
                     <Svg
                       width={75}
                       height={61}
@@ -78,7 +77,7 @@ export default function Navbar() {
                         fill={'#d5dff4'}
                       />
                     </Svg>
-                    <View style={{ flex: 1, backgroundColor: '#d5dff4'}}></View>
+                    <View style={{ flex: 1, backgroundColor: '#d5dff4'}} />
                   </View>
                   <View 
                       style={{
@@ -91,46 +90,46 @@ export default function Navbar() {
                         backgroundColor: focused ? "#424874": "#a1a6cc",
                       }}
                   >
-                    <Image source={ focused ? require('../../Icons/NavBar/PlusFocused.png'): require('../../Icons/NavBar/PlusUnfocused.png')}
+                    <Image 
+                      source={ focused ? require('../../Icons/NavBar/PlusFocused.png'): require('../../Icons/NavBar/PlusUnfocused.png')}
                       style={{ width: 20.8, height: 20.8, }}/>
                   </View>
-                </View>
-              )
-            },
-          }} />
+              </View>
+            ),
+          }} 
+        />
         <Tab.Screen 
           name="Dauerauftrag" 
           component={FixedTransactions}
           options={{
-            tabBarIcon: ({focused}) => {
-              return (
-                <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../Icons/NavBar/DauerauftragFocused.png'): require('../../Icons/NavBar/DauerauftragUnfocused.png')}
+            tabBarIcon: ({focused}) => (
+              <View style={{alignItems: "center", justifyContent: "center"}}>
+                  <Image 
+                    source={ focused ? require('../../Icons/NavBar/DauerauftragFocused.png'): require('../../Icons/NavBar/DauerauftragUnfocused.png')}
                     style={{ width: 33, height: 30, }} 
                   />
-                  <Text style={{fontSize: 12, color: focused ? "#424874": "#a1a6cc" }}>Dauerauftrag</Text>
-                </View>
-              )
-            },
-          }} />
+                  <Text style={{color: focused ? "#424874": "#a1a6cc" }}><NavText>Dauerauftrag</NavText></Text>
+              </View>
+            ),
+          }} 
+        />
         <Tab.Screen 
           name="Transaktionen" 
           component={TransactionsList}
           options={{
-            tabBarIcon: ({focused}) => {
-              return (
-                <View style={{alignItems: "center", justifyContent: "center"}}>
-                  <Image source={ focused ? require('../../Icons/NavBar/AusgabenFocused.png'): require('../../Icons/NavBar/AusgabenUnfocused.png')}
+            tabBarIcon: ({focused}) => (
+              <View style={{alignItems: "center", justifyContent: "center"}}>
+                  <Image 
+                    source={ focused ? require('../../Icons/NavBar/AusgabenFocused.png'): require('../../Icons/NavBar/AusgabenUnfocused.png')}
                     style={{ width: 30, height: 30, }} 
                   />
-                  <Text style={{fontSize: 11, color: focused ? "#424874": "#a1a6cc" }}>Transaktionen</Text>
-                </View>
-              )
-            },
-          }} />
+                  <Text style={{color: focused ? "#424874": "#a1a6cc" }}><NavText>Transaktionen</NavText></Text>
+              </View>
+            ),
+          }} 
+        />
       </Tab.Navigator>
     </NavigationContainer>
-    </ImageBackground>
   );
 }
 
