@@ -37,7 +37,7 @@ function MyTabs() {
                             borderTopLeftRadius: 25, 
                             borderTopRightRadius: 25
                         }}>
-                            <HeaderText style={{color: '#424874'}}>Budget</HeaderText>
+                            <Text><HeaderText>Budget</HeaderText></Text>
                         </View>
                       )
                     },
@@ -58,7 +58,7 @@ function MyTabs() {
                             borderTopLeftRadius: 25, 
                             borderTopRightRadius: 25,
                         }}>
-                            <HeaderText style={{color: '#424874'}}>Sparziele</HeaderText>
+                            <Text><HeaderText>Sparziele</HeaderText></Text>
                         </View>
                       )
                     },
