@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         gap: 4,
-        marginTop: 16,
         alignItems: 'center',
         shadowColor: COLORS.primaryDark,
         shadowOffset: {

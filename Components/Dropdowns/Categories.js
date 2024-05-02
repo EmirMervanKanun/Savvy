@@ -6,7 +6,7 @@ import COLORS from "../Farben"
 
 
 const dropdownData = [
-    { label: 'Wähle eine Kategorie aus...', icon:null, value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+    { label: 'Wähle ei', icon:null, value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
     { label: 'Lebensmittel', icon:<Image source={require('../../Icons/Categories/groceries.png')} style={{width: 32, height: 32}}/>, value: '1' },
     { label: 'Miete', icon:<Image source={require('../../Icons/Categories/rent.png')} style={{width: 32, height: 32}}/>, value: '2' },
     { label: 'Klamotten', icon:<Image source={require('../../Icons/Categories/clothes.png')} style={{width: 32, height: 32}}/>, value: '3' },
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
         paddingRight: 16,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 16,
         alignItems: 'center',
         shadowColor: COLORS.primaryDark,
         shadowOffset: {
