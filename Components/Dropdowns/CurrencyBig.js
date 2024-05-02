@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Image, TouchableOpacity, View, FlatList, Pressable } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben"
@@ -25,13 +25,15 @@ const CurrencyBigDropdown = () => {
             <TouchableOpacity
                 style={styles.dropdownSelector}
                 onPress={() => {setIsClicked(!isClicked);}}>
-            <ButtonText>{selectedData}</ButtonText>
+                <Text style={styles.fontColor}>
+                    <ButtonText>{selectedData}</ButtonText>
+                </Text>
 
-            {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
-                <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
-            ):(
-                <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
-            )}
+                {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
+                    <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
+                ):(
+                    <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
+                )}
             </TouchableOpacity>
              
             {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
@@ -42,7 +44,9 @@ const CurrencyBigDropdown = () => {
                                 setSelectedData(item.label);
                                 setIsClicked(false);
                             }}>
-                                <PlaceholderText>{item.label}</PlaceholderText>
+                                <Text style={styles.fontColor}>
+                                    <PlaceholderText>{item.label}</PlaceholderText>
+                                </Text>
                             </TouchableOpacity>
                         )
                     }}/>
@@ -100,5 +104,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderBottomWidth: 0.2,
         borderBottomColor: COLORS.schriftMid,
+    },
+    fontColor: {
+        color: COLORS.schriftDark
     },
 });

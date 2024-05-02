@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Image, TouchableOpacity, View, FlatList, Pressable } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben"
@@ -34,14 +34,16 @@ const CategoriesDropdown = () => {
                 
                 <View style={styles.dropdownAuswahl}>
                     <View>{selectedIcon}</View>
-                    <ButtonText style={styles.text}>{selectedData}</ButtonText>
+                    <Text style={styles.fontColor}>
+                        <ButtonText style={styles.text}>{selectedData}</ButtonText>
+                    </Text>
                 </View>
 
-            {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
-                <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
-            ):(
-                <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
-            )}
+                {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
+                    <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
+                ):(
+                    <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
+                )}
             </TouchableOpacity>
              
             {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
@@ -55,7 +57,9 @@ const CategoriesDropdown = () => {
                             }}>
                                 <View style={styles.itemContent}> 
                                     <View>{item.icon}</View>
-                                    <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
+                                    <Text style={styles.fontColor}>
+                                        <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                         )
@@ -128,5 +132,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     itemText: {
-    }
+    },
+    fontColor: {
+        color: COLORS.schriftDark
+    },
 });

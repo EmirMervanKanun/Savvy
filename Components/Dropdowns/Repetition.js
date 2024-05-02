@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Image, TouchableOpacity, View, FlatList, Pressable } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben"
@@ -10,7 +10,7 @@ const dropdownData = [
     { label: 'Keine Wiederholung', value: '1' },
     { label: 'Jährlich', value: '2' },
     { label: 'Monatlich', value: '3' },
-    { label: 'Alle zwei Wochen', value: '4' },
+    { label: '14-tägig', value: '4' },
     { label: 'Wöchentlich', value: '5' },
     { label: 'Täglich', value: '6' },
 ];
@@ -29,13 +29,15 @@ const RepetitionDropdown = () => {
             <TouchableOpacity
                 style={styles.dropdownSelector}
                 onPress={() => {setIsClicked(!isClicked);}}>
-            <ButtonText>{selectedData}</ButtonText>
+                <Text style={styles.fontColor}>
+                    <ButtonText>{selectedData}</ButtonText>
+                </Text>
 
-            {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
-                <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
-            ):(
-                <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
-            )}
+                {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
+                    <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
+                ):(
+                    <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
+                )}
             </TouchableOpacity>
              
             {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
@@ -46,7 +48,9 @@ const RepetitionDropdown = () => {
                                 setSelectedData(item.label);
                                 setIsClicked(false);
                             }}>
-                                <PlaceholderText>{item.label}</PlaceholderText>
+                                <Text style={styles.fontColor}>
+                                    <PlaceholderText>{item.label}</PlaceholderText>
+                                </Text>
                             </TouchableOpacity>
                         )
                     }}/>
@@ -104,5 +108,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderBottomWidth: 0.2,
         borderBottomColor: COLORS.schriftMid,
+    },
+    fontColor: {
+        color: COLORS.schriftDark
     },
 });

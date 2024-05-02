@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Image, TouchableOpacity, View, FlatList, Pressable } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben"
@@ -25,13 +25,15 @@ const CurrencySmallDropdown = () => {
             <TouchableOpacity
                 style={styles.dropdownSelector}
                 onPress={() => {setIsClicked(!isClicked);}}>
-            <ButtonText>{selectedData}</ButtonText>
+                <Text style={styles.fontColor}>
+                    <ButtonText>{selectedData}</ButtonText>
+                </Text>
 
-            {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
-                <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
-            ):(
-                <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
-            )}
+                {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
+                    <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
+                ):(
+                    <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
+                )}
             </TouchableOpacity>
              
             {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
@@ -42,7 +44,9 @@ const CurrencySmallDropdown = () => {
                                 setSelectedData(item.label);
                                 setIsClicked(false);
                             }}>
-                                <PlaceholderText>{item.label}</PlaceholderText>
+                                <Text>
+                                    <PlaceholderText>{item.label}</PlaceholderText>
+                                </Text>
                             </TouchableOpacity>
                         )
                     }}/>
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
     },
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
-        borderRadius: 8,
+        borderRadius: 15,
         height: 48,
         width: 90,
         paddingLeft: 12, 
@@ -90,7 +94,7 @@ const styles = StyleSheet.create({
         width: 90,
         height: 144,
         backgroundColor: COLORS.primaryLight,
-        borderRadius: 8,
+        borderRadius: 15,
         transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein
     },
     dropdownItem: {
@@ -101,5 +105,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 0.2,
         borderBottomColor: COLORS.schriftMid,
+    },
+    fontColor: {
+        color: COLORS.schriftDark
     },
 });
