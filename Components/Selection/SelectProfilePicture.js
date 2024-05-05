@@ -1,46 +1,66 @@
 import React, {useState} from "react";
 import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
-import ButtonText from "../TextComponents/ButtonText";
-import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben"
 import Header from "../TextComponents/Header"; 
-import { ButtonMid } from "../Buttons/Buttons";
+import { ButtonSmall } from "../Buttons/Buttons";
 
 const ProfilePictureSelector = () => {
-    /*const placeholder = profilePicturesData[0].img;      //Default-Profilbild ist standardmäßig ausgewählt
-    const [selectedImg, setSelectedIcon] = useState(placeholder);
-    const [data, setData] = useState(profilePicturesData);
-*/
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);  //wenn Dropdown Area geöffnet ist   
+    const [selectedPicture, setSelectedPicture] = useState(require('../../Icons/ProfilePictures/profilePictureDefault.png'));   //ausgewähltes Bild
+    const [defaultPicture, setDefaultPicture] = useState(require('../../Icons/ProfilePictures/profilePictureDefault.png'));     //Profilbild
 
+    const onSave = () => {      //wenn speichern gedrückt, dann ausgewähltes Bild als Profilbild setzen
+        if (selectedPicture) {
+            setDefaultPicture(selectedPicture);
+        }
+        setIsClicked(false);
+    };
+
+    const onCancel = () => {    //wenn abbrechen gedrückt, dann Dropdown Area schließen
+        setIsClicked(false);
+    };
 
     return (
-        <View>
-            <TouchableOpacity
+        <View style={styles.container}>
+            <TouchableOpacity   //Profilbild anzeigen
                 style={styles.selectedProfilePicture}
                 onPress={() => {setIsClicked(!isClicked);}}>
-                <Image source={require('../../Icons/ProfilePictures/profilePictureDefault.png')} style={styles.selImg}></Image>
+                <Image source={defaultPicture} style={styles.selImg}></Image>
             </TouchableOpacity>
 
             {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
                 <View style={styles.selectionArea}>
                     <Header>Profilbild auswählen</Header>
-                    <View style={styles.images}>      
-                        <Image source={require('../../Icons/ProfilePictures/profilePictureDefault.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture1.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture2.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture3.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture4.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture5.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture6.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture7.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture8.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture9.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture10.png')} style={styles.image}></Image>
-                        <Image source={require('../../Icons/ProfilePictures/profilePicture11.png')} style={styles.image}></Image>
+                    
+                    <View style={styles.images}>
+                        {[
+                        require('../../Icons/ProfilePictures/profilePictureDefault.png'),
+                        require('../../Icons/ProfilePictures/profilePicture1.png'),
+                        require('../../Icons/ProfilePictures/profilePicture2.png'),
+                        require('../../Icons/ProfilePictures/profilePicture3.png'),
+                        require('../../Icons/ProfilePictures/profilePicture4.png'),
+                        require('../../Icons/ProfilePictures/profilePicture5.png'),
+                        require('../../Icons/ProfilePictures/profilePicture6.png'),
+                        require('../../Icons/ProfilePictures/profilePicture7.png'),
+                        require('../../Icons/ProfilePictures/profilePicture8.png'),
+                        require('../../Icons/ProfilePictures/profilePicture9.png'),
+                        require('../../Icons/ProfilePictures/profilePicture10.png'),
+                        require('../../Icons/ProfilePictures/profilePicture11.png')
+                        ].map((pb, index) => (  //alle Bilder anzeigen
+                            <TouchableOpacity
+                                key={index}  
+                                onPress={() => setSelectedPicture(pb)}>
+                                <Image source={pb} style={styles.image}></Image> 
+                                {selectedPicture === pb && <View style={styles.pbSelected}></View>} 
+                            </TouchableOpacity>             // ^ wenn Bild ausgewählt, dann grüner Rahmen
+                        ))}
                     </View>
-                    <ButtonMid text="Abbrechen" img={<Image source={require('../../Icons/Button/cancel.png')} />}></ButtonMid>
-                    <ButtonMid text="Speichern" img={'../../Icons/Button/save.png'}></ButtonMid>
+
+                    
+                    <View style={styles.btns}>
+                        <ButtonSmall text="Abbrechen" img={require('../../Icons/Button/cancel.png')} onPress={onCancel}></ButtonSmall>
+                        <ButtonSmall text="Speichern" img={require('../../Icons/Button/save.png')} onPress={onSave}></ButtonSmall>
+                    </View>    
                 </View>
             ):(
                 null
@@ -52,9 +72,14 @@ const ProfilePictureSelector = () => {
     );
 }
 
+
 export default ProfilePictureSelector;
 
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        gap: 24,
+    },
     selImg: {
         width: 120,
         height: 120,
@@ -78,149 +103,16 @@ const styles = StyleSheet.create({
         width: 70,
         height: 70,
     },
+    pbSelected: {
+        width: 70,
+        height: 70,
+        borderColor: COLORS.greenDark,
+        borderWidth: 3,
+        borderRadius: 35,
+        position: 'absolute',
+    },
+    btns: {
+        flexDirection: 'row',
+        gap: 16,
+    },
 });
-
-
-/*
-
-{isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
-                <View style={styles.selectionArea}>
-                    <FlatList data={data} renderItem={({item})=>{
-                        return(
-                            <TouchableOpacity style={styles.dropdownItem} onPress={()=>{
-                                setSelectedIcon(item.img);
-                                setIsClicked(false);
-                            }}>
-                                <View style={styles.itemContent}> 
-                                    <View>{item.img}</View>
-                                </View>
-                            </TouchableOpacity>
-                        )
-                    }}/>
-                </View>
-            ):(
-                null
-            )}
-
-
-
-const CategoriesDropdown = () => {
-    const placeholder = dropdownData[0].label;      //"Wähle eine Kategorie aus..." ist standardmäßig ausgewählt
-
-    const [selectedData, setSelectedData] = useState(placeholder);
-    const [selectedIcon, setSelectedIcon] = useState(dropdownData[0].icon);
-
-    const [isClicked, setIsClicked] = useState(false);
-
-    const [data, setData] = useState(dropdownData);
-
-    return (
-        <View style={styles.container}>
-            <TouchableOpacity
-                style={styles.dropdownSelector}
-                onPress={() => {setIsClicked(!isClicked);}}>
-                
-                <View style={styles.dropdownAuswahl}>
-                    <View>{selectedIcon}</View>
-                    <Text style={styles.fontColor}>
-                        <ButtonText style={styles.text}>{selectedData}</ButtonText>
-                    </Text>
-                </View>
-
-                {!isClicked ? (       //wenn nicht geklickt, dann Pfeil nach unten; ansonten Pfeil nach oben
-                    <Image source={require('../../Icons/Objects/arrowDropdown.png')} style={styles.icon} />
-                ):(
-                    <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
-                )}
-            </TouchableOpacity>
-             
-            {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
-                <View style={styles.dropdownArea}>
-                    <FlatList data={data} renderItem={({item})=>{
-                        return(
-                            <TouchableOpacity style={styles.dropdownItem} onPress={()=>{
-                                setSelectedData(item.label);
-                                setSelectedIcon(item.icon);
-                                setIsClicked(false);
-                            }}>
-                                <View style={styles.itemContent}> 
-                                    <View>{item.icon}</View>
-                                    <Text style={styles.fontColor}>
-                                        <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
-                                    </Text>
-                                </View>
-                            </TouchableOpacity>
-                        )
-                    }}/>
-                </View>
-            ):(
-                null
-            )}
-        </View>
-    );
-}
-
-export default CategoriesDropdown;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-    },
-    text: {
-    },
-    dropdownAuswahl: {
-        flexDirection: 'row',
-        gap: 8,
-        alignItems: 'center',
-    },    
-    dropdownSelector: {
-        backgroundColor: COLORS.primaryLight,
-        borderRadius: 15,
-        height: 48,
-        width: 292,
-        paddingLeft: 16, 
-        paddingRight: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        shadowColor: COLORS.primaryDark,
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 1.41,
-        elevation: 5,
-        zIndex: 10,
-    },
-    icon: {
-        width: 24,
-        height: 24,
-    },
-    dropdownArea: {
-        width: 292,
-        height: 180,
-        backgroundColor: COLORS.primaryLight,
-        borderRadius: 15,
-        transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein
-    },
-    dropdownItem: {
-        width: 260,
-        height: 48,
-        justifyContent: 'center',    
-        alignSelf: 'center',
-        borderBottomWidth: 0.2,
-        borderBottomColor: COLORS.schriftMid,
-    },
-    itemContent: {
-        flexDirection: 'row',
-        gap: 8,
-        alignItems: 'center',
-    },
-    itemText: {
-    },
-    fontColor: {
-        color: COLORS.schriftDark
-    },
-});*/
