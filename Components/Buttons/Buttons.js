@@ -1,64 +1,64 @@
-import { StyleSheet, View, Image} from 'react-native';
+import { StyleSheet, View, Image, Pressable} from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
 import COLORS from '../Farben';
 
 
-const ButtonBig=({text, img}) => {
+const ButtonBig=({text, img, onPress}) => {
     if (img == null){
         return (
-            <View style={styles.containerBig}>
+            <Pressable onPress={onPress} style={styles.containerBig}>
                 <ButtonText style={styles.buttonText}>{text}</ButtonText>
-            </View>
+            </Pressable>
         );
     }
     
     return(
-        <View style={styles.containerBig}>
+        <Pressable onPress={onPress} style={styles.containerBig}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
-        </View>
+        </Pressable>
     );
 }
 export default ButtonBig;
 
-export const ButtonMid=({text, img}) => {
+export const ButtonMid=({text, img, onPress}) => {
     return(
-        <View style={styles.containerMid}>
+        <Pressable onPress={onPress} style={styles.containerMid}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
-        </View>
+        </Pressable>
     );
 }
 
-export const ButtonSmall=({text, img, isRed}) => {
+export const ButtonSmall=({text, img, isRed, onPress}) => {
     if(isRed == null){
         return(
-            <View style={styles.containerSmall}>
+            <Pressable onPress={onPress} style={styles.containerSmall}>
              <Image style={styles.image} source={img} />
              <ButtonText style={styles.buttonText}>{text}</ButtonText>
-         </View>
+            </Pressable>
         );
     }
     return(
-        <View style={styles.containerSmallRed}>
+        <Pressable onPress={onPress} style={styles.containerSmallRed}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
-        </View>
+        </Pressable>
     );
 }
 
-export const ButtonIcon=({img, isRed}) => {
+export const ButtonIcon=({img, isRed, onPress}) => {
     if(isRed == null){
         return(
-            <View style={styles.containerIcon}>
-                <Image style={styles.image} source={img} />
-            </View>
+            <Pressable onPress={onPress} style={styles.containerIcon}>
+                <Image style={styles.image} source={img}/>
+            </Pressable>
         );
     }
     return(
-        <View style={styles.containerIconRed}>
+        <Pressable onPress={onPress} style={styles.containerIconRed}>
             <Image style={styles.image} source={img} />
-        </View>
+        </Pressable>
     );
 }
 

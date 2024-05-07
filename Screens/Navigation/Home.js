@@ -11,6 +11,11 @@ export default function Home() {
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Hauptmenü</Text>
       <HomeEA></HomeEA>
+      <ButtonBig text="Los geht's!" onPress={()=>console.log("test")}/>
+      <ButtonMid text="Bearbeiten" img={require('../../Icons/Button/edit.png')}/>
+      <ButtonSmall text="Löschen" img={require('../../Icons/Button/delete.png')} isRed='1'/>
+      <ButtonIcon img={require('../../Icons/Button/delete.png')} isRed='1'/>
+      <ButtonIcon img={require('../../Icons/Button/save.png')}/>
     </View>
     </ImageBackground>
   );
