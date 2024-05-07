@@ -3,6 +3,8 @@ import React from 'react';
 import HomeIncome from '../../Components/OBJHome/HomeEA';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import HomeEA from '../../Components/OBJHome/HomeEA';
+import Kategorie from '../../Components/SonstSonstiges/Categorielist';
+import Categorie from '../../Components/SonstSonstiges/Categorielist';
 
 
 export default function Home() {
@@ -16,6 +18,7 @@ export default function Home() {
       <ButtonSmall text="Löschen" img={require('../../Icons/Button/delete.png')} isRed='1'/>
       <ButtonIcon img={require('../../Icons/Button/delete.png')} isRed='1'/>
       <ButtonIcon img={require('../../Icons/Button/save.png')}/>
+      <Categorie/>
     </View>
     </ImageBackground>
   );
