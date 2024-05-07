@@ -2,6 +2,7 @@ import { StyleSheet, ImageBackground, View, Text } from 'react-native';
 import React from 'react';
 import HomeIncome from '../../Components/OBJHome/HomeEA';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
+import HomeEA from '../../Components/OBJHome/HomeEA';
 
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
   <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Hauptmenü</Text>
-      <HomeHeader img={require('../../Icons/ProfilePictures/profilePicture1.png')}/>
+      <HomeEA></HomeEA>
     </View>
     </ImageBackground>
   );
@@ -21,4 +22,4 @@ export default function Home() {
   },
 });*/
 
-//<HomeIncome text="1.000,00 €" img={require('../../Icons/Objects/arrwoIncome.png')}/>
+//<HomeHeader img={require('../../Icons/ProfilePictures/profilePicture1.png')}/>
