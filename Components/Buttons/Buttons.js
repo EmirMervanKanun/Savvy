@@ -3,17 +3,17 @@ import ButtonText from '../TextComponents/ButtonText';
 import COLORS from '../Farben';
 
 
-const ButtonBig=({text, img}) => {
+const ButtonBig=({text, img, onPress}) => {
     if (img == null){
         return (
-            <Pressable style={styles.containerBig}>
+            <Pressable onPress={onPress} style={styles.containerBig}>
                 <ButtonText style={styles.buttonText}>{text}</ButtonText>
             </Pressable>
         );
     }
     
     return(
-        <Pressable style={styles.containerBig}>
+        <Pressable onPress={onPress} style={styles.containerBig}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
         </Pressable>
@@ -21,42 +21,42 @@ const ButtonBig=({text, img}) => {
 }
 export default ButtonBig;
 
-export const ButtonMid=({text, img}) => {
+export const ButtonMid=({text, img, onPress}) => {
     return(
-        <Pressable style={styles.containerMid}>
+        <Pressable onPress={onPress} style={styles.containerMid}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
         </Pressable>
     );
 }
 
-export const ButtonSmall=({text, img, isRed}) => {
+export const ButtonSmall=({text, img, isRed, onPress}) => {
     if(isRed == null){
         return(
-            <Pressable style={styles.containerSmall}>
+            <Pressable onPress={onPress} style={styles.containerSmall}>
              <Image style={styles.image} source={img} />
              <ButtonText style={styles.buttonText}>{text}</ButtonText>
             </Pressable>
         );
     }
     return(
-        <Pressable style={styles.containerSmallRed}>
+        <Pressable onPress={onPress} style={styles.containerSmallRed}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
         </Pressable>
     );
 }
 
-export const ButtonIcon=({img, isRed}) => {
+export const ButtonIcon=({img, isRed, onPress}) => {
     if(isRed == null){
         return(
-            <Pressable style={styles.containerIcon}>
+            <Pressable onPress={onPress} style={styles.containerIcon}>
                 <Image style={styles.image} source={img}/>
             </Pressable>
         );
     }
     return(
-        <Pressable style={styles.containerIconRed}>
+        <Pressable onPress={onPress} style={styles.containerIconRed}>
             <Image style={styles.image} source={img} />
         </Pressable>
     );
