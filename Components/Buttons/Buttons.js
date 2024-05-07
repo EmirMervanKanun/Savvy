@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image} from 'react-native';
+import { StyleSheet, View, Image, Pressable} from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
 import COLORS from '../Farben';
 
@@ -6,59 +6,59 @@ import COLORS from '../Farben';
 const ButtonBig=({text, img}) => {
     if (img == null){
         return (
-            <View style={styles.containerBig}>
+            <Pressable style={styles.containerBig}>
                 <ButtonText style={styles.buttonText}>{text}</ButtonText>
-            </View>
+            </Pressable>
         );
     }
     
     return(
-        <View style={styles.containerBig}>
+        <Pressable style={styles.containerBig}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
-        </View>
+        </Pressable>
     );
 }
 export default ButtonBig;
 
 export const ButtonMid=({text, img}) => {
     return(
-        <View style={styles.containerMid}>
+        <Pressable style={styles.containerMid}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
-        </View>
+        </Pressable>
     );
 }
 
 export const ButtonSmall=({text, img, isRed}) => {
     if(isRed == null){
         return(
-            <View style={styles.containerSmall}>
+            <Pressable style={styles.containerSmall}>
              <Image style={styles.image} source={img} />
              <ButtonText style={styles.buttonText}>{text}</ButtonText>
-         </View>
+            </Pressable>
         );
     }
     return(
-        <View style={styles.containerSmallRed}>
+        <Pressable style={styles.containerSmallRed}>
             <Image style={styles.image} source={img} />
             <ButtonText style={styles.buttonText}>{text}</ButtonText>
-        </View>
+        </Pressable>
     );
 }
 
 export const ButtonIcon=({img, isRed}) => {
     if(isRed == null){
         return(
-            <View style={styles.containerIcon}>
-                <Image style={styles.image} source={img} />
-            </View>
+            <Pressable style={styles.containerIcon}>
+                <Image style={styles.image} source={img}/>
+            </Pressable>
         );
     }
     return(
-        <View style={styles.containerIconRed}>
+        <Pressable style={styles.containerIconRed}>
             <Image style={styles.image} source={img} />
-        </View>
+        </Pressable>
     );
 }
 
