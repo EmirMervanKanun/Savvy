@@ -6,8 +6,9 @@ import { ButtonSmall } from "../Buttons/Buttons";
 
 const CatIconSelector = () => {
     const [isClicked, setIsClicked] = useState(false);
-    const [selectedIcon, setSelectedIcon] = useState(null);
+    const [selectedIcon, setSelectedIcon] = useState(require('../../Icons/Categories/groceries.png'));
     const [defaultIcon, setDefaultIcon] = useState(require('../../Icons/Categories/groceries.png'));
+    const [lastSelectedIcon, setLastSelectedIcon] = useState(require('../../Icons/Categories/groceries.png'));
 
     const icons = [
         require('../../Icons/Categories/groceries.png'),
@@ -27,12 +28,14 @@ const CatIconSelector = () => {
     const onSave = () => {
         if (selectedIcon) {
             setDefaultIcon(selectedIcon);
+            setLastSelectedIcon(selectedIcon);
         }
         setIsClicked(false);
     };
 
     const onCancel = () => {
         setIsClicked(false);
+        setSelectedIcon(lastSelectedIcon);
     };
 
     const selectIcon = (icon) => {
@@ -82,8 +85,8 @@ const styles = StyleSheet.create({
         gap: 24,
     },
     selIcon: {
-        width: 64,
-        height: 64,
+        width: 80,
+        height: 80,
     },
     selIconBg: {
         width: 120,
