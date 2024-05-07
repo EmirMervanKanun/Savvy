@@ -1,14 +1,15 @@
 import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
-import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './index';
+import { Home, FixedTransactions, TransactionsList, AddTransaction } from './index';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
 import NavText from '../TextComponents/NavText';
+import Tabbar from './Tabbar';
 
 
 const Tab = createBottomTabNavigator();
 const screenOptions = {
-  tabBarShowLabel: false,
+  tabBarShowLabel:false,
   headerShown: false,
   tabBarStyle: {
     position: "absolute",
@@ -44,8 +45,8 @@ export default function Navbar() {
           }} 
         />
         <Tab.Screen 
-          name="Sparziele" 
-          component={Budget}
+          name="Sparziele_Screen" 
+          component={Tabbar}
           options={{
             tabBarIcon: ({focused}) => (
               <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
