@@ -19,9 +19,5 @@ export default function Home() {
   );
 }
 
-function test(){
-  console.log("test");
-}
-
 const styles = StyleSheet.create({
 });
