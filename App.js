@@ -1,5 +1,5 @@
 import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
-import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction } from './Screens';
+import { Home, Budget, FixedTransactions, TransactionsList, AddTransaction, Onboarding } from './Screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
