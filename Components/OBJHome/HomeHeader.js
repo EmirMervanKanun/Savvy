@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image, Text } from "react-native";
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import ButtonIcon  from "../Buttons/Buttons";
@@ -7,7 +7,7 @@ import ButtonIcon  from "../Buttons/Buttons";
 const HomeHeader= ({img}) => {
     return (
         <View style={styles.container}>
-            <View style={styles.personalData}>  
+            <View style={styles.personalData}>
                 <Image source={img} style={styles.imagePerson} />
                 <Text style={{color:COLORS.schriftLight}}><Header>Hallo,Jason!</Header></Text>
                 <ButtonIcon img={require('../../Icons/Sonstiges/settings.png')} style={styles.btnSet}/>

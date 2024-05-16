@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image, Text, FlatList } from "react-native";
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import ButtonBig from "../Buttons/Buttons";
@@ -17,7 +17,7 @@ const listCategories = [
 const Categorie = () => {
     return (
         <View style={styles.container}>
-            <View style={styles.top}>  
+            <View style={styles.top}>
                 <Text style={{color:COLORS.schriftDark}}><Header>Kategorien</Header></Text>
             </View>
             <View style={styles.list}>
@@ -38,7 +38,7 @@ const Categorie = () => {
 };
 export default Categorie;
 
-const styles = StyleSheet.create({  
+const styles = StyleSheet.create({
     container: {
         width: 358,
         height: 650,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         paddingTop: 80,
     },
     categories: {
-        flexDirection: 'row',   
+        flexDirection: 'row',
         gap: 20,
         padding: 5,
         paddingLeft: 10,

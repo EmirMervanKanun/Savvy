@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image, Pressable} from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 
 const ButtonBig=({text, img, onPress}) => {
@@ -11,7 +11,7 @@ const ButtonBig=({text, img, onPress}) => {
             </Pressable>
         );
     }
-    
+
     return(
         <Pressable onPress={onPress} style={styles.containerBig}>
             <Image style={styles.image} source={img} />

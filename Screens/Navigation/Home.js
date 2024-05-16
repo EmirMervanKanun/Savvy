@@ -5,7 +5,10 @@ import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import HomeEA from '../../Components/OBJHome/HomeEA';
 import Kategorie from '../../Components/SonstSonstiges/Categorielist';
 import Categorie from '../../Components/SonstSonstiges/Categorielist';
-
+import ButtonBig from '../../Components/Buttons/Buttons';
+import ButtonMid from '../../Components/Buttons/Buttons';
+import ButtonSmall from '../../Components/Buttons/Buttons';
+import ButtonIcon from '../../Components/Buttons/Buttons';
 
 export default function Home() {
   return (

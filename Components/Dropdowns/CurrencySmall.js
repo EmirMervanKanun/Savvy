@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
-import COLORS from "../Farben"
+import COLORS from "../Colors"
 
 
 const dropdownData = [
@@ -35,7 +35,7 @@ const CurrencySmallDropdown = () => {
                     <Image source={require('../../Icons/Objects/arrowDropup.png')} style={styles.icon} />
                 )}
             </TouchableOpacity>
-             
+
             {isClicked ? (        //wenn geklickt, dann Dropdown Area anzeigen
                 <View style={styles.dropdownArea}>
                     <FlatList data={data} renderItem={({item})=>{
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         height: 48,
         width: 90,
-        paddingLeft: 12, 
+        paddingLeft: 12,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         gap: 4,
