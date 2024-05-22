@@ -2,6 +2,7 @@ import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
 import { Home, FixedTransactions, TransactionsList, AddTransaction } from './index';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import NavText from '../TextComponents/NavText';
 import Tabbar from './Tabbar';
@@ -13,11 +14,7 @@ const screenOptions = {
   headerShown: false,
   tabBarStyle: {
     position: "absolute",
-    bottom: 0,
-    right: 0,
-    left: 0,
     height: 75,
-    fontSize: 12,
     backgroundColor: "#d5dff4",
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
@@ -25,9 +22,8 @@ const screenOptions = {
   }
 };
 
-export default function Navbar() {
+function MyTabs() {
   return (
-    <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen 
           name="Hauptmenü" 
@@ -130,7 +126,21 @@ export default function Navbar() {
           }} 
         />
       </Tab.Navigator>
-    </NavigationContainer>
+  );
+}
+
+export default function NavBar() {
+  const insets = useSafeAreaInsets();
+  return (
+    <View 
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        flex: 1,
+      }}
+    >
+      <MyTabs />
+    </View>
   );
 }
 
