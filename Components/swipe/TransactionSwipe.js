@@ -3,8 +3,8 @@ import DateText from '../TextComponents/DateText';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import COLORS from '../Farben';
 
-export const Transaction=({img, title, amount, date, isPos}) => {
-        if(isPos >= 0){
+export const Transaction=({img, title, amount, date}) => {
+        if (amount >= 0){
             return(
                 <View style={styles.container}>
                     <View style={styles.containerImagePos}>
@@ -13,7 +13,6 @@ export const Transaction=({img, title, amount, date, isPos}) => {
         
                     <View style={styles.containerInfo}>
                         <View style={styles.containerTitleAmount}>
-                            {/* if amount is negative, color is red - */}
                             <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
                             <Text style={styles.placeholderTextPos}><TitelAmountText>{amount}€</TitelAmountText></Text>
                         </View>
@@ -40,7 +39,6 @@ export const Transaction=({img, title, amount, date, isPos}) => {
         
                 <View style={styles.containerInfo}>
                     <View style={styles.containerTitleAmount}>
-                    {/* if amount is negative, color is red - */}
                     <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
                     <Text style={styles.placeholderTextNeg}><TitelAmountText>{amount}</TitelAmountText></Text>
                 </View>

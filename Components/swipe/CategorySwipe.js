@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image} from 'react-native';
+import { StyleSheet, View, Image, Text} from 'react-native';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import COLORS from '../Farben';
 
@@ -7,7 +7,7 @@ export const CategorySwipe =({img, text}) => {
     return(
         <View style={styles.container}>
             <Image style={styles.image} source={img} />
-            <PlaceholderText style={styles.placeholderText}>{text}</PlaceholderText>
+            <Text style={{color: COLORS.schriftDark}}><PlaceholderText>{text}</PlaceholderText></Text>
         </View>
     );
 }
@@ -26,8 +26,5 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
         width: 32,
         height: 32,
-    },
-    placeholderText: {
-        color: COLORS.schriftDark,
     },
 });

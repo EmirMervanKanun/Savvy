@@ -1,22 +1,32 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, Text } from 'react-native';
 import TitelAmountText from '../TextComponents/TitelAmountText';
+import DateText from '../TextComponents/DateText';
 import COLORS from '../Farben';
 
 export const BudgetSwipe = ({img, title, amount1, amount2}) => {
     return(
-        <View style={styles.container}>
-            <View style={styles.containerImage}>
-                <Image style={styles.image} source={img} />
-            </View>
-            
-            <View style={styles.containerInfo}>
-                <View style={styles.containerTitleBudget}>
-                    <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
-                    <TitelAmountText style={styles.placeholderTextPos}>{amount1} / {amount2}</TitelAmountText>
+        <View style={{gap: 5}}>
+            <View style={styles.container}>
+                <View style={styles.containerImage}>
+                    {/*
+                    <Image style={styles.image} source={img} />
+                    */}
                 </View>
+                
+                <View style={styles.containerInfo}>
+                    <View style={styles.containerTitleBudget}>
+                        <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
+                        <TitelAmountText style={styles.placeholderTextPos}>{amount1} / {amount2}</TitelAmountText>
+                    </View>
 
-                <View style={styles.containerProgress}>
+                    <View style={styles.containerProgress}>
+                    {/* Progressbar */}
+                    </View>
                 </View>
+            </View>
+
+            <View style={styles.containerDate}>
+                <Text style={{color: COLORS.schriftMid}}><DateText>25.06.2024 - 25.07.2024</DateText></Text>
             </View>
         </View>
     );
@@ -27,9 +37,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: 292,
-        height: 68,
-        paddingVertical: 10,
+        paddingTop: 10,
         gap: 18,
+    },
+    containerDate: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     },
     containerImage: {
         width: 48,
@@ -47,7 +60,7 @@ const styles = StyleSheet.create({
     containerInfo: {
         flexWrap: 'wrap',
         flexDirection: 'row',
-        columnGap: 5,
+        gap: 5,
     },
     containerTitleBudget: {
         width: 226,
