@@ -21,10 +21,8 @@ export default function Home() {
   );
 }
 
-/*const styles = StyleSheet.create({
-  buttoncolor: {
-    backgroundColor: COLORS.redMid,
-  },
-});*/
+const styles = StyleSheet.create({
+  
+});
 
 //<HomeHeader img={require('../../Icons/ProfilePictures/profilePicture1.png')}/>
