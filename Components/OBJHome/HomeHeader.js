@@ -4,16 +4,16 @@ import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import ButtonIcon  from "../Buttons/Buttons";
 
-const HomeHeader= ({img}) => {
+const HomeHeader= ({props}) => {
     return (
         <View style={styles.container}>
             <View style={styles.personalData}>  
-                <Image source={img} style={styles.imagePerson} />
+                <Image source={props.img} style={styles.imagePerson} />
                 <Text style={{color:COLORS.schriftLight}}><Header>Hallo,Jason!</Header></Text>
                 <ButtonIcon img={require('../../Icons/Sonstiges/settings.png')} style={styles.btnSet}/>
             </View>
             <View style={styles.lineText}>
-                <Text style={{color:COLORS.schriftLight}}><Header>5678,90 €</Header></Text>
+                <Text style={{color:COLORS.schriftLight}}><Header>{props.amount} €</Header></Text>
                 <Text style={{color:COLORS.schriftMid}}><PlaceholderText>Gesamtsaldo</PlaceholderText></Text>
             </View>
         </View>
@@ -24,7 +24,7 @@ export default HomeHeader;
 const styles = StyleSheet.create({
     container: {
         height: 184,
-        width: 358,
+        width: '100%',
         backgroundColor: COLORS.primaryDark,
         borderBottomRightRadius: 70,
         paddingTop:20,
