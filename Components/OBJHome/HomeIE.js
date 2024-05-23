@@ -16,7 +16,7 @@ const HomeIE = ({ props }) => {
                 </View>
                 <View style={styles.bildmittext}>
                     <Image source={require('../../Icons/Objects/arrowIncome.png')} style={styles.image} />
-                    <Text style={{ color: COLORS.greenDark }}><TitleAmountText>{props.i.betrag} €</TitleAmountText></Text>
+                    <Text style={{ color: COLORS.greenDark }}><TitleAmountText>{props.iAmount}€</TitleAmountText></Text>
                 </View>
             </View>
             <View style={[styles.expenses, styles.box]}>
@@ -26,7 +26,7 @@ const HomeIE = ({ props }) => {
                 </View>
                 <View style={styles.bildmittext}>
                     <Image source={require('../../Icons/Objects/arrowExpense.png')} style={styles.image} />
-                    <Text style={{ color: COLORS.redDark }}><TitleAmountText>- {props.e.betrag} €</TitleAmountText></Text>
+                    <Text style={{ color: COLORS.redDark }}><TitleAmountText>- {props.eAmount}€</TitleAmountText></Text>
                 </View>
             </View>
         </View>
