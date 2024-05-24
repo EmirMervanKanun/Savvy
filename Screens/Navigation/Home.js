@@ -8,22 +8,22 @@ import Categorie from '../../Components/SonstSonstiges/Categorielist';
 import CategoriesDropdown from '../../Components/Dropdowns/Categories';
 
 const dropdownData = [
-  { label: 'Wähle eine Kategorie aus...', icon:null, value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
-  { label: 'Lebensmittel', icon:<Image source={require('../../Icons/Categories/groceries.png')} style={{width: 32, height: 32}}/>, value: '1' },
-  { label: 'Miete', icon:<Image source={require('../../Icons/Categories/rent.png')} style={{width: 32, height: 32}}/>, value: '2' },
-  { label: 'Klamotten', icon:<Image source={require('../../Icons/Categories/clothes.png')} style={{width: 32, height: 32}}/>, value: '3' },
-  { label: 'Technik', icon:<Image source={require('../../Icons/Categories/devices.png')} style={{width: 32, height: 32}}/>, value: '4' },
-  { label: 'Transportmittel', icon:<Image source={require('../../Icons/Categories/transportation.png')} style={{width: 32, height: 32}}/>, value: '5' },
-  { label: 'Medikamente', icon:<Image source={require('../../Icons/Categories/medication.png')} style={{width: 32, height: 32}}/>, value: '6' },
-  { label: 'Haustier', icon:<Image source={require('../../Icons/Categories/pets.png')} style={{width: 32, height: 32}}/>, value: '7' },
+  { label: 'Wähle eine Kategorie aus...', icon: null, value: '0' }, // Leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+  { label: 'Lebensmittel', icon: require('../../Icons/Categories/groceries.png'), value: '1' },
+  { label: 'Miete', icon: require('../../Icons/Categories/rent.png'), value: '2' },
+  { label: 'Klamotten', icon: require('../../Icons/Categories/clothes.png'), value: '3' },
+  { label: 'Technik', icon: require('../../Icons/Categories/devices.png'), value: '4' },
+  { label: 'Transportmittel', icon: require('../../Icons/Categories/transportation.png'), value: '5' },
+  { label: 'Medikamente', icon: require('../../Icons/Categories/medication.png'), value: '6' },
+  { label: 'Haustier', icon: require('../../Icons/Categories/pets.png'), value: '7' },
 ];
 
 export default function Home() {
   return (
-  <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
-    <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
-      <CategoriesDropdown props={dropdownData}/>
-    </View>
+    <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
+      <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+        <CategoriesDropdown props={dropdownData} />
+      </View>
     </ImageBackground>
   );
 }
