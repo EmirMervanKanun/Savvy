@@ -4,11 +4,8 @@ import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import HomeIE from '../../Components/OBJHome/HomeIE';
 
 
-
-
 export default function Home() {
   return (
-
     <View style={styles.container}>
       <HomeHeader props={{
         profilePicture: require('../../Icons/ProfilePictures/profilePicture1.png'),
@@ -18,7 +15,6 @@ export default function Home() {
       <Text>Home</Text>
       <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
     </View>
-
   );
 }
 
