@@ -4,8 +4,6 @@ import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import SavingsAmountText from '../TextComponents/SavingsAmountText';
 
-import CircularProgress from 'react-native-circular-progress-indicator';
-
 import COLORS from '../Farben';
 
 export default SavingGoal=({img, title, amount1, amount2, date}) => {

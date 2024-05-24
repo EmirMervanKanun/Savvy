@@ -5,26 +5,26 @@ import DateText from '../TextComponents/DateText';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import COLORS from '../Farben';
 
-const Transaction = ({ img, title, amount, date }) => {
+const Transaction = ({ props }) => {
     
-    const isPositive = amount >= 0;
+    const isPositive = props.isIncome;
 
     return (
         <View style={[styles.container, isPositive ? styles.containerPositive : styles.containerNegative]}>
             <View style={styles.containerImage}>
-                <Image style={styles.image} source={img} />
+                <Image style={styles.image} source={props.categoryIcon} />
             </View>
 
             <View style={styles.containerInfo}>
                 <View style={styles.containerTitleAmount}>
-                    <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
+                    <TitelAmountText style={styles.placeholderText}>{props.title}</TitelAmountText>
                     <Text style={[styles.amountText, isPositive ? styles.greenText : styles.redText]}>
-                        <TitelAmountText>{amount} €</TitelAmountText>
+                        <TitelAmountText>{props.amount} €</TitelAmountText>
                     </Text>
                 </View>
 
                 <View style={styles.containerDateRepeat}>
-                    <Text style={styles.placeholderText}><DateText>{date}</DateText></Text>
+                    <Text style={styles.placeholderText}><DateText>{props.date}</DateText></Text>
                     <View style={styles.containerRepeat}>
                         <Image style={styles.imageRepeat} source={require('../../Icons/Sonstiges/repeat.png')} />
                         <Text style={{color: COLORS.schriftMid}}><DateText>Monatlich</DateText></Text>
