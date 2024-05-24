@@ -16,15 +16,15 @@ const dropdownData = [
     { label: 'Haustier', icon:<Image source={require('../../Icons/Categories/pets.png')} style={{width: 32, height: 32}}/>, value: '7' },
 ];
 
-const CategoriesDropdown = () => {
-    const placeholder = dropdownData[0].label;      //"Wähle eine Kategorie aus..." ist standardmäßig ausgewählt
+const CategoriesDropdown = ( props ) => {
+    const placeholder = props[0].label;      //"Wähle eine Kategorie aus..." ist standardmäßig ausgewählt
 
     const [selectedData, setSelectedData] = useState(placeholder);
-    const [selectedIcon, setSelectedIcon] = useState(dropdownData[0].icon);
+    const [selectedIcon, setSelectedIcon] = useState(props[0].icon);
 
     const [isClicked, setIsClicked] = useState(false);
 
-    const [data, setData] = useState(dropdownData);
+    const [data, setData] = useState(props);
 
     return (
         <View style={styles.container}>
@@ -56,7 +56,7 @@ const CategoriesDropdown = () => {
                                 setIsClicked(false);
                             }}>
                                 <View style={styles.itemContent}> 
-                                    <View>{item.icon}</View>
+                                    <Image source={item.icon} />
                                     <Text style={styles.fontColor}>
                                         <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
                                     </Text>
