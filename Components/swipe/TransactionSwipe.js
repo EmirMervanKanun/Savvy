@@ -14,7 +14,7 @@ export const Transaction=({img, title, amount, date}) => {
                     <View style={styles.containerInfo}>
                         <View style={styles.containerTitleAmount}>
                             <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
-                            <Text style={styles.placeholderTextPos}><TitelAmountText>{amount}€</TitelAmountText></Text>
+                            <Text style={{color: COLORS.greenDark}}><TitelAmountText>{amount}€</TitelAmountText></Text>
                         </View>
 
                         <View style={styles.containerDateRepeat}>
@@ -40,7 +40,7 @@ export const Transaction=({img, title, amount, date}) => {
                 <View style={styles.containerInfo}>
                     <View style={styles.containerTitleAmount}>
                     <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
-                    <Text style={styles.placeholderTextNeg}><TitelAmountText>{amount}</TitelAmountText></Text>
+                    <Text style={{color: COLORS.redDark}}><TitelAmountText>{amount}</TitelAmountText></Text>
                 </View>
 
                 <View style={styles.containerDateRepeat}>
@@ -85,12 +85,6 @@ const styles = StyleSheet.create({
         height: 48,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    placeholderTextPos: {
-        color: COLORS.greenDark,
-    },
-    placeholderTextNeg: {
-        color: COLORS.redDark,
     },
     placeholderText: {
         color: COLORS.schriftMid,
