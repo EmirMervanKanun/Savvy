@@ -1,23 +1,48 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import React from 'react';
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import COLORS from '../Farben';
-import Header from '../TextComponents/Header';
-import PlaceholderText from '../TextComponents/PlaceholderText';
-import ButtonBig from "../Buttons/Buttons";
-//import Toggle  from "../Buttons/Buttons";
-//import BackButton from "../Buttons/Buttons";
+import TitelAmountText from '../TextComponents/TitelAmountText';
+import { ButtonIcon } from "../Buttons/Buttons";
 
-const Notifcations = ({img}) => {
+const Notification = ({ props }) => {
     return (
         <View style={styles.container}>
-            <View style={styles.personalData}>  
-                <Image source={img} style={styles.imagePerson} />
-                <Text style={{color:COLORS.schriftLight}}><Header>Mitteilungen</Header></Text>
-                <ButtonBig text="Neue Mitteilung" style={styles.btnSet}/>
-            </View>
-            <View style={styles.lineText}>
-                <Text style={{color:COLORS.schriftMid}}><PlaceholderText>Keine neuen Mitteilungen</PlaceholderText></Text>
-            </View>
+            <FlatList
+                data={props}
+                renderItem={({ item, index }) => {
+                    const isLastItem = index === props.length - 1;
+                    return (
+                        <View style={[styles.mitteilung, isLastItem && styles.lastItem]}>
+                            <Text style={styles.text}><TitelAmountText>{item.label}</TitelAmountText></Text>
+                            <ButtonIcon img={require('../../Icons/Button/add.png')} />
+                        </View>
+                    );
+                }}
+            />
         </View>
     );
 }
-export default Notifcations;
+export default Notification;
+
+const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    mitteilung: {
+        width: 292,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingVertical: 10,
+        borderBottomWidth: 0.5,
+        borderBottomColor: COLORS.schriftMid,
+    },
+    lastItem: {
+        borderBottomWidth: 0,
+    },
+    text: {
+        color: COLORS.schriftDark,
+    },
+});
