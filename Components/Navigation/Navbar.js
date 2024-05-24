@@ -1,8 +1,6 @@
 import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
 import { Home, FixedTransactions, TransactionsList, AddTransaction } from './index';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import NavText from '../TextComponents/NavText';
 import Tabbar from './Tabbar';
