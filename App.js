@@ -5,7 +5,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     'Sora-Regular': require('./assets/Fonts/Sora-Regular.ttf'),
