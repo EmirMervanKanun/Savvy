@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
 
-export default function InputText() {
+export default function InputText({placeholder}) {
     const [input, setInput] = useState('');
     return (
         <TextInput
             style={styles.input}
             value={input}
             onChangeText={setInput}
-            placeholder="Placeholder"
+            placeholder={placeholder}
         />
     );
 };
