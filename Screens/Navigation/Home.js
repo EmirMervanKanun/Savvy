@@ -1,4 +1,4 @@
-import { StyleSheet, ImageBackground, View, Text } from 'react-native';
+import { StyleSheet, ImageBackground, View, Image, Text } from 'react-native';
 import React from 'react';
 import HomeIncome from '../../Components/OBJHome/HomeEA';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
