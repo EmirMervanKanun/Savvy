@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image} from 'react-native';
+import { StyleSheet, View, Image, Text} from 'react-native';
 
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
@@ -13,9 +13,10 @@ export default SavingGoal=({img, title, amount1, amount2, date}) => {
             <View style={styles.containerProgress}>
                 <Image style={styles.image} source={img} />
             </View>
+
             <View style={styles.containerInfo}>
-                <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
-                <SavingsAmountText style={styles.placeholderTextPos}>{amount1} / {amount2}</SavingsAmountText>
+                <TitelAmountText>{title}</TitelAmountText>
+                <Text style={{ color: COLORS.primaryMid }}><SavingsAmountText>{amount1}€ / {amount2}€</SavingsAmountText></Text>
                 <Text style={{color: COLORS.schriftMid}}><DateText>{date}</DateText></Text>
             </View>
         </View>
@@ -24,20 +25,29 @@ export default SavingGoal=({img, title, amount1, amount2, date}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'column',
-        alignItems: 'center',
+        flexDirection: 'row',
+        alighItems: 'center',
+        justifyContent: 'center',
         width: 292,
         height: 120,
         gap: 16,
     },
+    image: {
+        width: 40,
+        height: 40,
+    },
     containerProgress: {
         width: 120,
         height: 120,
+        borderRadius: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLORS.primaryLight,
     },
     containerInfo: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        textAlign: 'left',
+        flexDirection: 'collumn',
+        justifyContent: 'center',
+        alignItems: 'left',
         columnGap: 8,
     },
 });
