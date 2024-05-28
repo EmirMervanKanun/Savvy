@@ -4,11 +4,8 @@ class Savvy{
     transactions = [];
     budgets = [];
     savings = [];
-
-
-
-
-
+    categorys = [];
+    settings = [];
 
 
     registerUser(user){
@@ -27,6 +24,10 @@ class Savvy{
         this.savings.push(savings);
     }
 
+    addCategory(category){
+        this.categorys.push(category);
+    }
+
 
     getUser(){
         return this.user;
@@ -42,5 +43,8 @@ class Savvy{
 
     getSavings(){
         return this.savings;
+    }
+    getCategorys(){
+        return this.categorys;
     }
 }
