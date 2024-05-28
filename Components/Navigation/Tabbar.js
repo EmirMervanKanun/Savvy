@@ -33,7 +33,7 @@ function MyTabs({ tab1, tab2 }) {
               styles.tabbarLabel, 
               { backgroundColor: focused ? "white" : COLORS.primaryLight }
             ]}>
-              <Text><HeaderText>{tab1.title}</HeaderText></Text>
+              <Text style={styles.text}><HeaderText>{tab1.title}</HeaderText></Text>
             </View>
           ),
         }}
@@ -47,7 +47,7 @@ function MyTabs({ tab1, tab2 }) {
               styles.tabbarLabel, 
               { backgroundColor: focused ? "white" : COLORS.primaryLight }
             ]}>
-              <Text><HeaderText>{tab2.title}</HeaderText></Text>
+              <Text style={styles.text}><HeaderText>{tab2.title}</HeaderText></Text>
             </View>
           ),
         }}
@@ -71,5 +71,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     marginBottom: -10, 
-  }
+  },
+  text: {
+    color: COLORS.schriftDark,
+  },
 });
