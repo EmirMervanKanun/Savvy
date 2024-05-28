@@ -2,6 +2,7 @@ import Reaact from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View, Text, Image, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Svg, { Path } from 'react-native-svg';
 import Home from '../../Screens/Navigation/Home';
 import Tabbar from '../Navigation/Tabbar';
 import FixedTransactions from '../../Screens/Navigation/FixedTransactions';
@@ -34,13 +35,26 @@ const styles = StyleSheet.create ({
       width: 30,
       height: 30,
     },
-    plus: {
+    plusContainer: {
       justifyContent: 'center',
       alignItems: 'center',
       width: Platform.OS == 'ios' ? 55 : 40,
       height: Platform.OS == 'ios' ? 55 : 40,
-      top: Platform.OS == 'ios' ? -20 : -45,
+      top: Platform.OS == 'ios' ? -20 : -17,
       borderRadius: Platform.OS == 'ios' ? 30 : 40,
+    },
+    plus: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    plusBack: {
+      justifyContent: 'center', 
+      alignItems:'center', 
+      backgroundColor: COLORS.primaryMid, 
+      width: 45, 
+      height:45, 
+      borderRadius: 25, 
+      top: -21,
     },
 })
 
@@ -88,17 +102,30 @@ function MyTabs() {
         options={{
           tabBarIcon: ({focused}) => {
             return (
-              <View style={{...styles.plus, backgroundColor: focused ? COLORS.primaryDark : COLORS.primaryMid }}>
-                <Image
-                  source={focused ? require('../../Icons/NavBar/PlusUnfocused.png'): require('../../Icons/NavBar/PlusFocused.png')}
-                  style={styles.icons}
-                />
+              <View style={styles.plusContainer}>
+                <Svg
+                  width={75}
+                  height={61}
+                  viewBox='0 0 75 61'
+                  style={{backgroundColor: 'white'}}
+                >
+                  <Path
+                    d="M75.2 0v61H0V0c4.1 0 7.4 3.1 7.9 7.1C10 21.7 22.5 33 37.7 33c15.2 0 27.7-11.3 29.7-25.9.5-4 3.9-7.1 7.9-7.1h-.1z"
+                    fill={COLORS.primaryLight}
+                  />
+                  <View style={styles.plus}>
+                    <View style={{...styles.plusBack, backgroundColor: focused ? COLORS.primaryDark : COLORS.primaryMid}}>
+                      <Image
+                        source={ focused ? require('../../Icons/NavBar/PlusFocused.png'): require('../../Icons/NavBar/PlusUnfocused.png')}
+                        style={styles.icons}
+                      />
+                    </View>
+                  </View>
+                </Svg>
               </View>
             )
           }
         }}
-      
-      
       />
       <Tab.Screen 
         name="Dauerauftrag" 
