@@ -2,8 +2,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import React from 'react';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import HomeIE from '../../Components/OBJHome/HomeIE';
-import Button from '../../Components/Buttons/Buttons';
-import { ButtonBack, ButtonSettings } from '../../Components/Buttons/Buttons';
 
 
 export default function Home() {
