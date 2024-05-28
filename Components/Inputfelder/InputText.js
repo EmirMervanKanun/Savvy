@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TextInput, StyleSheet, View } from "react-native";
 import COLORS from "../Farben"
 
-export default function InputText({placeholder}) {
+export default function InputText({placeholder, keyboardType}) {
     const [input, setInput] = useState('');
     const [bgColor, setBgColor] = useState(COLORS.schriftLight);
 
@@ -21,6 +21,7 @@ export default function InputText({placeholder}) {
                 value={input}
                 onChangeText={handleTextChange}
                 placeholder={placeholder}
+                keyboardType={keyboardType}
             />
         </View>
     );

@@ -15,7 +15,7 @@ export default function Home() {
       }} />
       <Text>Home</Text>
       <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
-      <InputText placeholder='Gib Input'/>
+      <InputText placeholder='Gib Input' keyboardType='numeric'/>
     </View>
   );
 }
