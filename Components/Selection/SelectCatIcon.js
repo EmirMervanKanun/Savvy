@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Image, TouchableOpacity, View } from "react-native";
 import COLORS from "../Farben";
 import Header from "../TextComponents/Header";
-import { ButtonSmall } from "../Buttons/Buttons";
+import Button from "../Buttons/Buttons";
 
 const CatIconSelector = () => {
     const [isClicked, setIsClicked] = useState(false);
@@ -68,8 +68,20 @@ const CatIconSelector = () => {
                     </View>
 
                     <View style={styles.btns}>
-                        <ButtonSmall text="Abbrechen" img={require('../../Icons/Button/cancel.png')} onPress={onCancel}></ButtonSmall>
-                        <ButtonSmall text="Speichern" img={require('../../Icons/Button/save.png')} onPress={onSave}></ButtonSmall>
+                        <Button props={{
+                            img: require('../../Icons/Button/cancel.png'),
+                            text: 'Abbrechen',
+                            color: 'blue',
+                            size: 'small',
+                            onPress: () => onCancel()
+                        }} />
+                        <Button props={{
+                            img: require('../../Icons/Button/save.png'),
+                            text: 'Speichern',
+                            color: 'blue',
+                            size: 'small',
+                            onPress: () => onSave()
+                        }} />
                     </View>
                 </View>
             )}
