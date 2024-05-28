@@ -1,6 +1,6 @@
 import Reaact from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Home from '../../Screens/Navigation/Home';
 import Tabbar from '../Navigation/Tabbar';
@@ -17,7 +17,7 @@ const screenOptions = {
     tabBarStyle: {
         position: 'absolute',
         height: 95,
-        backgroundColor: '#d5dff4',
+        backgroundColor: COLORS.primaryLight,
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
         borderTopWidth: 0,
@@ -33,6 +33,14 @@ const styles = StyleSheet.create ({
     icons: {
       width: 30,
       height: 30,
+    },
+    plus: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: Platform.OS == 'ios' ? 55 : 40,
+      height: Platform.OS == 'ios' ? 55 : 40,
+      top: Platform.OS == 'ios' ? -20 : -45,
+      borderRadius: Platform.OS == 'ios' ? 30 : 40,
     },
 })
 
@@ -74,6 +82,24 @@ function MyTabs() {
         }}
       />
       {/*Plus anschauen, evtl anders*/}
+      <Tab.Screen 
+        name="AddTransaction"
+        component={AddTransaction}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <View style={{...styles.plus, backgroundColor: focused ? COLORS.primaryDark : COLORS.primaryMid }}>
+                <Image
+                  source={focused ? require('../../Icons/NavBar/PlusUnfocused.png'): require('../../Icons/NavBar/PlusFocused.png')}
+                  style={styles.icons}
+                />
+              </View>
+            )
+          }
+        }}
+      
+      
+      />
       <Tab.Screen 
         name="Dauerauftrag" 
         component={FixedTransactions}
