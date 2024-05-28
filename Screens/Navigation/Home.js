@@ -1,7 +1,7 @@
 import { StyleSheet, ImageBackground, View, Text } from 'react-native';
 import React from 'react';
-import ButtonBig from '../../Components/Buttons/Buttons';
-import {ButtonMid, ButtonSmall, ButtonIcon, ButtonBack, ButtonSettings} from '../../Components/Buttons/Buttons';
+import Button from '../../Components/Buttons/Buttons';
+import {ButtonBack, ButtonSettings} from '../../Components/Buttons/Buttons';
 
 
 export default function Home() {
@@ -9,11 +9,33 @@ export default function Home() {
   <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Hauptmenü</Text>
-      <ButtonBig text="Los geht's!" onPress={()=>console.log("test")}/>
-      <ButtonMid text="Bearbeiten" img={require('../../Icons/Button/edit.png')}/>
-      <ButtonSmall text="Löschen" img={require('../../Icons/Button/delete.png')} isRed='1'/>
-      <ButtonIcon img={require('../../Icons/Button/delete.png')} isRed='1'/>
-      <ButtonIcon img={require('../../Icons/Button/save.png')}/>
+      <Button props={{
+        img:require('../../Icons/Button/save.png'),
+        text:'Speichern',
+        color:'blue',
+        size:'big',
+        onPress:()=>console.log("testspeichern")
+      }}/>
+      <Button props={{
+        img:require('../../Icons/Button/delete.png'),
+        text:'Löschen',
+        color:'red',
+        size:'small',
+        onPress:()=>console.log("testlöschen")
+      }}/>
+      <Button props={{
+        text:'kein text',
+        color:'blue',
+        size:'small',
+        onPress:()=>console.log("testlöschen")
+      }}/>
+      <Button props={{
+        img:require('../../Icons/Button/save.png'),
+        color:'red',
+        size:'small',
+        onPress:()=>console.log("testicon")
+      }}/>
+
       <ButtonBack/>
       <ButtonSettings/>
 
