@@ -1,91 +1,90 @@
-import React, {useState} from 'react';
-import { StyleSheet, View, Image, Pressable, Text} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Image, Pressable, Text } from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
 import COLORS from '../Farben';
 
 
+// größe, farbe rot oder blau, icon an oder aus, text an oder aus aber nur wenn icon an
 
-const ButtonBig=({text, img, onPress}) => {
-    if (img == null){
-        return (
-            <Pressable onPress={onPress} style={styles.containerBig}>
-                <Text style={styles.buttonText}><ButtonText>{text}</ButtonText></Text>
-            </Pressable>
-        );
-    }
+// button mit icon und text
+
+//button mit Text
+
+//button nur Icon
+const Button = ({ props }) => {
     
-    return(
-        <Pressable onPress={onPress} style={styles.containerBig}>
-            <Image style={styles.image} source={img} />
-            <Text style={styles.buttonText}><ButtonText>{text}</ButtonText></Text>
-        </Pressable>
-    );
-}
-export default ButtonBig;
+    //button Color
+    if (props.color == null) {
 
-export const ButtonMid=({text, img, onPress}) => {
-    return(
-        <Pressable onPress={onPress} style={styles.containerMid}>
-            <Image style={styles.image} source={img} />
-            <Text style={styles.buttonText}><ButtonText>{text}</ButtonText></Text>
-        </Pressable>
-    );
-}
+    } else if (props.color == 'red') {
+        styles.button = { ...styles.button, backgroundColor: COLORS.redMid, };
+    } else if (props.color == 'blue') {
+        styles.button = { ...styles.button, backgroundColor: COLORS.primaryMid, };
+    }
 
-export const ButtonSmall=({text, img, isRed, onPress}) => {
-    if(isRed == null){
-        return(
-            <Pressable onPress={onPress} style={styles.containerSmall}>
-             <Image style={styles.image} source={img} />
-             <Text style={styles.buttonText}><ButtonText>{text}</ButtonText></Text>
+    //button Size
+    if (props.size == null) {
+
+    } else if (props.size == 'big') {
+        styles.button = { ...styles.button, height: 32, width: 175, };
+    } else if (props.size == 'mid') {
+        styles.button = { ...styles.button, height: 32, width: 136, };
+    } else if (props.size == 'small') {
+        styles.button = { ...styles.button, height: 32, width: 116, };
+    }
+
+    //TextButton
+    if (props.img == null && props.text != null) {
+        return (
+            <Pressable onPress={props.onPress} style={styles.button}>
+                <Text style={styles.buttonText}><ButtonText>{props.text}</ButtonText></Text>
             </Pressable>
         );
     }
-    return(
-        <Pressable onPress={onPress} style={styles.containerSmallRed}>
-            <Image style={styles.image} source={img} />
-            <Text style={styles.buttonText}><ButtonText>{text}</ButtonText></Text>
-        </Pressable>
-    );
-}
-
-export const ButtonIcon=({img, isRed, onPress}) => {
-    if(isRed == null){
-        return(
-            <Pressable onPress={onPress} style={styles.containerIcon}>
-                <Image style={styles.image} source={img}/>
+    //IconTextButton
+    if (props.img != null && props.text != null) {
+        return (
+            <Pressable onPress={props.onPress} style={styles.button}>
+                <Image style={styles.image} source={props.img} />
+                <Text style={styles.buttonText}><ButtonText>{props.text}</ButtonText></Text>
             </Pressable>
         );
     }
-    return(
-        <Pressable onPress={onPress} style={styles.containerIconRed}>
-            <Image style={styles.image} source={img} />
-        </Pressable>
-    );
+    //IconButton
+    if (props.img != null && props.text == null) {
+        styles.button = { ...styles.button, height: 32, width: 32, };
+        return (
+            <Pressable onPress={props.onPress} style={styles.button}>
+                <Image style={styles.image} source={props.img} />
+            </Pressable>
+        );
+    }
+    return (<Text>Button Error</Text>);
 }
+export default Button;
 
-export const ButtonBack=({onPress}) => {
-    return(
+export const ButtonBack = ({ onPress }) => {
+    return (
         <Pressable onPress={onPress} style={styles.containerButtonBack}>
-            <Image style={styles.image} source={require('../../Icons/Objects/arrowLeft.png')}/>
+            <Image style={styles.image} source={require('../../Icons/Objects/arrowLeft.png')} />
             <Text style={styles.buttonTextBack}><ButtonText>zurück</ButtonText></Text>
         </Pressable>
     );
 }
 
-export const ButtonSettingsItem=({children, onPress}) => {
-    return(
+export const ButtonSettingsItem = ({ children, onPress }) => {
+    return (
         <Pressable onPress={onPress} style={styles.containerSettingsItem}>
             <Text style={styles.buttonText}><ButtonText>{children}</ButtonText></Text>
-            <Image style={styles.image} source={require('../../Icons/Objects/arrowRight.png')}/>
+            <Image style={styles.image} source={require('../../Icons/Objects/arrowRight.png')} />
         </Pressable>
     );
 }
 
-export const ButtonSettings=({onPress}) => {
-    return(
+export const ButtonSettings = ({ onPress }) => {
+    return (
         <Pressable onPress={onPress} style={styles.containerButtonSettings}>
-            <Image style={styles.imageSettings} source={require('../../Icons/Sonstiges/settings.png')}/>
+            <Image style={styles.imageSettings} source={require('../../Icons/Sonstiges/settings.png')} />
         </Pressable>
     );
 }
@@ -125,7 +124,13 @@ export let ButtonFilter=({items, startSelected}) => {
 }
 */
 
-const styles = StyleSheet.create({
+styles = StyleSheet.create({
+    button: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     containerButtonSettings: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -137,7 +142,7 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30,
     },
-    containerButtonFilter: {   
+    containerButtonFilter: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -163,64 +168,10 @@ const styles = StyleSheet.create({
         height: 24,
         width: 80,
     },
-    containerBig: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: COLORS.primaryMid,
-        height: 32,
-        width: 175,
-        borderRadius: 8,
-    },
     image: {
         resizeMode: 'stretch',
         width: 24,
         height: 24,
-    },
-    containerMid: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: COLORS.primaryMid,
-        height: 32,
-        width: 136,
-        borderRadius: 8,
-    },
-    containerSmall: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: COLORS.primaryMid,
-        height: 32,
-        width: 116,
-        borderRadius: 8,
-    },
-    containerSmallRed: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: COLORS.redMid,
-        height: 32,
-        width: 116,
-        borderRadius: 8,
-    },
-    containerIcon: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: COLORS.primaryMid,
-        height: 32,
-        width: 32,
-        borderRadius: 8,
-    },
-    containerIconRed: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: COLORS.redMid,
-        height: 32,
-        width: 32,
-        borderRadius: 8,
     },
     buttonText: {
         color: COLORS.schriftDark,
