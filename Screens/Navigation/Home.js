@@ -1,11 +1,21 @@
-import { StyleSheet, ImageBackground, View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import React from 'react';
+import HomeHeader from '../../Components/OBJHome/HomeHeader';
+import HomeIE from '../../Components/OBJHome/HomeIE';
 import Button from '../../Components/Buttons/Buttons';
 import {ButtonBack, ButtonSettings} from '../../Components/Buttons/Buttons';
 
 
 export default function Home() {
   return (
+    <View style={styles.container}>
+      <HomeHeader props={{
+        profilePicture: require('../../Icons/ProfilePictures/profilePicture1.png'),
+        name: 'John',
+        amount: '123.456,89'
+      }} />
+      <Text>Home</Text>
+      <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
   <ImageBackground source={require('../../assets/grid.png')} style={{flex: 1, resizeMode: "cover", justifyContent: "center"}}>
     <View style={{flex: 1, alignItems: "center", justifyContent:"center"}}>
       <Text>Hauptmenü</Text>
@@ -40,12 +50,12 @@ export default function Home() {
       <ButtonSettings/>
 
     </View>
-    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
 });
-
-//<HomeHeader img={require('../../Icons/ProfilePictures/profilePicture1.png')}/>
