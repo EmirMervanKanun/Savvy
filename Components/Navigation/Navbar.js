@@ -10,6 +10,8 @@ import AddTransaction from '../../Screens/AddTransaction';
 import TransactionsList from '../../Screens/Navigation/TransactionsList';
 import NavText from '../TextComponents/NavText';
 import COLORS from '../Farben';
+import BudgetSavingWrapper from './TabbarBudgetSavingWrapper';
+import Transactionswrapper from './TabbarTransactionsWrapper';
 
 const Tab = createBottomTabNavigator();
 const screenOptions = { 
@@ -80,7 +82,7 @@ function MyTabs() {
       />
       <Tab.Screen 
         name="SparzieleScreen" 
-        component={Tabbar}
+        component={BudgetSavingWrapper}
         options={{
           tabBarIcon: ({focused}) => {
             return (
@@ -146,7 +148,7 @@ function MyTabs() {
       />
       <Tab.Screen 
         name="Transaktionen" 
-        component={TransactionsList}
+        component={Transactionswrapper}
         options={{
           tabBarIcon: ({focused}) => {
             return (
