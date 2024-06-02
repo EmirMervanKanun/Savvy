@@ -12,7 +12,7 @@ const RadioDefaultText=({children}) => {
 
 const styles = StyleSheet.create({
   radio: {
-    fontSize: 12,
+    fontSize: 14,
   },
 });
 

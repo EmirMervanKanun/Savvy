@@ -3,27 +3,42 @@ import { View, Pressable, StyleSheet } from 'react-native';
 import RadioDefaultText from '../TextComponents/RadioDefaultText';
 import COLORS from '../Farben';
 
-const ToggleButton = (props) => {
-  // Initial state ist 'false' (aus)
-  const [isOn, setIsOn] = useState(false);
-
-  // Funktion zum Umschalten des Zustands
-  const toggleSwitch = () => {
-    setIsOn(previousState => !previousState);
-  };
-
+const ButtonRadio = ({selected, onPress, label}) => {
   return (
-    <View style={styles.container}>
-      <Pressable style={styles.button} onPress={toggleSwitch}>
-          <View style={[styles.nob, isOn? styles.nobOn : styles.nobOff]}></View>
+      <Pressable style={styles.container} onPress={onPress}>
+          <View style={styles.button}>
+            <View style={[styles.nob, selected? styles.nobOn : styles.nobOff]}></View>
+          </View>
+          <RadioDefaultText>{label}</RadioDefaultText>
       </Pressable>
-      <RadioDefaultText>{props.text}</RadioDefaultText>
-    </View>
   );
 };
-export default ToggleButton;
+
+const RadioButtonGroup = ({ options }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  return (
+    <View style={styles.groupContainer}>
+      {options.map((option, index) => (
+        <ButtonRadio
+          key={index}
+          label={option}
+          selected={selectedOption === option}
+          onPress={() => setSelectedOption(option)}
+        />
+      ))}
+    </View>
+  );
+}; export default RadioButtonGroup;
 
 const styles = StyleSheet.create({
+  groupContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    gap: 14,
+  },
   container: {
     display: 'flex',
     flexDirection: 'row',
@@ -32,9 +47,11 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   button: {
-    width: 24,
-    height: 24,
-    borderRadius: 23,
+    width: 26,
+    height: 26,
+    borderRadius: 25,
+    backgroundColor: COLORS.primaryLight,
+    padding: 4,
     alignContent: 'center',
     justifyContent: 'center',
   },

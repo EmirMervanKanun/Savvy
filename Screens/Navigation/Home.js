@@ -4,7 +4,8 @@ import Button from '../../Components/Buttons/Button';
 import ButtonBack from '../../Components/Buttons/ButtonBack';
 import ButtonSettings from '../../Components/Buttons/ButtonSettings';
 import ButtonToggle from '../../Components/Buttons/ButtonToggle';
-import ButtonRadio from '../../Components/Buttons/ButtonRadio';
+import RadioButtonGroup from '../../Components/Buttons/ButtonRadio';
+import FilterGroup from '../../Components/Buttons/ButtonFilter';
 
 
 export default function Home() {
@@ -39,7 +40,9 @@ export default function Home() {
         onPress:()=>console.log("testicon")
       }}/>
       <ButtonToggle/>
-      <ButtonRadio text="Einnahme"/>
+      <RadioButtonGroup options={['Einnahme','Ausgabe','Sparen']}/>
+      <FilterGroup options={['Gesamt','Einnahmen','Ausgaben']}/>
+      
       <ButtonBack/>
       <ButtonSettings/>
 
