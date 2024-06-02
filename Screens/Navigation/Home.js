@@ -1,7 +1,10 @@
 import { StyleSheet, ImageBackground, View, Text } from 'react-native';
 import React from 'react';
-import Button from '../../Components/Buttons/Buttons';
-import {ButtonBack, ButtonSettings} from '../../Components/Buttons/Buttons';
+import Button from '../../Components/Buttons/Button';
+import ButtonBack from '../../Components/Buttons/ButtonBack';
+import ButtonSettings from '../../Components/Buttons/ButtonSettings';
+import ButtonToggle from '../../Components/Buttons/ButtonToggle';
+import ButtonRadio from '../../Components/Buttons/ButtonRadio';
 
 
 export default function Home() {
@@ -35,9 +38,11 @@ export default function Home() {
         size:'small',
         onPress:()=>console.log("testicon")
       }}/>
-
+      <ButtonToggle/>
+      <ButtonRadio text="Einnahme"/>
       <ButtonBack/>
       <ButtonSettings/>
+
 
     </View>
     </ImageBackground>

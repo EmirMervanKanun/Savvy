@@ -63,31 +63,10 @@ const Button = ({ props }) => {
 }
 export default Button;
 
-export const ButtonBack = ({ onPress }) => {
-    return (
-        <Pressable onPress={onPress} style={styles.containerButtonBack}>
-            <Image style={styles.image} source={require('../../Icons/Objects/arrowLeft.png')} />
-            <Text style={styles.buttonTextBack}><ButtonText>zurück</ButtonText></Text>
-        </Pressable>
-    );
-}
 
-export const ButtonSettingsItem = ({ children, onPress }) => {
-    return (
-        <Pressable onPress={onPress} style={styles.containerSettingsItem}>
-            <Text style={styles.buttonText}><ButtonText>{children}</ButtonText></Text>
-            <Image style={styles.image} source={require('../../Icons/Objects/arrowRight.png')} />
-        </Pressable>
-    );
-}
 
-export const ButtonSettings = ({ onPress }) => {
-    return (
-        <Pressable onPress={onPress} style={styles.containerButtonSettings}>
-            <Image style={styles.imageSettings} source={require('../../Icons/Sonstiges/settings.png')} />
-        </Pressable>
-    );
-}
+
+
 /*
 const ButtonFilterItem=({children, onPress}) => {
     const [isSelected, setIsSelected] = useState(true);
@@ -131,43 +110,6 @@ styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 8,
     },
-    containerButtonSettings: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 40,
-        width: 40,
-    },
-    imageSettings: {
-        resizeMode: 'stretch',
-        width: 30,
-        height: 30,
-    },
-    containerButtonFilter: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        height: 24,
-        width: 292,
-    },
-    containerSettingsItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderColor: COLORS.schriftLight,
-        borderTopWidth: 1,
-        borderBottomWidth: 1,
-        borderStyle: 'solid',
-        height: 56,
-        width: 340,
-        paddingHorizontal: 32,
-    },
-    containerButtonBack: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 24,
-        width: 80,
-    },
     image: {
         resizeMode: 'stretch',
         width: 24,
@@ -175,14 +117,5 @@ styles = StyleSheet.create({
     },
     buttonText: {
         color: COLORS.schriftDark,
-    },
-    buttonTextUnderlined: {
-        color: COLORS.schriftDark,
-        textDecorationLine: 'underline',
-    },
-    buttonTextBack: {
-        color: COLORS.schriftDark,
-        alignContent: 'center',
-        height: 24,
     },
 });
