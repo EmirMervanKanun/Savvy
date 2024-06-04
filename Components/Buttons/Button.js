@@ -105,6 +105,7 @@ export let ButtonFilter=({items, startSelected}) => {
 
 styles = StyleSheet.create({
     button: {
+        flex: null,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',

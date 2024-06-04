@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Pressable, StyleSheet } from 'react-native';
+import { View, Pressable, StyleSheet, Text} from 'react-native';
 import RadioDefaultText from '../TextComponents/RadioDefaultText';
 import COLORS from '../Farben';
 
@@ -9,7 +9,7 @@ const ButtonRadio = ({selected, onPress, label}) => {
           <View style={styles.button}>
             <View style={[styles.nob, selected? styles.nobOn : styles.nobOff]}></View>
           </View>
-          <RadioDefaultText>{label}</RadioDefaultText>
+          <Text style={{color: COLORS.schriftDark}}><RadioDefaultText>{label}</RadioDefaultText></Text>
       </Pressable>
   );
 };

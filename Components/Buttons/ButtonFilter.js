@@ -6,7 +6,10 @@ import COLORS from '../Farben';
 const ButtonFilter = ({selected, onPress, label}) => {
   return (
       <Pressable style={styles.container} onPress={onPress}>
-          <Text style={[styles.filterText, selected? styles.underlined : null]}><TitelAmountText>{label}</TitelAmountText></Text>
+        <View style={selected? {borderBottomWidth:2, borderColor: COLORS.schriftDark} : null}>
+          <Text style={styles.filterText}><TitelAmountText>{label}</TitelAmountText></Text>
+        </View>
+          
       </Pressable>
   );
 };
@@ -42,6 +45,11 @@ const styles = StyleSheet.create({
   },
   underlined: {
     textDecorationLine: 'underline',
+  },
+  filterText: {
+    color: COLORS.schriftDark,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
