@@ -3,8 +3,8 @@ import React from 'react';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import HomeIE from '../../Components/OBJHome/HomeIE';
 
-
 export default function Home() {
+
   return (
     <View style={styles.container} >
       <HomeHeader props={{
@@ -23,3 +23,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
