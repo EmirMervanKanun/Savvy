@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabbar from './Tabbar';
-import Budget from '../../Screens/Navigation/Budget';
-import Saving from '../../Screens/Navigation/Saving';
+import Budget from '../../Screens/BudgetSavings/Budget';
+import Saving from '../../Screens/BudgetSavings/Saving';
 
 const propsTabbarBudgetSavingWrapper = { 
   tab1: { 

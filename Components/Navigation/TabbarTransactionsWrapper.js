@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabbar from './Tabbar';
-import TList from '../../Screens/Navigation/TransactionsList';
-import TDiagram from '../../Screens/Navigation/TransactionsDiagram';
+import TList from '../../Screens/Transactions/TransactionsList';
+import TDiagram from '../../Screens/Transactions/TransactionsDiagram';
 
 const propsTabbarTransactionWrapper = { 
   tab1: { 

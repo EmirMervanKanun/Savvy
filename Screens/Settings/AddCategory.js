@@ -1,6 +1,6 @@
 
 
-export default function EditCategory() {
+export default function AddCategory() {
     return (
       <View></View>
     );
