@@ -17,6 +17,7 @@ const Tab = createBottomTabNavigator();
 const screenOptions = { 
     tabBarShowLabel: false,
     headerShown: false,
+    tabBarHideOnKeyboard: true,
     tabBarStyle: {
         position: 'absolute',
         height: 95,
