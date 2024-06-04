@@ -3,30 +3,32 @@ import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import COLORS from '../Farben';
 
-export const BudgetSwipe = ({img, title, amount1, amount2}) => {
-    return(
-        <View style={{gap: 5}}>
+export const BudgetSwipe = ({ img, title, amount1, amount2 }) => {
+    return (
+        <View style={{ gap: 5 }}>
             <View style={styles.container}>
                 <View style={styles.containerImage}>
-                    {/*
                     <Image style={styles.image} source={img} />
-                    */}
                 </View>
-                
+
                 <View style={styles.containerInfo}>
                     <View style={styles.containerTitleBudget}>
-                        <TitelAmountText style={styles.placeholderText}>{title}</TitelAmountText>
-                        <TitelAmountText style={styles.placeholderTextPos}>{amount1} / {amount2}</TitelAmountText>
+                        <Text style={styles.text}>
+                            <TitelAmountText>{title}</TitelAmountText>
+                        </Text>
+                        <Text style={styles.text}>
+                            <TitelAmountText>{amount1} / {amount2}</TitelAmountText>
+                        </Text>
                     </View>
 
                     <View style={styles.containerProgress}>
-                    {/* Progressbar */}
+                        {/* Progressbar */}
                     </View>
                 </View>
             </View>
 
             <View style={styles.containerDate}>
-                <Text style={{color: COLORS.schriftMid}}><DateText>25.06.2024 - 25.07.2024</DateText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>25.06.2024 - 25.07.2024</DateText></Text>
             </View>
         </View>
     );
@@ -47,15 +49,14 @@ const styles = StyleSheet.create({
     containerImage: {
         width: 48,
         height: 48,
-        backgroundColor: COLORS.primaryDark,
+        backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
     },
     image: {
-        resizeMode: 'stretch',
-        width: 30,
-        height: 30,
+        width: 48,
+        height: 48,
     },
     containerInfo: {
         flexWrap: 'wrap',
@@ -72,5 +73,8 @@ const styles = StyleSheet.create({
         height: 16.31,
         backgroundColor: COLORS.primaryLight,
         borderRadius: 8,
+    },
+    text: {
+        color: COLORS.schriftDark,
     },
 });

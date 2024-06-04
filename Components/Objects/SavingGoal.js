@@ -1,23 +1,24 @@
-import { StyleSheet, View, Image, Text} from 'react-native';
-
+import { StyleSheet, View, Image, Text } from 'react-native';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import SavingsAmountText from '../TextComponents/SavingsAmountText';
 
 import COLORS from '../Farben';
 
-export default SavingGoal=({img, title, amount1, amount2, date}) => {
+export default SavingGoal = ({ img, title, amount1, amount2, date }) => {
 
-    return(
+    return (
         <View style={styles.container}>
             <View style={styles.containerProgress}>
                 <Image style={styles.image} source={img} />
             </View>
 
             <View style={styles.containerInfo}>
-                <TitelAmountText>{title}</TitelAmountText>
+                <Text style={styles.text}>
+                    <TitelAmountText>{title}</TitelAmountText>
+                </Text>
                 <Text style={{ color: COLORS.primaryMid }}><SavingsAmountText>{amount1}€ / {amount2}€</SavingsAmountText></Text>
-                <Text style={{color: COLORS.schriftMid}}><DateText>{date}</DateText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>{date}</DateText></Text>
             </View>
         </View>
     );
@@ -33,8 +34,8 @@ const styles = StyleSheet.create({
         gap: 16,
     },
     image: {
-        width: 40,
-        height: 40,
+        width: 48,
+        height: 48,
     },
     containerProgress: {
         width: 120,
@@ -49,5 +50,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'left',
         columnGap: 8,
+    },
+    text: {
+        color: COLORS.schriftDark,
     },
 });
