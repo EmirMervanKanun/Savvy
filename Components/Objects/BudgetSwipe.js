@@ -17,7 +17,7 @@ export const BudgetSwipe = ({ img, title, amount1, amount2 }) => {
                             <TitelAmountText>{title}</TitelAmountText>
                         </Text>
                         <Text style={styles.text}>
-                            <TitelAmountText>{amount1} / {amount2}</TitelAmountText>
+                            <TitelAmountText>{amount1}€ / {amount2}€</TitelAmountText>
                         </Text>
                     </View>
 

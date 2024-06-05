@@ -2,9 +2,9 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import { BudgetSwipe } from '../../Components/Objects/BudgetSwipe';
 import Button from '../../Components/Buttons/Buttons';
+import AddBudget from './AddBudget';
 
-
-export default function Budget() {
+export default function Budget () {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -23,7 +23,8 @@ export default function Budget() {
           color: 'blue',
           size: 'big',
           text: 'Hinzufügen',
-          img: require('../../Icons/Button/add.png')
+          img: require('../../Icons/Button/add.png'),
+          //onPress: () => navigation.navigate('AddBudget')
         }} />
       </View>
     </ScrollView>
@@ -32,11 +33,11 @@ export default function Budget() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 16,
+    paddingTop: 48,
     paddingBottom: 160,
     display: 'flex',
     alignItems: 'center',
-    gap: 32,
+    gap: 48,
     backgroundColor: 'white',
   },
   budgets: {

@@ -28,11 +28,11 @@ export default function Saving() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 16,
+    paddingTop: 48,
     paddingBottom: 160,
     display: 'flex',
     alignItems: 'center',
-    gap: 32,
+    gap: 48,
     backgroundColor: 'white',
   },
   budgets: {
