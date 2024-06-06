@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Image, Pressable, Text } from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
 import COLORS from '../Farben';
@@ -28,7 +28,8 @@ const Button = ({ props }) => {
         useStyle = { ...useStyle, height: 32, width: 136, };
     } else if (props.size == 'small') {
         useStyle = { ...useStyle, height: 32, width: 116, };
-    } 
+    }
+    
 
     //TextButton
     if (props.img == null && props.text != null) {
