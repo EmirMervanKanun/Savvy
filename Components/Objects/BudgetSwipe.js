@@ -3,21 +3,21 @@ import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import COLORS from '../Farben';
 
-export const BudgetSwipe = ({ img, title, amount1, amount2 }) => {
+export const BudgetSwipe = ({ props }) => {
     return (
         <View style={{ gap: 5 }}>
             <View style={styles.container}>
                 <View style={styles.containerImage}>
-                    <Image style={styles.image} source={img} />
+                    <Image style={styles.image} source={props.img} />
                 </View>
 
                 <View style={styles.containerInfo}>
                     <View style={styles.containerTitleBudget}>
                         <Text style={styles.text}>
-                            <TitelAmountText>{title}</TitelAmountText>
+                            <TitelAmountText>{props.title}</TitelAmountText>
                         </Text>
                         <Text style={styles.text}>
-                            <TitelAmountText>{amount1}€ / {amount2}€</TitelAmountText>
+                            <TitelAmountText>{props.amount1}€ / {props.amount2}€</TitelAmountText>
                         </Text>
                     </View>
 
@@ -28,7 +28,7 @@ export const BudgetSwipe = ({ img, title, amount1, amount2 }) => {
             </View>
 
             <View style={styles.containerDate}>
-                <Text style={{ color: COLORS.schriftMid }}><DateText>25.06.2024 - 25.07.2024</DateText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.date}</DateText></Text>
             </View>
         </View>
     );

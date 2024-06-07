@@ -1,11 +1,10 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 import React from 'react';
-import SavingGoal from '../../Components/Objects/SavingGoal';
-import Button from '../../Components/Buttons/Buttons';
 import Header from '../../Components/TextComponents/Header';
 import InputText from '../../Components/Inputfelder/InputText';
 import COLORS from '../../Components/Farben';
 import CategoriesDropdown from '../../Components/Dropdowns/Categories';
+import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
 
 const categories = [{
   label: 'Wähle eine Kategorie aus...',
@@ -43,28 +42,36 @@ const categories = [{
 
 export default function AddBudget() {
   return (
+    <View style={styles.container}>
+      <Text style={styles.headerText}><Header>Budget hinzufügen</Header></Text>
 
-      <View style={styles.container}>
-        <Text style={styles.text}><Header>Budget hinzufügen</Header></Text>
+      <FlatList
+        contentContainerStyle={styles.inputs}
+        data={[{ key: 'Titel' }, { key: 'Kategorie' }, { key: 'Betrag' }]}
+        renderItem={({ item }) => (
+          <View style={styles.inputfeld}>
 
-        <View style={styles.inputs}>
-          <View style={styles.inputfeld}>
-            <Text style={styles.text}><Header>Titel</Header></Text>
-            <InputText placeholder="Gib einen Titel ein..." keyboardType="default" />
-          </View>
+            <Text style={styles.labelText}><Header>{item.key}</Header></Text>
 
-          <View style={styles.inputfeld}>
-            <Text style={styles.text}><Header>Kategorie</Header></Text>
-            <CategoriesDropdown props={categories} />
+            {item.key === 'Kategorie' ? (
+              <View style={styles.inputfeldDropdown}>
+                <CategoriesDropdown props={categories} />
+              </View>
+
+            ) : item.key === 'Betrag' ? (
+              <View style={styles.betrag}>
+                <InputText style={styles.betragInput} placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
+                <CurrencySmallDropdown style={styles.betragDropdown} />
+              </View>
+
+            ) : item.key === 'Titel' ? (
+              <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
+
+            ) : null}
           </View>
-          // versteckt das untere Inputfeld
-          
-          <View style={styles.inputfeld}>
-            <Text style={styles.text}><Header>Betrag</Header></Text>
-            <InputText placeholder="Gib einen Betrag ein..." keyboardType="decimal-pad" />
-          </View>
-        </View>
-      </View>
+        )}
+      />
+    </View>
   );
 }
 
@@ -72,22 +79,41 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 48,
     paddingBottom: 160,
-    display: 'flex',
-    alignItems: 'center',
     gap: 48,
+    alignItems: 'center',
     backgroundColor: 'white',
   },
-  text: {
+  headerText: {
     color: COLORS.schriftDark,
   },
   inputs: {
-    display: 'flex',
+    width: '100%',
     flexDirection: 'column',
+    paddingHorizontal: 16,
     gap: 32,
   },
   inputfeld: {
-    display: 'flex',
     flexDirection: 'column',
     gap: 8,
-  }
+  },
+  inputfeldDropdown: {
+    width: '100%',
+    flexDirection: 'column',
+    gap: 8,
+    zIndex: 2,
+  },
+  labelText: {
+    color: COLORS.schriftDark,
+  },
+  betrag: {
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    gap: 8,
+  },
+  betragInput: {
+    width: '100%',
+  },
+  betragDropdown: {
+    alignSelf: 'flex-end',
+  },
 });

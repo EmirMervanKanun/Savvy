@@ -5,20 +5,20 @@ import SavingsAmountText from '../TextComponents/SavingsAmountText';
 
 import COLORS from '../Farben';
 
-export default SavingGoal = ({ img, title, amount1, amount2, date }) => {
+export default SavingGoal = ({ props }) => {
 
     return (
         <View style={styles.container}>
             <View style={styles.containerProgress}>
-                <Image style={styles.image} source={img} />
+                <Image style={styles.image} source={props.img} />
             </View>
 
             <View style={styles.containerInfo}>
                 <Text style={styles.text}>
-                    <TitelAmountText>{title}</TitelAmountText>
+                    <TitelAmountText>{props.title}</TitelAmountText>
                 </Text>
-                <Text style={{ color: COLORS.primaryMid }}><SavingsAmountText>{amount1}€ / {amount2}€</SavingsAmountText></Text>
-                <Text style={{ color: COLORS.schriftMid }}><DateText>{date}</DateText></Text>
+                <Text style={{ color: COLORS.primaryMid }}><SavingsAmountText>{props.amount1}€ / {props.amount2}€</SavingsAmountText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.date}</DateText></Text>
             </View>
         </View>
     );

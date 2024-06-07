@@ -67,7 +67,6 @@ export default RepetitionDropdown;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
     },
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,

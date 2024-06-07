@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text, ScrollView } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben";
@@ -34,7 +34,7 @@ const CategoriesDropdown = ({ props }) => {
                 />
             </TouchableOpacity>
             {isClicked && (
-                <View style={styles.dropdownArea}>
+                <ScrollView style={styles.dropdownArea}>
                     <FlatList 
                         data={props}
                         keyExtractor={(item) => item.value}
@@ -50,13 +50,13 @@ const CategoriesDropdown = ({ props }) => {
                                 <View style={styles.itemContent}>
                                     {item.icon && <Image source={item.icon} style={{width: 32, height: 32}} />}
                                     <Text style={styles.fontColor}>
-                                        <PlaceholderText style={styles.itemText}>{item.label}</PlaceholderText>
+                                        <PlaceholderText>{item.label}</PlaceholderText>
                                     </Text>
                                 </View>
                             </TouchableOpacity>
                         )}
                     />
-                </View>
+                </ScrollView>
             )}
         </View>
     );
@@ -67,7 +67,6 @@ export default CategoriesDropdown;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
     },
     text: {},
     dropdownAuswahl: {
@@ -105,6 +104,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         transform:[{translateY: -48}], // Dropdown Area soll hinter Selector sein
+        marginBottom: -48,
     },
     dropdownItem: {
         width: 260,
@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
         gap: 8,
         alignItems: 'center',
     },
-    itemText: {},
     fontColor: {
         color: COLORS.schriftDark,
     },
