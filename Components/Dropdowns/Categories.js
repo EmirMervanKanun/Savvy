@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    text: {},
     dropdownAuswahl: {
         flexDirection: 'row',
         gap: 8,
@@ -100,7 +99,6 @@ const styles = StyleSheet.create({
     },
     dropdownArea: {
         width: 292,
-        height: 180,
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         transform:[{translateY: -48}], // Dropdown Area soll hinter Selector sein

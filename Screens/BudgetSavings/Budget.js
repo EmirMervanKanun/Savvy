@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import { BudgetSwipe } from '../../Components/Objects/BudgetSwipe';
-import Button from '../../Components/Buttons/Buttons';
 import AddBudget from './AddBudget';
+import Button from '../../Components/Buttons/Button';
 
 export default function Budget() {
   return (

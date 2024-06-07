@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import SavingGoal from '../../Components/Objects/SavingGoal';
-import Button from '../../Components/Buttons/Buttons';
+import Button from '../../Components/Buttons/Button';
 
 export default function Saving() {
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.budgets}>
-          
+
           <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
           <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
           <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
@@ -21,7 +21,8 @@ export default function Saving() {
           color: 'blue',
           size: 'big',
           text: 'Hinzufügen',
-          img: require('../../Icons/Button/add.png')
+          img: require('../../Icons/Button/add.png'),
+          //onPress: () => navigation.navigate('AddSaving')
         }} />
       </View>
     </ScrollView>

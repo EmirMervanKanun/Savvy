@@ -5,6 +5,7 @@ import InputText from '../../Components/Inputfelder/InputText';
 import COLORS from '../../Components/Farben';
 import CategoriesDropdown from '../../Components/Dropdowns/Categories';
 import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
+import Button from '../../Components/Buttons/Button';
 
 const categories = [{
   label: 'Wähle eine Kategorie aus...',
@@ -47,9 +48,9 @@ export default function AddBudget() {
 
       <FlatList
         contentContainerStyle={styles.inputs}
-        data={[{ key: 'Titel' }, { key: 'Kategorie' }, { key: 'Betrag' }]}
+        data={[{ key: 'Titel' }, { key: 'Kategorie' }, { key: 'Betrag' }, { key: 'Buttons' }]}
         renderItem={({ item }) => (
-          <View style={styles.inputfeld}>
+          <View style={styles.inputfelder}>
 
             <Text style={styles.labelText}><Header>{item.key}</Header></Text>
 
@@ -66,6 +67,24 @@ export default function AddBudget() {
 
             ) : item.key === 'Titel' ? (
               <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
+
+            ) : item.key === 'Buttons' ? (
+              <View style={styles.buttons}>
+                <Button props={{
+                  color: 'blue',
+                  size: 'mid',
+                  text: 'Abbrechen',
+                  img: require('../../Icons/Button/add.png'),
+                  //onPress: 
+                }} />
+                <Button props={{
+                  color: 'blue',
+                  size: 'mid',
+                  text: 'Speichern',
+                  img: require('../../Icons/Button/add.png'),
+                  //onPress: 
+                }} />
+              </View>
 
             ) : null}
           </View>
@@ -92,7 +111,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     gap: 32,
   },
-  inputfeld: {
+  inputfelder: {
     flexDirection: 'column',
     gap: 8,
   },
@@ -100,7 +119,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'column',
     gap: 8,
-    zIndex: 2,
+    zIndex: 1,
   },
   labelText: {
     color: COLORS.schriftDark,
@@ -109,11 +128,17 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-end',
     gap: 8,
+    zIndex: 1,
   },
   betragInput: {
     width: '100%',
   },
   betragDropdown: {
     alignSelf: 'flex-end',
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    zIndex: 2,
   },
 });
