@@ -2,7 +2,7 @@ import { StyleSheet, View, Image, Text } from "react-native";
 import COLORS from '../Farben';
 import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
-import ButtonIcon, { ButtonSettings } from "../Buttons/Buttons";
+import ButtonSettings from "../Buttons/ButtonSettings";
 
 const HomeHeader = ({ props }) => {
     return (
