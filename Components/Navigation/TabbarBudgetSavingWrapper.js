@@ -8,7 +8,7 @@ import AddSaving from '../../Screens/BudgetSavings/AddSaving';
 const propsTabbarBudgetSavingWrapper = { 
   tab1: { 
     title: "Budget",
-    component: Budget,
+    component: AddBudget,
   }, 
   tab2: { 
     title: "Sparziele",

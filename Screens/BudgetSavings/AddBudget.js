@@ -44,29 +44,35 @@ const categories = [{
 export default function AddBudget() {
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}><Header>Budget hinzufügen</Header></Text>
-
+      <Text style={styles.header}><Header>Budget hinzufügen</Header></Text>
       <FlatList
-        contentContainerStyle={styles.inputs}
-        data={[{ key: 'Titel' }, { key: 'Kategorie' }, { key: 'Betrag' }, { key: 'Buttons' }]}
+        contentContainerStyle={styles.containerBudgetHinzufügen}
+        showsVerticalScrollIndicator={false}
+        data={[{ key: 'Datum' }, { key: 'Titel' }, { key: 'Kategorie' }, { key: 'Betrag' }, { key: 'Buttons' }]}
         renderItem={({ item }) => (
-          <View style={styles.inputfelder}>
+          <View style={styles.content}>
+            {item.key === 'Datum' ? (
+              <Text style={styles.itemHeader}><Header>{item.key}</Header></Text>
+            ) : item.key === 'Titel' ? (
+              <View style={styles.item}>
+                <Text style={styles.itemHeader}><Header>{item.key}</Header></Text>
+                <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
+              </View>
 
-            <Text style={styles.labelText}><Header>{item.key}</Header></Text>
-
-            {item.key === 'Kategorie' ? (
-              <View style={styles.inputfeldDropdown}>
+            ) : item.key === 'Kategorie' ? (
+              <View style={styles.item}>
+                <Text style={styles.itemHeader}><Header>{item.key}</Header></Text>
                 <CategoriesDropdown props={categories} />
               </View>
 
             ) : item.key === 'Betrag' ? (
-              <View style={styles.betrag}>
-                <InputText style={styles.betragInput} placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
-                <CurrencySmallDropdown style={styles.betragDropdown} />
+              <View style={styles.item}>
+                <Text style={styles.itemHeader}><Header style={styles.betragHeader}>{item.key}</Header></Text>
+                <View style={styles.betrag}>
+                  <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
+                  <CurrencySmallDropdown />
+                </View>
               </View>
-
-            ) : item.key === 'Titel' ? (
-              <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
 
             ) : item.key === 'Buttons' ? (
               <View style={styles.buttons}>
@@ -89,6 +95,7 @@ export default function AddBudget() {
             ) : null}
           </View>
         )}
+        ListFooterComponent={<View style={{ height: 200 }} />}  // Add extra space at the bottom
       />
     </View>
   );
@@ -96,49 +103,44 @@ export default function AddBudget() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 48,
-    paddingBottom: 160,
-    gap: 48,
+    display: 'flex',
     alignItems: 'center',
     backgroundColor: 'white',
+    paddingTop: 32,
   },
-  headerText: {
+
+  header: {
+    color: COLORS.schriftDark,
+    marginBottom: 48,
+  },
+  itemHeader: {
     color: COLORS.schriftDark,
   },
-  inputs: {
-    width: '100%',
+
+  containerBudgetHinzufügen: {
+    display: 'flex',
     flexDirection: 'column',
-    paddingHorizontal: 16,
     gap: 32,
   },
-  inputfelder: {
+  content: {
     flexDirection: 'column',
     gap: 8,
   },
-  inputfeldDropdown: {
-    width: '100%',
+
+  item: {
     flexDirection: 'column',
     gap: 8,
-    zIndex: 1,
   },
-  labelText: {
-    color: COLORS.schriftDark,
-  },
+
   betrag: {
     flexDirection: 'column',
     alignItems: 'flex-end',
     gap: 8,
-    zIndex: 1,
   },
-  betragInput: {
-    width: '100%',
-  },
-  betragDropdown: {
-    alignSelf: 'flex-end',
-  },
+
   buttons: {
+    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    zIndex: 2,
   },
 });
