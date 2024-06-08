@@ -28,7 +28,7 @@ export const BudgetSwipe = ({ props }) => {
             </View>
 
             <View style={styles.containerDate}>
-                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.date}</DateText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
             </View>
         </View>
     );

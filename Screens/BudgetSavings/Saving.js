@@ -9,12 +9,12 @@ export default function Saving() {
       <View style={styles.container}>
         <View style={styles.budgets}>
 
-          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
+          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <SavingGoal props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
 
         </View>
         <Button props={{

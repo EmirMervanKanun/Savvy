@@ -18,7 +18,7 @@ export default SavingGoal = ({ props }) => {
                     <TitelAmountText>{props.title}</TitelAmountText>
                 </Text>
                 <Text style={{ color: COLORS.primaryMid }}><SavingsAmountText>{props.amount1}€ / {props.amount2}€</SavingsAmountText></Text>
-                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.date}</DateText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
             </View>
         </View>
     );

@@ -3,22 +3,25 @@ import React from 'react';
 import { BudgetSwipe } from '../../Components/Objects/BudgetSwipe';
 import AddBudget from './AddBudget';
 import Button from '../../Components/Buttons/Button';
+import { CategorySwipe } from '../../Components/Objects/CategorySwipe';
+import Transaction from '../../Components/Objects/TransStanOrder';
 
 export default function Budget() {
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.budgets}>
+          <Transaction props={{ isIncome: false, isStan: true, categoryIcon: require('../../Icons/Categories/gaming.png'), title: "Games", amount: "1000", date: "25.06.2024" }} />
 
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
-          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", date: "25.06.2024 - 25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
+          <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
 
         </View>
         <Button props={{
