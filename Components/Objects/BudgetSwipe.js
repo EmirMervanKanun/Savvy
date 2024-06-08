@@ -8,7 +8,7 @@ export const BudgetSwipe = ({ props }) => {
         <View style={{ gap: 5 }}>
             <View style={styles.container}>
                 <View style={styles.containerImage}>
-                    <Image style={styles.image} source={props.img} />
+                    <Image style={styles.image} source={props.details.img} />
                 </View>
 
                 <View style={styles.containerInfo}>
@@ -17,7 +17,7 @@ export const BudgetSwipe = ({ props }) => {
                             <TitelAmountText>{props.title}</TitelAmountText>
                         </Text>
                         <Text style={styles.text}>
-                            <TitelAmountText>{props.amount1}€ / {props.amount2}€</TitelAmountText>
+                            <TitelAmountText>{props.details.amount1}€ / {props.details.amount2}€</TitelAmountText>
                         </Text>
                     </View>
 
@@ -28,7 +28,7 @@ export const BudgetSwipe = ({ props }) => {
             </View>
 
             <View style={styles.containerDate}>
-                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
+                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.details.dateStart} - {props.details.dateEnd}</DateText></Text>
             </View>
         </View>
     );

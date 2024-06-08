@@ -11,8 +11,6 @@ export default function Budget() {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.budgets}>
-          <Transaction props={{ isIncome: false, isStan: true, categoryIcon: require('../../Icons/Categories/gaming.png'), title: "Games", amount: "1000", date: "25.06.2024" }} />
-
           <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
           <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
           <BudgetSwipe props={{ img: require('../../Icons/Categories/gaming.png'), title: "Games", amount1: "1000", amount2: "2000", dateStart: "25.06.2024", dateEnd: "25.07.2024" }} />
