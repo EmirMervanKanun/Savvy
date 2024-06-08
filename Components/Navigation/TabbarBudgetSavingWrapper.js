@@ -12,7 +12,7 @@ const propsTabbarBudgetSavingWrapper = {
   }, 
   tab2: { 
     title: "Sparziele",
-    component: Saving, 
+    component: AddSaving, 
   } 
 };
 
