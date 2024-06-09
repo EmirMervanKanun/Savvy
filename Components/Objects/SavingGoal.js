@@ -2,23 +2,33 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import SavingsAmountText from '../TextComponents/SavingsAmountText';
-
+import * as Progress from 'react-native-progress';
 import COLORS from '../Farben';
 
 export default SavingGoal = ({ props }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.containerProgress}>
-                <Image style={styles.image} source={props.img} />
-            </View>
+            <View style={styles.containerObject}>
+                <View style={styles.containerProgress}>
+                    <Progress.Circle
+                        progress={props.amount1 / props.amount2}
+                        unfilledColor={COLORS.primaryLight}
+                        color={COLORS.primaryDark}
+                        size={120}
+                        thickness={16}
+                        animated={true}
+                        borderWidth={0}
+                    />
 
-            <View style={styles.containerInfo}>
-                <Text style={styles.text}>
-                    <TitelAmountText>{props.title}</TitelAmountText>
-                </Text>
-                <Text style={{ color: COLORS.primaryMid }}><SavingsAmountText>{props.amount1}€ / {props.amount2}€</SavingsAmountText></Text>
-                <Text style={{ color: COLORS.schriftMid }}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
+                    <Image style={styles.image} source={props.img} />
+                </View>
+
+                <View style={styles.containerInfo}>
+                    <Text style={styles.text}><TitelAmountText>{props.title}</TitelAmountText></Text>
+                    <Text style={styles.amountText}><SavingsAmountText>{props.amount1}€ / {props.amount2}€</SavingsAmountText></Text>
+                    <Text style={styles.dateText}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
+                </View>
             </View>
         </View>
     );
@@ -26,32 +36,38 @@ export default SavingGoal = ({ props }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alighItems: 'center',
-        justifyContent: 'center',
-        width: 292,
-        height: 120,
-        gap: 16,
+        display: 'flex',
+        alignItems: 'center',
     },
-    image: {
-        width: 48,
-        height: 48,
+    containerObject: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 20,
     },
     containerProgress: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        justifyContent: 'center',
+        display: 'flex',
         alignItems: 'center',
-        backgroundColor: COLORS.primaryLight,
+        justifyContent: 'center',
+    },
+    image: {
+        width: 60,
+        height: 60,
+        position: 'absolute',
     },
     containerInfo: {
-        flexDirection: 'collumn',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'left',
-        columnGap: 8,
+        gap: 4,
     },
     text: {
         color: COLORS.schriftDark,
+    },
+    amountText: {
+        color: COLORS.primaryDark,
+    },
+    dateText: {
+        color: COLORS.schriftMid,
     },
 });
