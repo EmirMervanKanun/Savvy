@@ -3,6 +3,7 @@ import React from 'react';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import HomeIE from '../../Components/OBJHome/HomeIE';
 import InputText from '../../Components/Inputfelder/InputText';
+import InputDate from '../../Components/Inputfelder/InputDate';
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
       }} />
       <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
       <InputText placeholder='Gib Input' keyboardType='numeric'/>
+      <InputDate />
     </View>
   );
 }
