@@ -1,21 +1,45 @@
 import { StyleSheet, View, Text } from 'react-native';
 import React from 'react';
-import HomeHeader from '../../Components/OBJHome/HomeHeader';
-import HomeIE from '../../Components/OBJHome/HomeIE';
-import InputText from '../../Components/Inputfelder/InputText';
 
-export default function Home() {
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { CommonActions } from '@react-navigation/native';
+import Onboarding from '../Onboarding/Onboarding';
+import Button from '../../Components/Buttons/Button';
 
+const Stack = createNativeStackNavigator();
+
+function HomeStart({ navigation }) {
   return (
     <View style={styles.container} >
-      <HomeHeader props={{
-        profilePicture: require('../../Icons/ProfilePictures/profilePicture1.png'),
-        name: 'John',
-        amount: '123.456,89'
-      }} />
-      <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
-      <InputText placeholder='Gib Input' keyboardType='numeric'/>
+
+      <Button props= {{
+        color: 'red',
+        text: 'Onboarding',
+        onPress: () => navigation.dispatch(
+          CommonActions.navigate({
+              name: 'Onboarding',
+            },
+          )
+        )
+      }}
+      />
+      
     </View>
+  );
+}
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeStart} options={{headerShown: false}} />
+      <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown: false}} />
+    </Stack.Navigator>
+  );
+}
+
+export default function Home() {
+  return (
+    <MyStack />
   );
 }
 

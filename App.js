@@ -3,6 +3,8 @@ import  Navbar  from './Components/Navigation/Navbar.js';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
+import MyStack from '../Budget/Screens/Home/Home.js';
+import Home from '../Budget/Screens/Home/Home.js';
 
 
 export default function App() {
@@ -17,7 +19,7 @@ export default function App() {
   return(
     <SafeAreaProvider>
       <NavigationContainer>
-        <Navbar />
+          <Navbar />
       </NavigationContainer>
     </SafeAreaProvider>
   );

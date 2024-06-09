@@ -19,6 +19,8 @@ export default Onboarding = () => {
     return (
       <View style = {styles.container}>
 
+        <CircleProgress data = {slides} scrollX={scrollX}/>
+
         <View style = {{flex: 3}}>
           <FlatList 
             data = {slides} 
@@ -40,8 +42,6 @@ export default Onboarding = () => {
             
           />
         </View>
-
-        <CircleProgress data = {slides} scrollX={scrollX}/>
 
       </View>
     );
