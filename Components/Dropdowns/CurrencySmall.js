@@ -5,8 +5,7 @@ import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben"
 
 
-const dropdownData = [
-    { label: ' ', value: '0' },         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+const dropdownData = [         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
     { label: 'Euro €', value: '1' },
     { label: 'USD $', value: '2' },
 ];
@@ -23,7 +22,7 @@ const CurrencySmallDropdown = () => {
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                style={styles.dropdownSelector}
+                style={isClicked? {...styles.dropdownSelector , borderBottomEndRadius: 0, borderBottomStartRadius: 0} : styles.dropdownSelector}
                 onPress={() => {setIsClicked(!isClicked);}}>
                 <Text style={styles.fontColor}>
                     <ButtonText>{selectedData}</ButtonText>
@@ -62,7 +61,7 @@ export default CurrencySmallDropdown;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        display: 'flex',
         alignItems: 'center',
     },
     dropdownSelector: {
@@ -91,10 +90,11 @@ const styles = StyleSheet.create({
     },
     dropdownArea: {
         width: 90,
-        height: 144,
+        height: 'auto',
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
-        transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein
+        borderTopEndRadius: 0,  
+        borderTopStartRadius: 0,
     },
     dropdownItem: {
         width: 80,
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         borderBottomWidth: 0.2,
+        borderRadius: 15,
         borderBottomColor: COLORS.schriftMid,
     },
     fontColor: {
