@@ -7,9 +7,3 @@ class Budget {
         this.amount = amount;
     }
 }
-
-/* 
-    Einstellungen
-
-    betrag = ZAHL + WÄHRUNG
-    */

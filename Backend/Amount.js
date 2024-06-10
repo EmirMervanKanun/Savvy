@@ -3,4 +3,5 @@ class Amount {
         this.amount = amount;
         this.currency = currency;
     }
+    
 }

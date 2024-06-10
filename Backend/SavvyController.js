@@ -1,3 +1,4 @@
+import Currency from './Currency';
 class Savvy{
     
     user;
@@ -5,7 +6,9 @@ class Savvy{
     budgets = [];
     savings = [];
     categorys = [];
-    settings = [];
+    settings;
+    currency = new Currency();
+
 
 
     registerUser(user){
@@ -29,22 +32,4 @@ class Savvy{
     }
 
 
-    getUser(){
-        return this.user;
-    }
-    
-    getTransactions(){
-        return this.transactions;
-    }
-
-    getBudgets(){
-        return this.budgets;
-    }
-
-    getSavings(){
-        return this.savings;
-    }
-    getCategorys(){
-        return this.categorys;
-    }
 }
