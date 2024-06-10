@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.schriftLight,
     },
     container: {
-        flex: 1,
+        display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         gap: 8,
