@@ -10,16 +10,16 @@ export default function AddTransaction() {
   return (
     <View style={styles.container}>
       <InputDate />
-      <Dropdown />
       <InputText placeholder='Gib einen Betrag ein...' keyboardType='numeric'/>
+      <Dropdown />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container:{
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
 });
