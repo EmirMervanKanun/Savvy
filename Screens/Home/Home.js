@@ -16,7 +16,6 @@ export default function Home() {
       }} />
       <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
       <InputText placeholder='Gib Input' keyboardType='numeric'/>
-      <InputDate />
     </View>
   );
 }
