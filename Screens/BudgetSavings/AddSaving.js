@@ -1,11 +1,19 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
+
 import Header from '../../Components/TextComponents/Header';
 import InputText from '../../Components/Inputfelder/InputText';
 import COLORS from '../../Components/Farben';
 import CategoriesDropdown from '../../Components/Dropdowns/Categories';
 import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';
+
+import Saving from './Saving';
+
+import { CommonActions } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const categories = [{
   label: 'Wähle eine Kategorie aus...',
@@ -41,7 +49,7 @@ const categories = [{
   icon: require('../../Icons/Categories/pets.png'),
 }];
 
-export default function AddBudget() {
+function AddSaving({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -75,7 +83,11 @@ export default function AddBudget() {
               size: 'mid',
               text: 'Abbrechen',
               img: require('../../Icons/Button/add.png'),
-              //onPress: 
+              onPress: () => navigation.dispatch(
+                CommonActions.navigate({
+                  name: 'Saving'
+                })
+              )
             }} />
             <Button props={{
               color: 'blue',
@@ -88,6 +100,21 @@ export default function AddBudget() {
         </View>
       </View>
     </ScrollView>
+  );
+}
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="AddSaving" component={AddSaving} options={{ headerShown: false }} />
+      <Stack.Screen name="Saving" component={Saving} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  );
+}
+
+export default function BudgetScreen() {
+  return (
+    <MyStack />
   );
 }
 
