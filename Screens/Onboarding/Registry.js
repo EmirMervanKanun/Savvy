@@ -38,7 +38,7 @@ function RegistryOnboarding ({ navigation }) {
 
           <View style={styles.input}>
             <Header>Startkapital</Header>
-            <InputText placeholder="Gib dein Startkapital ein" />
+            <InputText placeholder="Gib dein Startkapital ein" keyboardType='numeric'/>
             <View style={styles.currency}>
               <CurrencySmall />
             </View>
