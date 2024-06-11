@@ -76,8 +76,20 @@ export default function AddTransaction() {
             <InputText placeholder='Schreibe eine Notiz...' keyboardType='default' />
           </View>
           <View style={styles.button}>
-            <Button props={{color: 'blue', size: 'mid', text: 'Abrechen', img: require("../../Icons/Button/cancel.png")}} />
-            <Button props={{color: 'blue', size: 'mid', text: 'Speichern', img: require("../../Icons/Button/save.png")}} />
+            <Button props={{
+                color: 'blue', 
+                size: 'mid', 
+                text: 'Abrechen', 
+                img: require("../../Icons/Button/cancel.png")
+              }} 
+            />
+            <Button props={{
+                color: 'blue', 
+                size: 'mid', 
+                text: 'Speichern', 
+                img: require("../../Icons/Button/save.png")
+              }} 
+            />
           </View>
         </View>
       </View>
