@@ -1,11 +1,19 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
+
 import Header from '../../Components/TextComponents/Header';
 import InputText from '../../Components/Inputfelder/InputText';
 import COLORS from '../../Components/Farben';
 import CategoriesDropdown from '../../Components/Dropdowns/Categories';
 import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';
+
+import Budget from './Budget';
+
+import { CommonActions } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const categories = [{
   label: 'Wähle eine Kategorie aus...',
@@ -41,11 +49,12 @@ const categories = [{
   icon: require('../../Icons/Categories/pets.png'),
 }];
 
-export default function AddBudget() {
+function AddBudget({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
         <Text style={styles.header}><Header>Budget hinzufügen</Header></Text>
+
         <View style={styles.containerBudgetHinzufügen} >
 
           <Text style={styles.itemHeader}><Header>Datum</Header></Text>
@@ -63,7 +72,7 @@ export default function AddBudget() {
           <View style={styles.item}>
             <Text style={styles.itemHeader}><Header style={styles.betragHeader}>Betrag</Header></Text>
             <View style={styles.betrag}>
-              <InputText placeholder={`Gib einen Betrag ein...`} keyboardType="default" />
+              <InputText placeholder={`Gib einen Betrag ein...`} keyboardType="numeric" />
               <CurrencySmallDropdown />
             </View>
           </View>
@@ -74,7 +83,11 @@ export default function AddBudget() {
               size: 'mid',
               text: 'Abbrechen',
               img: require('../../Icons/Button/add.png'),
-              //onPress: 
+              onPress: () => navigation.dispatch(
+                CommonActions.navigate({
+                  name: 'Budget'
+                })
+              )
             }} />
             <Button props={{
               color: 'blue',
@@ -87,6 +100,21 @@ export default function AddBudget() {
         </View>
       </View>
     </ScrollView>
+  );
+}
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="AddBudget" component={AddBudget} options={{ headerShown: false }} />
+      <Stack.Screen name="Budget" component={Budget} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  );
+}
+
+export default function BudgetScreen() {
+  return (
+    <MyStack />
   );
 }
 
