@@ -9,7 +9,7 @@ const Transaction = ({ props }) => {
 
     return (
         <View style={styles.container}>
-            <View style={[styles.containerImage, , props.isIncome ? styles.containerPositive : styles.containerNegative]}>
+            <View style={[styles.containerImage, props.isIncome ? styles.containerPositive : styles.containerNegative]}>
                 <Image style={styles.image} source={props.categoryIcon} />
             </View>
 
@@ -17,7 +17,7 @@ const Transaction = ({ props }) => {
                 <View style={styles.containerTitleAmount}>
                     <TitelAmountText style={styles.placeholderText}>{props.title}</TitelAmountText>
                     <Text style={[styles.amountText, props.isIncome ? styles.greenText : styles.redText]}>
-                        <TitelAmountText>{props.amount}€</TitelAmountText>
+                    <TitelAmountText>{props.isIncome ? '' : '- '}{props.amount}€</TitelAmountText>
                     </Text>
                 </View>
 
