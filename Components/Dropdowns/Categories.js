@@ -34,7 +34,7 @@ const CategoriesDropdown = ({ props }) => {
                 />
             </TouchableOpacity>
             {isClicked && (
-                <ScrollView style={styles.dropdownArea}>
+                <View style={styles.dropdownArea}>
                     <FlatList 
                         data={props}
                         keyExtractor={(item) => item.value}
@@ -56,7 +56,7 @@ const CategoriesDropdown = ({ props }) => {
                             </TouchableOpacity>
                         )}
                     />
-                </ScrollView>
+                </View>
             )}
         </View>
     );
@@ -66,7 +66,7 @@ export default CategoriesDropdown;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        display: 'flex',
     },
     dropdownAuswahl: {
         flexDirection: 'row',

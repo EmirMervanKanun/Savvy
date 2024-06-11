@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import InputText from '../../Components/Inputfelder/InputText';
@@ -43,70 +43,60 @@ const categories = [{
 
 export default function AddBudget() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}><Header>Budget hinzufügen</Header></Text>
-      <FlatList
-        contentContainerStyle={styles.containerBudgetHinzufügen}
-        showsVerticalScrollIndicator={false}
-        data={[{ key: 'Datum' }, { key: 'Titel' }, { key: 'Kategorie' }, { key: 'Betrag' }, { key: 'Buttons' }]}
-        renderItem={({ item }) => (
-          <View style={styles.content}>
-            {item.key === 'Datum' ? (
-              <Text style={styles.itemHeader}><Header>{item.key}</Header></Text>
-            ) : item.key === 'Titel' ? (
-              <View style={styles.item}>
-                <Text style={styles.itemHeader}><Header>{item.key}</Header></Text>
-                <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
-              </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.header}><Header>Budget hinzufügen</Header></Text>
+        <View style={styles.containerBudgetHinzufügen} >
 
-            ) : item.key === 'Kategorie' ? (
-              <View style={styles.item}>
-                <Text style={styles.itemHeader}><Header>{item.key}</Header></Text>
-                <CategoriesDropdown props={categories} />
-              </View>
+          <Text style={styles.itemHeader}><Header>Datum</Header></Text>
 
-            ) : item.key === 'Betrag' ? (
-              <View style={styles.item}>
-                <Text style={styles.itemHeader}><Header style={styles.betragHeader}>{item.key}</Header></Text>
-                <View style={styles.betrag}>
-                  <InputText placeholder={`Gib einen ${item.key} ein...`} keyboardType="default" />
-                  <CurrencySmallDropdown />
-                </View>
-              </View>
-
-            ) : item.key === 'Buttons' ? (
-              <View style={styles.buttons}>
-                <Button props={{
-                  color: 'blue',
-                  size: 'mid',
-                  text: 'Abbrechen',
-                  img: require('../../Icons/Button/add.png'),
-                  //onPress: 
-                }} />
-                <Button props={{
-                  color: 'blue',
-                  size: 'mid',
-                  text: 'Speichern',
-                  img: require('../../Icons/Button/add.png'),
-                  //onPress: 
-                }} />
-              </View>
-
-            ) : null}
+          <View style={styles.item}>
+            <Text style={styles.itemHeader}><Header>Titel</Header></Text>
+            <InputText placeholder={`Gib einen Titel ein...`} keyboardType="default" />
           </View>
-        )}
-        ListFooterComponent={<View style={{ height: 200 }} />}  // Add extra space at the bottom
-      />
-    </View>
+
+          <View style={styles.item}>
+            <Text style={styles.itemHeader}><Header>Kategorie</Header></Text>
+            <CategoriesDropdown props={categories} />
+          </View>
+
+          <View style={styles.item}>
+            <Text style={styles.itemHeader}><Header style={styles.betragHeader}>Betrag</Header></Text>
+            <View style={styles.betrag}>
+              <InputText placeholder={`Gib einen Betrag ein...`} keyboardType="default" />
+              <CurrencySmallDropdown />
+            </View>
+          </View>
+
+          <View style={styles.buttons}>
+            <Button props={{
+              color: 'blue',
+              size: 'mid',
+              text: 'Abbrechen',
+              img: require('../../Icons/Button/add.png'),
+              //onPress: 
+            }} />
+            <Button props={{
+              color: 'blue',
+              size: 'mid',
+              text: 'Speichern',
+              img: require('../../Icons/Button/add.png'),
+              //onPress: 
+            }} />
+          </View>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 48,
+    paddingBottom: 160,
     display: 'flex',
     alignItems: 'center',
     backgroundColor: 'white',
-    paddingTop: 32,
   },
 
   header: {

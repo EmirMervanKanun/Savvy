@@ -5,6 +5,44 @@ import AddBudget from './AddBudget';
 import Button from '../../Components/Buttons/Button';
 import { CategorySwipe } from '../../Components/Objects/CategorySwipe';
 import Transaction from '../../Components/Objects/TransStanOrder';
+import CategoriesDropdown from '../../Components/Dropdowns/Categories';
+import CurrencyBigDropdown from '../../Components/Dropdowns/CurrencyBig';
+import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
+import RepetitionDropdown from '../../Components/Dropdowns/Repetition';
+
+const categories = [{
+  label: 'Wähle eine Kategorie aus...',
+  value: '0',
+  icon: null,
+}, {
+  label: 'Lebensmittel',
+  value: '1',
+  icon: require('../../Icons/Categories/groceries.png'),
+}, {
+  label: 'Miete',
+  value: '2',
+  icon: require('../../Icons/Categories/rent.png'),
+}, {
+  label: 'Klamotten',
+  value: '3',
+  icon: require('../../Icons/Categories/clothes.png'),
+}, {
+  label: 'Technik',
+  value: '4',
+  icon: require('../../Icons/Categories/devices.png'),
+}, {
+  label: 'Transportmittel',
+  value: '5',
+  icon: require('../../Icons/Categories/transportation.png'),
+}, {
+  label: 'Medikamente',
+  value: '6',
+  icon: require('../../Icons/Categories/medication.png'),
+}, {
+  label: 'Haustier',
+  value: '7',
+  icon: require('../../Icons/Categories/pets.png'),
+}];
 
 export default function Budget() {
   return (
@@ -31,6 +69,11 @@ export default function Budget() {
           img: require('../../Icons/Button/add.png'),
           //onPress: () => navigation.navigate('AddBudget')
         }} />
+
+        <CategoriesDropdown props={categories} />
+        <CurrencyBigDropdown />
+        <CurrencySmallDropdown />
+        <RepetitionDropdown />
       </View>
     </ScrollView>
   );
