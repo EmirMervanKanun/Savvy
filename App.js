@@ -7,7 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 
-savvy;
+let savvy;
 
 
 export default function App() {
