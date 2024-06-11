@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingTop: 48,
-    paddingBottom: 32,
+    paddingBottom: 48,
   },
   radio: {
     paddingBottom: 32,
