@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import COLORS from '../Farben';
 import TitelAmountText from '../TextComponents/TitelAmountText';
-import { ButtonIcon } from "../Buttons/Buttons";
+import ButtonToggle from '../Buttons/ButtonToggle';
 
 const Notification = ({ props }) => {
     return (
@@ -14,7 +14,7 @@ const Notification = ({ props }) => {
                     return (
                         <View style={[styles.mitteilung, isLastItem && styles.lastItem]}>
                             <Text style={styles.text}><TitelAmountText>{item.label}</TitelAmountText></Text>
-                            <ButtonIcon img={require('../../Icons/Button/add.png')} />
+                            <ButtonToggle img={require('../../Icons/Button/add.png')} />
                         </View>
                     );
                 }}
