@@ -50,10 +50,10 @@ export default function AddTransaction() {
         <View style={styles.header}>
           <TextHeader>Transaktion hinufügen</TextHeader>
         </View>
+        <View style={styles.radio}>
+          <RadioButtonGroup options={['Einnahme', 'Ausgabe', 'Sparen']} />
+        </View>
         <View style={styles.auswahl}>
-          <View>
-            <RadioButtonGroup options={['Einnahme', 'Ausgabe', 'Sparen']} />
-          </View>
           <View>
             <InputDate />
           </View>
@@ -91,10 +91,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'white',
-    gap: 48,
   },
   header: {
     paddingTop: 48,
+    paddingBottom: 32,
+  },
+  radio: {
+    paddingBottom: 32,
   },
   auswahl: {
     gap: 32,
@@ -102,13 +105,14 @@ const styles = StyleSheet.create({
   button: {
     display: 'flex',
     flexDirection: 'row',
-    gap: 20,
+    justifyContent: 'space-between',
   },
   smallContainer: {
+    width: 'auto',
     gap: 8,
   },
   currencyDrop: {
     display: 'flex',
-    alignItems: 'flex-end'
+    flexDirection: 'row-reverse',
   },
 });
