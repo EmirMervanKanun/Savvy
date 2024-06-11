@@ -64,7 +64,7 @@ export default function AddBudget() {
           <View style={styles.item}>
             <Text style={styles.itemHeader}><Header style={styles.betragHeader}>Betrag</Header></Text>
             <View style={styles.betrag}>
-              <InputText placeholder={`Gib einen Betrag ein...`} keyboardType="default" />
+              <InputText placeholder={`Gib einen Betrag ein...`} keyboardType="numeric" />
               <CurrencySmallDropdown />
             </View>
           </View>

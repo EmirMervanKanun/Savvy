@@ -1,6 +1,6 @@
-const Budgets = [
+const Savings = [
     {
-        title: "Games1",
+        title: "Saving1",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -10,7 +10,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games2",
+        title: "Saving2",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -20,7 +20,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games3",
+        title: "Saving3",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -30,7 +30,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games4",
+        title: "Saving4",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -40,7 +40,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games1",
+        title: "Saving1",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -50,7 +50,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games2",
+        title: "Saving2",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -60,7 +60,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games3",
+        title: "Saving3",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -70,7 +70,7 @@ const Budgets = [
         }
     },
     {
-        title: "Games4",
+        title: "Saving4",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
@@ -82,4 +82,4 @@ const Budgets = [
    
 ];
 
-export default Budgets;
+export default Savings;

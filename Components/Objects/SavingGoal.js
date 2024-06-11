@@ -12,7 +12,7 @@ export default SavingGoal = ({ props }) => {
             <View style={styles.containerObject}>
                 <View style={styles.containerProgress}>
                     <Progress.Circle
-                        progress={props.amount1 / props.amount2}
+                        progress={props.details.amount1 / props.details.amount2}
                         unfilledColor={COLORS.primaryLight}
                         color={COLORS.primaryDark}
                         size={120}
@@ -21,13 +21,13 @@ export default SavingGoal = ({ props }) => {
                         borderWidth={0}
                     />
 
-                    <Image style={styles.image} source={props.img} />
+                    <Image style={styles.image} source={props.details.img} />
                 </View>
 
                 <View style={styles.containerInfo}>
                     <Text style={styles.text}><TitelAmountText>{props.title}</TitelAmountText></Text>
-                    <Text style={styles.amountText}><SavingsAmountText>{props.amount1}€ / {props.amount2}€</SavingsAmountText></Text>
-                    <Text style={styles.dateText}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
+                    <Text style={styles.amountText}><SavingsAmountText>{props.details.amount1}€ / {props.details.amount2}€</SavingsAmountText></Text>
+                    <Text style={styles.dateText}><DateText>{props.details.dateStart} - {props.details.dateEnd}</DateText></Text>
                 </View>
             </View>
         </View>
