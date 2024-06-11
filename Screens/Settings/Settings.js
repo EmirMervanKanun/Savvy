@@ -7,6 +7,7 @@ import Notifications from '../Settings/Notifications';
 import DataProtection from '../Settings/DataProtection';
 import AGB from '../Settings/Agb';
 import Imprint from '../Settings/Imprint';
+import Categories from '../Settings/Categories';
 import Header from '../../Components/TextComponents/Header';
 
 const Stack = createNativeStackNavigator();
@@ -19,39 +20,63 @@ function SettingsStart({ navigation }) {
         <Header>Einstellungen</Header>
       </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'EditProfile' }
-          ))} >Profil bearbeiten</ButtonSettingsItem>
+      <View>
+        <View style={styles.headerMenu}>
+          <Header>Profil</Header>
+        </View>
+        <View sytle={styles.buttonContainer}>
+          <ButtonSettingsItem onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'EditProfile' }
+            ))} >Profil bearbeiten</ButtonSettingsItem>
+        </View>
       </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'Notifications' }
-          ))} >Mitteilungen</ButtonSettingsItem>
+
+      <View>
+        <View style={styles.headerMenu}>
+          <Header>Allgemeines</Header>
+        </View>
+        <View sytle={styles.buttonContainer}>
+          <ButtonSettingsItem onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'Categories' }
+            ))} >Kategorien</ButtonSettingsItem>
+        </View>
+
+        <View sytle={styles.buttonContainer}>
+          <ButtonSettingsItem onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'Notifications' }
+            ))} >Mitteilungen</ButtonSettingsItem>
+        </View>
       </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'AGB' }
-          ))} >AGB</ButtonSettingsItem>
-      </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'DataProtection' }
-          ))} >Datenschutz</ButtonSettingsItem>
-      </View>
+      <View>
+        <View style={styles.headerMenu}>
+          <Header>Sonstiges</Header>
+        </View>
+        <View sytle={styles.buttonContainer}>
+          <ButtonSettingsItem onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'AGB' }
+            ))} >AGB</ButtonSettingsItem>
+        </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'Imprint' }
-          ))} >Impressum</ButtonSettingsItem>
+        <View sytle={styles.buttonContainer}>
+          <ButtonSettingsItem onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'DataProtection' }
+            ))} >Datenschutz</ButtonSettingsItem>
+        </View>
+
+        <View sytle={styles.buttonContainer}>
+          <ButtonSettingsItem onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'Imprint' }
+            ))} >Impressum</ButtonSettingsItem>
+        </View>
       </View>
     </View>
   );
@@ -62,6 +87,7 @@ function MyStack() {
     <Stack.Navigator>
       <Stack.Screen name="SettingsMain" component={SettingsStart} options={{ headerShown: false }} />
       <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />
+      <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
       <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
       <Stack.Screen name="AGB" component={AGB} options={{ headerShown: false }} />
       <Stack.Screen name="DataProtection" component={DataProtection} options={{ headerShown: false }} />
@@ -78,12 +104,9 @@ export default function Settings() {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
     paddingBottom: 160,
     backgroundColor: 'white',
+    height: '100%',
   },
   buttonContainer: {
     display: 'flex',
@@ -91,9 +114,15 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     width: '100%',
+    margin: 10,
   },
   headerContainer: {
     marginTop: 40,
     alignItems: 'center',
+  },
+  headerMenu: {
+    marginTop: 40,
+    alignItems: 'flex-start',
+    marginBottom: 5,
   },
 });

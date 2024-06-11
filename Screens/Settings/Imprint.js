@@ -26,8 +26,7 @@ function ImprintStart({ navigation }) {
       </View>
 
       <View style={styles.placeholderContainer}>
-      <PlaceholderText>Hier könnte ein Text zum 
-      Impressum stehen</PlaceholderText>
+        <PlaceholderText>Hier könnte ein Text zum Impressum stehen</PlaceholderText>
       </View>
     </View>
   );
@@ -36,16 +35,16 @@ function ImprintStart({ navigation }) {
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Impressum" component={ImprintStart} options={{headerShown:false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown:false}}/>
+      <Stack.Screen name="Imprint" component={ImprintStart} options={{headerShown: false}}/>
+      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
     </Stack.Navigator>
   );
 }
 
-export default function Imprint(){
-  return(
+export default function Imprint() {
+  return (
     <MyStack/>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -54,8 +53,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingBottom: 160,
+    height: '100%',
     backgroundColor: 'white',
+    paddingBottom: 160,
   },
   buttonContainer: {
     position: 'absolute',
@@ -70,6 +70,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 250,
+    height: '100%',
   },
 });

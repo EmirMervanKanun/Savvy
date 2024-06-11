@@ -1,4 +1,4 @@
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
@@ -7,50 +7,45 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
 import Settings from '../Settings/Settings';
 
-
 const Stack = createNativeStackNavigator();
 
 function DataProtectionStart({ navigation }) {
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <View style={styles.container}>
 
-        <View style={styles.buttonContainer}>
-          <ButtonBack
-            onPress={() => navigation.dispatch(
-              CommonActions.navigate(
-                { name: 'Settings' }
-              ))} />
-        </View>
-
-        <View style={styles.headerContainer}>
-          <Header>Datenschutz</Header>
-        </View>
-
-        <View style={styles.placeholderWrapper}>
-          <View style={styles.placeholderContainer}>
-            <PlaceholderText>Hier könnte ein Text zu den
-              Datenschutzerklärungen stehen</PlaceholderText>
-          </View>
-        </View>
+      <View style={styles.buttonContainer}>
+        <ButtonBack
+          onPress={() => navigation.dispatch(
+            CommonActions.navigate(
+              { name: 'Settings' }
+            ))} />
       </View>
-    </ScrollView>
+
+      <View style={styles.headerContainer}>
+        <Header>Datenschutz</Header>
+      </View>
+
+      <View style={styles.placeholderContainer}>
+        <PlaceholderText>Hier könnte ein Text zu den 
+        Datenschutzerklärungen stehen</PlaceholderText>
+      </View>
+    </View>
   );
 }
 
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Datenschutz" component={DataProtectionStart} options={{ headerShown: false }} />
-      <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
+      <Stack.Screen name="DataProtection" component={DataProtectionStart} options={{headerShown: false}}/>
+      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
     </Stack.Navigator>
   );
 }
 
 export default function DataProtection() {
   return (
-    <MyStack />
-  )
+    <MyStack/>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -60,8 +55,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     height: '100%',
-    paddingBottom: 160,
     backgroundColor: 'white',
+    paddingBottom: 160,
   },
   buttonContainer: {
     position: 'absolute',
@@ -72,16 +67,10 @@ const styles = StyleSheet.create({
     marginTop: 40,
     alignItems: 'center',
   },
-  placeholderWrapper: {
-    display: 'flex',
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   placeholderContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    height: '100%',
   },
 });

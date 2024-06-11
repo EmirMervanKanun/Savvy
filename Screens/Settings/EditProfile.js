@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: 'row',
-    gap: 16,
+    gap: 50,
     marginTop: 30,
   },
 });

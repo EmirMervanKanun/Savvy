@@ -1,58 +1,51 @@
-import { Text, Pressable, Image, View, StyleSheet } from 'react-native';
-import ButtonSettingsItem from '../../Components/Buttons/SettingsItem';
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import Header from '../../Components/TextComponents/Header';
+import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import EditProfile from '../Settings/EditProfile';
-import Notifications from '../Settings/Notifications';
-import DataProtection from '../Settings/DataProtection';
-import AGB from '../Settings/Agb';
-import Imprint from '../Settings/Imprint';
-import Header from '../../Components/TextComponents/Header';
+import Categories from '../Settings/Categories';
+import InputText from '../../Components/Inputfelder/InputText';
+import SelectCatIcon from '../../Components/Selection/SelectCatIcon';
+import Button from '../../Components/Buttons/Button';
 
 const Stack = createNativeStackNavigator();
 
-function SettingsStart({ navigation }) {
+function AddCategoryStart({ navigation }) {
   return (
     <View style={styles.container}>
 
       <View style={styles.headerContainer}>
-        <Header>Einstellungen</Header>
+        <Header>Kategorien hinzufügen</Header>
       </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'EditProfile' }
-          ))} >Profil bearbeiten</ButtonSettingsItem>
+      <View style={styles.selectcatContainer}>
+          <SelectCatIcon/>
+        </View>
+
+      <View style={styles.inputContainer}>
+        <View style={styles.headerInput}>
+          <Header style={styles.headerText}>Kategorietitel</Header>
+        </View>
+        <InputText placeholder="Gib einen Kategorietitel ein..." keyboardType="default" />
       </View>
 
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'Notifications' }
-          ))} >Mitteilungen</ButtonSettingsItem>
-      </View>
-
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'AGB' }
-          ))} >AGB</ButtonSettingsItem>
-      </View>
-
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'DataProtection' }
-          ))} >Datenschutz</ButtonSettingsItem>
-      </View>
-
-      <View sytle={styles.buttonContainer}>
-        <ButtonSettingsItem onPress={() => navigation.dispatch(
-          CommonActions.navigate(
-            { name: 'Imprint' }
-          ))} >Impressum</ButtonSettingsItem>
-      </View>
+      <View style={styles.buttonRow}>
+          <Button props={{
+            img: require('../../Icons/Button/cancel.png'),
+            text: 'Abbrechen',
+            color: 'blue',
+            size: 'small',
+            // onPress: () => onCancel()
+          }} />
+          <Button props={{
+            img: require('../../Icons/Button/save.png'),
+            text: 'Speichern',
+            color: 'blue',
+            size: 'small',
+            // onPress: () => onSave()
+          }} />
+        </View>
     </View>
   );
 }
@@ -60,12 +53,8 @@ function SettingsStart({ navigation }) {
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="SettingsMain" component={SettingsStart} options={{ headerShown: false }} />
-      <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />
-      <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
-      <Stack.Screen name="AGB" component={AGB} options={{ headerShown: false }} />
-      <Stack.Screen name="DataProtection" component={DataProtection} options={{ headerShown: false }} />
-      <Stack.Screen name="Imprint" component={Imprint} options={{ headerShown: false }} />
+      <Stack.Screen name="AddCategory" component={AddCategoryStart} options={{ headerShown: false }} />
+      <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
@@ -73,7 +62,7 @@ function MyStack() {
 export default function Home() {
   return (
     <MyStack />
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -82,16 +71,37 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    height: '100%',
+    backgroundColor: 'white',
+    paddingBottom: 160,
   },
-  buttonContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    width: '100%',
+  selectcatContainer: {
+    marginTop: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   headerContainer: {
     marginTop: 40,
     alignItems: 'center',
+  },
+  inputContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 30,
+    marginTop: 40,
+  },
+  headerInput: {
+    width: '100%',
+    alignItems: 'flex-start',
+    paddingLeft: 35,
+    marginBottom: 5,
+  },
+  headerText: {
+    marginLeft: 30,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    gap: 50,
+    marginTop: 30,
   },
 });
