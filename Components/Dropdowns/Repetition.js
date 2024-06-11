@@ -66,8 +66,7 @@ export default RepetitionDropdown;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center',
+        display: 'flex',
     },
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
@@ -95,10 +94,10 @@ const styles = StyleSheet.create({
     },
     dropdownArea: {
         width: 292,
-        height: 180,
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein
+        marginBottom: -48,
     },
     dropdownItem: {
         width: 260,

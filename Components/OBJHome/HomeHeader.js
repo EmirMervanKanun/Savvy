@@ -12,7 +12,6 @@ const HomeHeader = ({ props }) => {
                     <Image source={props.profilePicture} style={styles.imagePerson} />
                     <Text style={styles.name}><Header>Hallo, {props.name}!</Header></Text>
                 </View>
-                <ButtonSettings/>
 
             </View>
             <View style={styles.money}>
