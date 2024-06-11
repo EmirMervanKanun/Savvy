@@ -6,6 +6,7 @@ import COLORS from "../Farben"
 
 
 const dropdownData = [         //leerer Eintrag, damit 1. Eintrag nicht hinter Auswahl rutscht
+    { label: ' ', value: '0' },
     { label: 'Euro €', value: '1' },
     { label: 'USD $', value: '2' },
 ];
