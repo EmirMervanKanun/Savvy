@@ -17,13 +17,11 @@ export default function App() {
     return null;
   }
   return (
-    <GestureHandlerRootView>
       <SafeAreaProvider>
         <NavigationContainer>
           <Navbar />
         </NavigationContainer>
       </SafeAreaProvider>
-    </GestureHandlerRootView>
   );
 }
 
