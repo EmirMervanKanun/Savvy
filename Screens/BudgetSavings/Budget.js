@@ -69,11 +69,6 @@ export default function Budget() {
           img: require('../../Icons/Button/add.png'),
           //onPress: () => navigation.navigate('AddBudget')
         }} />
-
-        <CategoriesDropdown props={categories} />
-        <CurrencyBigDropdown />
-        <CurrencySmallDropdown />
-        <RepetitionDropdown />
       </View>
     </ScrollView>
   );
