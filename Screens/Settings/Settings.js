@@ -1,7 +1,9 @@
-
+import { StyleSheet, View, Image, Text } from "react-native";
 
 export default function Settings() {
     return (
-      <View></View>
+      <View>
+        <Text>Settings</Text>
+      </View>
     );
 }
