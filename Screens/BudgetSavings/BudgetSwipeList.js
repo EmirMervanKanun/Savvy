@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
-
 import BudgetSwipe from "../../Components/Objects/BudgetSwipe";
 import Budgets from "./Budgets";
-import { render } from "react-native-web";
-import { TouchableHighlight } from "react-native-gesture-handler";
 
 const BudgetSwipeList = () => {
     const [listData, setListData] = useState(
-        Budgets.map((BudgetsItem, index) => ({
+        Budgets.map((BudgetItem, index) => ({
             key: `${index}`,
-            title: BudgetsItem.title,
-            details: BudgetsItem.details,
+            title: BudgetItem.title,
+            details: BudgetItem.details,
         }))
     );
 
@@ -20,33 +17,38 @@ const BudgetSwipeList = () => {
         const { data } = props;
         return (
             <TouchableHighlight>
-                <BudgetSwipe props={data} />
+                <BudgetSwipe props={data.item} />
             </TouchableHighlight>
-        )
-    }
+        );
+    };
 
     const renderItem = (data, rowMap) => {
-        return(
-            <VisibleItem data={data} rowMap={rowMap} />
-        )
+        return (
+            <View style={styles.itemContainer}>
+                <VisibleItem data={data} />
+            </View>
+        );
     };
 
     const renderHiddenItem = () => {
-
+        return <View />;
     };
 
     return (
-        <SwipeListView>
+        <SwipeListView
             data={listData}
             renderItem={renderItem}
             renderHiddenItem={renderHiddenItem}
-
-        </SwipeListView>
-    )
-}
-
-export default BudgetSwipeList;
+            rightOpenValue={-75}
+        />
+    );
+};
 
 const styles = StyleSheet.create({
-
+    itemContainer: {
+        marginBottom: 24,
+    },
+    // Weitere Styles hier definieren
 });
+
+export default BudgetSwipeList;

@@ -1,39 +1,33 @@
-import { StyleSheet, View, Image, Text } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import * as Progress from 'react-native-progress';
+import COLORS from '../Farben';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
-import COLORS from '../Farben';
-import * as Progress from 'react-native-progress';
 
-export const BudgetSwipe = ({ props }) => {
+const BudgetSwipe = ({ props }) => {
     return (
-        <View style={{ gap: 5 }}>
+        <View >
             <View style={styles.container}>
                 <View style={styles.containerDate}>
-
                     <View style={styles.containerImage}>
-
-                        <Image style={styles.image} source={props.img} />
-
+                        <Image style={styles.image} source={props.details.img} />
                         <View style={styles.containerProgress}>
-
                             <View style={styles.containerInfo}>
                                 <Text style={styles.text}><TitelAmountText>{props.title}</TitelAmountText></Text>
-                                <Text style={styles.text}><TitelAmountText>{props.amount1}€ / {props.amount2}€</TitelAmountText></Text>
+                                <Text style={styles.text}><TitelAmountText>{props.details.amount1}€ / {props.details.amount2}€</TitelAmountText></Text>
                             </View>
-
                             <Progress.Bar 
-                            style={styles.progressBar} 
-                            progress={props.amount1/props.amount2} 
-                            unfilledColor={COLORS.primaryLight} 
-                            color={COLORS.primaryDark} 
-                            width={225}
-                            height={15}
+                                style={styles.progressBar} 
+                                progress={props.details.amount1 / props.details.amount2} 
+                                unfilledColor={COLORS.primaryLight} 
+                                color={COLORS.primaryDark} 
+                                width={225}
+                                height={15}
                             />
-
                         </View>
                     </View>
-
-                    <Text style={styles.dateText}><DateText>{props.dateStart} - {props.dateEnd}</DateText></Text>
+                    <Text style={styles.dateText}><DateText>{props.details.dateStart} - {props.details.dateEnd}</DateText></Text>
                 </View>
             </View>
         </View>
@@ -85,3 +79,5 @@ const styles = StyleSheet.create({
         color: COLORS.schriftMid,
     },
 });
+
+export default BudgetSwipe;

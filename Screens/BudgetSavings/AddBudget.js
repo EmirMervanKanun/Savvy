@@ -46,6 +46,7 @@ export default function AddBudget() {
     <ScrollView>
       <View style={styles.container}>
         <Text style={styles.header}><Header>Budget hinzufügen</Header></Text>
+
         <View style={styles.containerBudgetHinzufügen} >
 
           <Text style={styles.itemHeader}><Header>Datum</Header></Text>
