@@ -2,7 +2,7 @@ import { StyleSheet, View, Image, Text } from "react-native";
 import COLORS from '../Farben';
 import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
-import ButtonIcon, { ButtonSettings } from "../Buttons/Buttons";
+import ButtonSettings from "../Buttons/ButtonSettings";
 
 const HomeHeader = ({ props }) => {
     return (
@@ -12,7 +12,6 @@ const HomeHeader = ({ props }) => {
                     <Image source={props.profilePicture} style={styles.imagePerson} />
                     <Text style={styles.name}><Header>Hallo, {props.name}!</Header></Text>
                 </View>
-                <ButtonSettings/>
 
             </View>
             <View style={styles.money}>

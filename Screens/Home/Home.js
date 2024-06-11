@@ -1,5 +1,9 @@
 import { StyleSheet, View, Text } from 'react-native';
 import React from 'react';
+import HomeHeader from '../../Components/OBJHome/HomeHeader';
+import HomeIE from '../../Components/OBJHome/HomeIE';
+import InputText from '../../Components/Inputfelder/InputText';
+import InputDate from '../../Components/Inputfelder/InputDate';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';

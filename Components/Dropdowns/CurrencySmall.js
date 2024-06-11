@@ -62,7 +62,6 @@ export default CurrencySmallDropdown;
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
-        alignItems: 'center',
     },
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
@@ -90,11 +89,10 @@ const styles = StyleSheet.create({
     },
     dropdownArea: {
         width: 90,
-        height: 'auto',
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
-        borderTopEndRadius: 0,  
-        borderTopStartRadius: 0,
+        transform:[{translateY:-48}],           //Dropdown Area soll hinter Selector sein
+        marginBottom: -48,
     },
     dropdownItem: {
         width: 80,
