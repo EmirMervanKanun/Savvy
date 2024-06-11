@@ -3,11 +3,11 @@ import PlaceholderText from '../TextComponents/PlaceholderText';
 import COLORS from '../Farben';
 
 
-export const CategorySwipe =({img, text}) => {
+export default CategorySwipe =({ props }) => {
     return(
         <View style={styles.container}>
-            <Image style={styles.image} source={img} />
-            <Text style={{color: COLORS.schriftDark}}><PlaceholderText>{text}</PlaceholderText></Text>
+            <Image style={styles.image} source={props.details.img} />
+            <Text style={{color: COLORS.schriftDark}}><PlaceholderText>{props.title}</PlaceholderText></Text>
         </View>
     );
 }
