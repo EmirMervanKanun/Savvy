@@ -1,4 +1,4 @@
-class CurrencyController{
+class Currency{
     symbol;
     Name;
     Short;
