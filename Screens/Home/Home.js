@@ -13,6 +13,7 @@ function HomeStart({ navigation }) {
     <View style={styles.container} >
 
       <Button props= {{
+        size: 'mid',
         color: 'red',
         text: 'Onboarding',
         onPress: () => navigation.dispatch(
