@@ -10,6 +10,7 @@ import Transactions from '../../Components/Objects/Transactions.js';
 export default function Home() {
 
   return (
+    <ScrollView>
     <View style={styles.container} >
 
       <HomeHeader props={{
@@ -22,12 +23,11 @@ export default function Home() {
 
       <View style={styles.containerTrans}>
         <Header>Transaktionen</Header>
-        <ScrollView>
           <TransactionSwipeList transactions={Transactions} />
-        </ScrollView>
       </View>
 
     </View >
+    </ScrollView>
   );
 }
 
@@ -35,10 +35,8 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
-    gap: 32,
+    gap: 20,
+    backgroundColor: 'white'
   },
-  containerTrans: {
-    gap: 16,
-  }
 });
 
