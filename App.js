@@ -7,7 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 
-savvy;
+let savvy;
 
 
 export default function App() {
@@ -16,6 +16,7 @@ export default function App() {
   if(savvy == null){
     savvy = new Savvy();
     storeData(savvy);
+    savvy.initTest();
   }
 
   const [fontsLoaded, fontError] = useFonts({
@@ -42,7 +43,7 @@ const storeData = async (savvy) => {
     const jsonValue = JSON.stringify(savvy);
     await AsyncStorage.setItem('AppData', jsonValue);
   } catch (e) {
-    console.log("Ein Fehler beim Speichern den Daten ist Passiert! \n" + e);
+    console.log("Ein Fehler beim Speichern der Daten ist Passiert! \n" + e);
   }
 };
 const getData = async () => {
@@ -50,7 +51,7 @@ const getData = async () => {
     const jsonValue = await AsyncStorage.getItem('AppData');
     return jsonValue != null ? JSON.parse(jsonValue) : null;
   } catch (e) {
-    console.log("Ein Fehler beim Laden den Daten ist Passiert! \n" + e);
+    console.log("Ein Fehler beim Laden der Daten ist Passiert! \n" + e);
   }
 };
     
