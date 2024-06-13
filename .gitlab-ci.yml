@@ -1,0 +1,48 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  image: node:latest
+  artifacts:
+    untracked: true
+  script:
+    - npm install
+#  only:
+#    - main
+#    - dev
+
+unit-test:
+  image: node:latest
+  stage: test
+  dependencies:
+    - build
+  script:
+    - npm run test:ci
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - coverage/
+    when: always
+    reports:
+      junit:
+        - junit.xml
+
+#$KEYSTORE_PASSWORD in gitlab-settings unter Einstellungen -> Variablen
+deploy-android:
+  stage: deploy
+  tags:
+    - deploy
+  dependencies:
+    - build
+  script:
+    - cd android && ./gradlew assembleRelease -PMYAPP_RELEASE_STORE_PASSWORD=$KEYSTORE_PASSWORD -PMYAPP_RELEASE_KEY_PASSWORD=$KEYSTORE_PASSWORD
+    - cp android/app/build/outputs/apk/app-release.apk $CI_PROJECT_NAME-$CI_COMMIT_REF_NAME.apk
+  artifacts:
+    name: "$CI_PROJECT_NAME-$PLATFORM-$CI_COMMIT_REF_NAME"
+    paths:
+      - $CI_PROJECT_NAME-$CI_COMMIT_REF_NAME.apk
+    expire_in: 7 days
+  when: manual

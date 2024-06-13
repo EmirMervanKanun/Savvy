@@ -28,8 +28,8 @@ class Savvy{
         this.user = new User(firstname, lastname, new Amount(amount, currency), img);
     }
 
-    addTransaction(type, repeat, date, amount, currency, category, note, ){
-        this.transactions.push(new Transaction(type, repeat, date, new Amount(amount, currency), category, note));
+    addTransaction(type, repeat, date, amount, currency, category){
+        this.transactions.push(new Transaction(type, repeat, date, new Amount(amount, currency), category));
     }
 
     addBudget(title, startDate, endDate, category, amount, currency){
@@ -68,8 +68,8 @@ class Savvy{
 
     initTest(){
         this.registerUser("Max", "Mustermann", 5000, savy.currency[0], "../../Icons/ProfilePictures/profilePicture4.png");
-        this.addTransaction("Ausgabe", "Einmalig", "2021-06-01", 50, savy.currency[0], savy.categorys[1], "H&M");
-        this.addTransaction("Einnahme", "Monatlich", "2021-06-01", 500, savy.currency[0], savy.categorys[1], "Lohn");
+        this.addTransaction("Ausgabe", "Einmalig", "2021-06-01", 50, savy.currency[0], savy.categorys[1]);
+        this.addTransaction("Einnahme", "Monatlich", "2021-06-01", 500, savy.currency[0], savy.categorys[1]);
         this.addBudget("Lebensmittel", "2021-06-01", "2021-06-30", savy.categorys[2], 1000, savy.currency[0]);
         this.addSavings("Fahrrad", "2021-12-24", savy.categorys[5], 1000, savy.currency[0]);
     }
