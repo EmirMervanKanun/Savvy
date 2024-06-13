@@ -82,7 +82,7 @@ function AddSaving({ navigation }) {
               color: 'blue',
               size: 'mid',
               text: 'Abbrechen',
-              img: require('../../Icons/Button/add.png'),
+              img: require('../../Icons/Button/cancel.png'),
               onPress: () => navigation.dispatch(
                 CommonActions.navigate({
                   name: 'Saving'
@@ -93,7 +93,7 @@ function AddSaving({ navigation }) {
               color: 'blue',
               size: 'mid',
               text: 'Speichern',
-              img: require('../../Icons/Button/add.png'),
+              img: require('../../Icons/Button/save.png'),
               //onPress: 
             }} />
           </View>
