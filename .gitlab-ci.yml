@@ -10,6 +10,8 @@ build:
     untracked: true
   script:
     - npm install
+    - npm update
+    - npx expo start
 #  only:
 #    - main
 #    - dev
