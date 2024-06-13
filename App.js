@@ -9,7 +9,7 @@ import 'react-native-gesture-handler';
 
 let savvy;
 
-//test
+//test test
 export default function App() {
   // Load Data from AsyncStorage
   savvy = getData();
