@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Image, TouchableOpacity, View, FlatList, Text, ScrollView } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben";
@@ -18,44 +18,41 @@ const CategoriesDropdown = ({ props }) => {
             >
                 <View style={styles.dropdownAuswahl}>
                     <View>
-                        {selectedIcon && <Image source={selectedIcon} style={{width: 32, height: 32}} />}
+                        {selectedIcon && <Image source={selectedIcon} style={{ width: 32, height: 32 }} />}
                     </View>
                     <Text style={styles.fontColor}>
                         <ButtonText style={styles.text}>{selectedData}</ButtonText>
                     </Text>
                 </View>
-                <Image 
+                <Image
                     source={
-                        isClicked 
-                            ? require('../../Icons/Objects/arrowDropup.png') 
+                        isClicked
+                            ? require('../../Icons/Objects/arrowDropup.png')
                             : require('../../Icons/Objects/arrowDropdown.png')
-                    } 
-                    style={styles.icon} 
+                    }
+                    style={styles.icon}
                 />
             </TouchableOpacity>
             {isClicked && (
                 <View style={styles.dropdownArea}>
-                    <FlatList 
-                        data={props}
-                        keyExtractor={(item) => item.value}
-                        renderItem={({ item }) => (
-                            <TouchableOpacity 
-                                style={styles.dropdownItem} 
-                                onPress={() => {
-                                    setSelectedData(item.label);
-                                    setSelectedIcon(item.icon);
-                                    setIsClicked(false);
-                                }}
-                            >
-                                <View style={styles.itemContent}>
-                                    {item.icon && <Image source={item.icon} style={{width: 32, height: 32}} />}
-                                    <Text style={styles.fontColor}>
-                                        <PlaceholderText>{item.label}</PlaceholderText>
-                                    </Text>
-                                </View>
-                            </TouchableOpacity>
-                        )}
-                    />
+                    {props.map((item) => (
+                        <TouchableOpacity
+                            key={item.value}
+                            style={styles.dropdownItem}
+                            onPress={() => {
+                                setSelectedData(item.label);
+                                setSelectedIcon(item.icon);
+                                setIsClicked(false);
+                            }}
+                        >
+                            <View style={styles.itemContent}>
+                                {item.icon && <Image source={item.icon} style={{ width: 32, height: 32 }} />}
+                                <Text style={styles.fontColor}>
+                                    <PlaceholderText>{item.label}</PlaceholderText>
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    ))}
                 </View>
             )}
         </View>
@@ -101,7 +98,7 @@ const styles = StyleSheet.create({
         width: 292,
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
-        transform:[{translateY: -48}], // Dropdown Area soll hinter Selector sein
+        transform: [{ translateY: -48 }], // Dropdown Area soll hinter Selector sein
         marginBottom: -48,
     },
     dropdownItem: {
