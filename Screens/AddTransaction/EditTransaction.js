@@ -71,10 +71,6 @@ export default function EditTransaction() {
             <TextHeader>Kategorie</TextHeader>
             <CategoriesDropdown props={categories}/>
           </View>
-          <View style={styles.smallContainer}>
-            <TextHeader>Notiz</TextHeader>
-            <InputText placeholder='Schreibe eine Notiz...' keyboardType='default' />
-          </View>
           <View style={styles.button}>
             <Button props={{
                 color: 'blue', 
