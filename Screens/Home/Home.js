@@ -1,12 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import Header from '../../Components/TextComponents/Header';
+import HomeHeader from '../../Components/OBJHome/HomeHeader';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
 import Categories from '../Settings/Categories';
 import InputText from '../../Components/Inputfelder/InputText';
 import InputDate from '../../Components/Inputfelder/InputDate';
+import HomeIE from '../../Components/OBJHome/HomeIE';
 
 const Stack = createNativeStackNavigator();
 
