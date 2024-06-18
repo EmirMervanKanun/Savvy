@@ -14,8 +14,8 @@ const ButtonFilter = ({selected, onPress, label}) => {
   );
 };
 
-const FilterGroup = ({ options }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+const FilterGroup = ({ options, changedFilter, selectedAtStart}) => {
+  const [selectedOption, setSelectedOption] = useState(selectedAtStart || null);
 
   return (
     <View style={styles.groupContainer}>
@@ -24,8 +24,11 @@ const FilterGroup = ({ options }) => {
           key={index}
           label={option}
           selected={selectedOption === option}
-          onPress={() => setSelectedOption(option)}
-        />
+          onPress={(filter) => {
+            setSelectedOption(option);
+            changedFilter = option;
+          }
+        }/>
       ))}
     </View>
   );

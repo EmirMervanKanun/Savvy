@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         display: "flex",
     },
     itemContainer: {
-        marginTop: 24,
+        marginBottom: 24,
         backgroundColor: "white",
     },
     rowBack: {
@@ -85,10 +85,9 @@ const styles = StyleSheet.create({
     },
     backRightBtn: {
         alignItems: 'center',
-        bottom: 0,
         justifyContent: 'center',
         position: 'absolute',
-        top: 16,
+        top: 8.5,
     },
     backRightBtnLeft: {
         right: 50,
