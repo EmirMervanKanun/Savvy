@@ -1,5 +1,6 @@
 import { Text, Pressable, Image, StyleSheet } from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
+import COLORS from '../Farben';
 
 const ButtonBack = ({ onPress }) => {
     return (
@@ -13,11 +14,12 @@ export default ButtonBack;
 
 styles = StyleSheet.create({
     containerButtonBack: {
+        display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         height: 24,
-        width: 80,
+       
     },
     image: {
         resizeMode: 'stretch',
