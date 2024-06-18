@@ -73,7 +73,7 @@ export default function InputDate () {
 
 const styles = StyleSheet.create({
     input: {
-        height: 25,
+        height: 32,
         width: 103,
         textAlign: "center",
         borderRadius: 8,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
+        alignItems: "center",
         gap: 8,
     },
     icon: {
