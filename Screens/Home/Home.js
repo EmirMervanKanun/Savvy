@@ -7,8 +7,9 @@ import TransactionSwipeList from '../../Components/Objects/TransactionSwipeList.
 import Transactions from '../../Components/Objects/Transactions.js';
 
 
-export default function Home() {
+const Stack = createNativeStackNavigator();
 
+function HomeStart({ navigation }) {
   return (
     <ScrollView>
     <View style={styles.container} >
@@ -28,6 +29,21 @@ export default function Home() {
 
     </View >
     </ScrollView>
+  );
+}
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeStart} options={{headerShown: false}} />
+      <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown: false}} />
+    </Stack.Navigator>
+  );
+}
+
+export default function Home() {
+  return (
+    <MyStack />
   );
 }
 

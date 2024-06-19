@@ -1,14 +1,21 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import Navbar from './Components/Navigation/Navbar.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Savvy from './Backend/SavvyController.js';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Navbar from './Components/Navigation/Navbar.js';
+
+import OnboardingScreen from './Screens/Onboarding/Onboarding.js';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MyTabs from './Components/Navigation/MyTabs.js';
 
 let savvy;
 
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   // Load Data from AsyncStorage
@@ -29,12 +36,24 @@ export default function App() {
   return (
       <SafeAreaProvider>
         <NavigationContainer>
-          <Navbar />
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Onboarding"
+                component={OnboardingScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="MainTabs"
+                component={MyTabs}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </GestureHandlerRootView>
         </NavigationContainer>
       </SafeAreaProvider>
   );
 }
-
 
 // Save and Load Data from AsyncStorage
 const storeData = async (savvy) => {
@@ -53,6 +72,3 @@ const getData = async () => {
     console.log("Ein Fehler beim Laden den Daten ist Passiert! \n" + e);
   }
 };
-    
-
-  
