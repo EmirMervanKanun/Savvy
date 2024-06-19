@@ -3,8 +3,12 @@ import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import BudgetSwipe from "./BudgetSwipe";
 import Button from "../Buttons/Button";
+import { useNavigation } from '@react-navigation/native';
 
 const BudgetSwipeList = ({ budgets }) => {
+
+    const navigation = useNavigation();
+    
     const [listData, setListData] = useState(
         budgets.map((BudgetItem, index) => ({
             key: `${index}`,
@@ -38,7 +42,7 @@ const BudgetSwipeList = ({ budgets }) => {
                         props={{ 
                             color: "blue", 
                             img: require("../../Icons/Button/edit.png"),
-                            onPress: () => console.log("Edit button clicked")
+                            onPress: () => navigation.navigate('AddBudget')
                         }}
                     />
                 </View>

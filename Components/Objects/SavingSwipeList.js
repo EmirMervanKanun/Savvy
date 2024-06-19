@@ -3,8 +3,12 @@ import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import SavingGoal from "./SavingGoal";
 import Button from "../Buttons/Button";
+import { useNavigation } from '@react-navigation/native';
 
 const SavingSwipeList = ({ savings }) => {
+
+    const navigation = useNavigation();
+
     const [listData, setListData] = useState(
         savings.map((SavingItem, index) => ({
             key: `${index}`,
@@ -38,7 +42,7 @@ const SavingSwipeList = ({ savings }) => {
                         props={{ 
                             color: "blue", 
                             img: require("../../Icons/Button/edit.png"),
-                            onPress: () => console.log("Edit button clicked")
+                            onPress: () => navigation.navigate('AddSaving')
                         }}
                     />
                 </View>
