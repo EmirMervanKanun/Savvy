@@ -50,7 +50,7 @@ const Slides = ({ item }) => {
   );
 };
 
-const OnboardingScreen = ({navigation}) => {
+const OnboardingScreen = ({ navigation }) => {
 
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
 
@@ -75,8 +75,8 @@ const OnboardingScreen = ({navigation}) => {
                 text: 'Los geht`s',
                 onPress: () => navigation.dispatch(
                   CommonActions.navigate({
-                      name: 'Registry',
-                    },
+                    name: 'Registry',
+                  },
                   )
                 )
               }}
@@ -112,12 +112,14 @@ const OnboardingScreen = ({navigation}) => {
         onMomentumScrollEnd={updateCurrentSlideIndex}
         pagingEnabled
         data={slides}
-        contentContainerStyle={{ height: height * 0.75 }}
+        contentContainerStyle={{ height: height * 0.83 }}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <Slides item={item} />}
       />
-      <Footer />
+      <View style={{backgroundColor : 'red', flex: 1}}>
+        <Footer />
+      </View>
     </SafeAreaView>
   );
 }
@@ -125,8 +127,8 @@ const OnboardingScreen = ({navigation}) => {
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{headerShown: false}} />
-      <Stack.Screen name="Registry" component={Registry} options={{headerShown: false}} />
+      <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Registry" component={Registry} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
@@ -140,15 +142,15 @@ export default function Onboarding() {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    backgroundColor: COLORS.white,
+    backgroundColor: 'white',
   },
 
   slideContainer: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center', 
-    paddingTop: 20, 
-    width: 390, 
+    alignItems: 'center',
+    paddingTop: 70,
+    width: 390,
   },
   image: {
     height: 432,
@@ -167,9 +169,10 @@ const styles = StyleSheet.create({
     color: COLORS.schriftDark,
   },
   footerContainer: {
-    height: 20,
+    flex: 1,
     justifyContent: 'space-between',
     paddingHorizontal: 20,
+    backgroundColor: 'white',
   },
   indicatorContainer: {
     flexDirection: 'row',
