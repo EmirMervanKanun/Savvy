@@ -1,26 +1,32 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import React from 'react';
 import HomeHeader from '../../Components/OBJHome/HomeHeader';
-import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CommonActions } from '@react-navigation/native';
-import Categories from '../Settings/Categories';
-import InputText from '../../Components/Inputfelder/InputText';
-import InputDate from '../../Components/Inputfelder/InputDate';
 import HomeIE from '../../Components/OBJHome/HomeIE';
+import Header from '../../Components/TextComponents/Header.js';
+import TransactionSwipeList from '../../Components/Objects/TransactionSwipeList.js';
+import Transactions from '../../Components/Objects/Transactions.js';
 
-const Stack = createNativeStackNavigator();
 
-function AddCategoryStart({ navigation }) {
+export default  function HomeStart() {
   return (
+    <ScrollView>
     <View style={styles.container} >
+
       <HomeHeader props={{
         profilePicture: require('../../Icons/ProfilePictures/profilePicture1.png'),
         name: 'John',
         amount: '123.456,89'
       }} />
+
       <HomeIE props={{ iAmount: '1.234,56', eAmount: '7.890,12' }} />
-    </View>
+
+      <View style={styles.containerTrans}>
+        <Header>Transaktionen</Header>
+          <TransactionSwipeList transactions={Transactions} />
+      </View>
+
+    </View >
+    </ScrollView>
   );
 }
 
@@ -42,40 +48,8 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    height: '100%',
-    backgroundColor: 'white',
-    paddingBottom: 160,
-  },
-  selectcatContainer: {
-    marginTop: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerContainer: {
-    marginTop: 40,
-    alignItems: 'center',
-  },
-  inputContainer: {
-    width: '100%',
-    alignItems: 'center',
-    marginBottom: 30,
-    marginTop: 40,
-  },
-  headerInput: {
-    width: '100%',
-    alignItems: 'flex-start',
-    paddingLeft: 35,
-    marginBottom: 5,
-  },
-  headerText: {
-    marginLeft: 30,
-  },
-  buttonRow: {
-    flexDirection: 'row',
-    gap: 50,
-    marginTop: 30,
+    gap: 20,
+    backgroundColor: 'white'
   },
 });

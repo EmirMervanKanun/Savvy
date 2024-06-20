@@ -3,8 +3,12 @@ import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import CategorySwipe from "./CategorySwipe";
 import Button from "../Buttons/Button";
+import { useNavigation } from '@react-navigation/native';
 
 const CategorySwipeList = ({ categories }) => {
+
+    const navigation = useNavigation();
+
     const [listData, setListData] = useState(
         categories.map((CategoryItem, index) => ({
             key: `${index}`,
@@ -38,7 +42,7 @@ const CategorySwipeList = ({ categories }) => {
                         props={{ 
                             color: "blue", 
                             img: require("../../Icons/Button/edit.png"),
-                            onPress: () => console.log("Edit button clicked")
+                            onPress: () => navigation.navigate('AddCategory')
                         }}
                     />
                 </View>

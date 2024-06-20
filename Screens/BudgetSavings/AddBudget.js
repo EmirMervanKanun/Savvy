@@ -49,7 +49,7 @@ const categories = [{
   icon: require('../../Icons/Categories/pets.png'),
 }];
 
-function AddBudget({ navigation }) {
+export default function AddBudget() {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -100,21 +100,6 @@ function AddBudget({ navigation }) {
         </View>
       </View>
     </ScrollView>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="AddBudget" component={AddBudget} options={{ headerShown: false }} />
-      <Stack.Screen name="Budget" component={Budget} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function BudgetScreen() {
-  return (
-    <MyStack />
   );
 }
 

@@ -1,15 +1,26 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import Navbar from './Components/Navigation/Navbar.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Savvy from './Backend/SavvyController.js';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import OnboardingScreen from './Screens/Onboarding/Onboarding.js';
+import Settings from './Screens/Settings/Settings.js';
+import AddBudget from './Screens/BudgetSavings/AddBudget.js';
+import EditTransaction from './Screens/AddTransaction/EditTransaction.js';
+import AddSaving from './Screens/BudgetSavings/AddSaving.js';
+import AddCategory from './Screens/Settings/AddCategory.js';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MyTabs from './Components/Navigation/MyTabs.js';
 
 let savvy;
 
-//test test test
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   // Load Data from AsyncStorage
   savvy = getData();
@@ -30,12 +41,49 @@ export default function App() {
   return (
       <SafeAreaProvider>
         <NavigationContainer>
-          <Navbar />
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Onboarding"
+                component={OnboardingScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="MainTabs"
+                component={MyTabs}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Settings"
+                component={Settings}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="AddBudget"
+                component={AddBudget}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="EditTransaction"
+                component={EditTransaction}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="AddSaving"
+                component={AddSaving}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="AddCategory"
+                component={AddCategory}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </GestureHandlerRootView>
         </NavigationContainer>
       </SafeAreaProvider>
   );
 }
-
 
 // Save and Load Data from AsyncStorage
 const storeData = async (savvy) => {
@@ -54,6 +102,3 @@ const getData = async () => {
     console.log("Ein Fehler beim Laden der Daten ist Passiert! \n" + e);
   }
 };
-    
-
-  

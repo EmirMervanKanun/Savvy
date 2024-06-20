@@ -3,8 +3,12 @@ import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import TransStanOrder from "./TransStanOrder";
 import Button from "../Buttons/Button";
+import { useNavigation } from '@react-navigation/native';
 
 const TransactionSwipeList = ({ transactions }) => {
+
+    const navigation = useNavigation();
+
     const [listData, setListData] = useState(
         transactions.map((TransactionItem, index) => ({
             key: `${index}`,
@@ -38,7 +42,7 @@ const TransactionSwipeList = ({ transactions }) => {
                         props={{ 
                             color: "blue", 
                             img: require("../../Icons/Button/edit.png"),
-                            onPress: () => console.log("Edit button clicked")
+                            onPress: () => navigation.navigate('EditTransaction')
                         }}
                     />
                 </View>

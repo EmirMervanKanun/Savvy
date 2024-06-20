@@ -3,14 +3,19 @@ import COLORS from '../Farben';
 import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import ButtonSettings from "../Buttons/ButtonSettings";
+import { useNavigation } from '@react-navigation/native';
 
 const HomeHeader = ({ props }) => {
+
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.head}>
                 <View style={styles.personalData}>
                     <Image source={props.profilePicture} style={styles.imagePerson} />
                     <Text style={styles.name}><Header>Hallo, {props.name}!</Header></Text>
+                    <ButtonSettings onPress={() => navigation.navigate('Settings')}/>
                 </View>
 
             </View>
