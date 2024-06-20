@@ -4,12 +4,7 @@ import Header from '../../Components/TextComponents/Header';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
 import COLORS from '../../Components/Farben';
 import Button from '../../Components/Buttons/Button';
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CommonActions } from '@react-navigation/native';
-import Registry from '../Onboarding/Registry';
-
-const Stack = createNativeStackNavigator();
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -50,7 +45,9 @@ const Slides = ({ item }) => {
   );
 };
 
-const OnboardingScreen = ({ navigation }) => {
+export default function OnboardingScreen() {
+
+  const navigation = useNavigation();
 
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
 
@@ -73,12 +70,7 @@ const OnboardingScreen = ({ navigation }) => {
                 color: 'blue',
                 size: 'big',
                 text: 'Los geht`s',
-                onPress: () => navigation.dispatch(
-                  CommonActions.navigate({
-                    name: 'Registry',
-                  },
-                  )
-                )
+                onPress: () => navigation.navigate('Registry'),
               }}
               />
             </View>
@@ -121,21 +113,6 @@ const OnboardingScreen = ({ navigation }) => {
         <Footer />
       </View>
     </SafeAreaView>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Registry" component={Registry} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function Onboarding() {
-  return (
-    <MyStack />
   );
 }
 

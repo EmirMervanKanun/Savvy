@@ -8,15 +8,12 @@ import InputText from '../../Components/Inputfelder/InputText'
 import CurrencySmall from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CommonActions } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-import HomeStart from '../Home/Home';
-import Onboarding from '../Onboarding/Onboarding';
+export default function Registry () {
 
-const Stack = createNativeStackNavigator();
+  const navigation = useNavigation();
 
-function RegistryOnboarding ({ navigation }) {
   return (
     <SafeAreaProvider>
       <ScrollView contentContainerStyle={styles.container} style={styles.contentContainer}>
@@ -51,12 +48,7 @@ function RegistryOnboarding ({ navigation }) {
             color: 'blue',
             img: require('../../Icons/Button/cancel.png'),
             text: 'Abbrechen',
-            onPress: () => navigation.dispatch(
-              CommonActions.navigate({
-                name: 'Onboarding',
-              },
-              )
-            )
+            onPress: () => navigation.navigate('Onboarding'),
           }}
           />
 
@@ -65,33 +57,12 @@ function RegistryOnboarding ({ navigation }) {
             color: 'blue',
             img: require('../../Icons/Button/save.png'),
             text: 'Speichern',
-            onPress: () => navigation.dispatch(
-              CommonActions.navigate({
-                name: 'Home',
-              },
-              )
-            )
+            onPress: () => navigation.navigate('MainTabs'),
           }}
           />
         </View>
       </ScrollView>
     </SafeAreaProvider>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Registry" component={RegistryOnboarding} options={{headerShown: false}} />
-      <Stack.Screen name="Home" component={HomeStart} options={{ headerShown: false }} />
-      <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function Registry() {
-  return (
-    <MyStack />
   );
 }
 

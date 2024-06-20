@@ -8,7 +8,7 @@ import COLORS from '../Farben';
 
 // button mit icon und text
 
-//button mit Text
+//button mit Text 
 
 //button nur Icon
 const Button = ({ props }) => {

@@ -13,6 +13,7 @@ import AddBudget from './Screens/BudgetSavings/AddBudget.js';
 import EditTransaction from './Screens/AddTransaction/EditTransaction.js';
 import AddSaving from './Screens/BudgetSavings/AddSaving.js';
 import AddCategory from './Screens/Settings/AddCategory.js';
+import Registry from './Screens/Onboarding/Registry.js';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyTabs from './Components/Navigation/MyTabs.js';
@@ -46,6 +47,11 @@ export default function App() {
               <Stack.Screen
                 name="Onboarding"
                 component={OnboardingScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Registry"
+                component={Registry}
                 options={{ headerShown: false }}
               />
               <Stack.Screen
