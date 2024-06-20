@@ -43,7 +43,7 @@ const categories = [{
   icon: require('../../Icons/Categories/pets.png'),
 }];
 
-export default function AddTransaction({ navigation }) {
+export default function AddTransaction() {
   return (
     <ScrollView>
       <View style={styles.container}>

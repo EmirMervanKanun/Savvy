@@ -6,8 +6,7 @@ import Header from '../../Components/TextComponents/Header.js';
 import TransactionSwipeList from '../../Components/Objects/TransactionSwipeList.js';
 import Transactions from '../../Components/Objects/Transactions.js';
 
-
-export default  function HomeStart() {
+export default function HomeStart() {
   return (
     <ScrollView>
     <View style={styles.container} >
@@ -27,21 +26,6 @@ export default  function HomeStart() {
 
     </View >
     </ScrollView>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="AddCategory" component={AddCategoryStart} options={{ headerShown: false }} />
-      <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function Home() {
-  return (
-    <MyStack />
   );
 }
 
