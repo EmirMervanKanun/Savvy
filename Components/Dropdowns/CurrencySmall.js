@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         borderBottomWidth: 0.2,
+        borderRadius: 15,
         borderBottomColor: COLORS.schriftMid,
     },
     fontColor: {
