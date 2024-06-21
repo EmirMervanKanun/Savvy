@@ -17,6 +17,7 @@ import Registry from './Screens/Onboarding/Registry.js';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyTabs from './Components/Navigation/MyTabs.js';
+import Navbar from './Components/Navigation/Navbar.js';
 
 let savvy;
 
@@ -56,7 +57,7 @@ export default function App() {
               />
               <Stack.Screen
                 name="MainTabs"
-                component={MyTabs}
+                component={Navbar}
                 options={{ headerShown: false }}
               />
               <Stack.Screen
