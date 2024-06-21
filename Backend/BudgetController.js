@@ -12,3 +12,5 @@ class Budget {
         this.amount = amount;
     }
 }
+
+export default Budget;

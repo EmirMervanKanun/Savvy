@@ -7,3 +7,5 @@ class Amount {
     }
     
 }
+
+export default Amount;

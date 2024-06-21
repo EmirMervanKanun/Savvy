@@ -49,12 +49,16 @@ const categories = [{
   icon: require('../../Icons/Categories/pets.png'),
 }];
 
+const handleGoBack = (navigation) => {
+  navigation.goBack();
+};
+
 function AddSaving({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
         <Text style={styles.header}><Header>Sparziel hinzufügen</Header></Text>
-        
+
         <View style={styles.containerBudgetHinzufügen} >
 
           <Text style={styles.itemHeader}><Header>Datum</Header></Text>
@@ -83,11 +87,7 @@ function AddSaving({ navigation }) {
               size: 'mid',
               text: 'Abbrechen',
               img: require('../../Icons/Button/cancel.png'),
-              onPress: () => navigation.dispatch(
-                CommonActions.navigate({
-                  name: 'Saving'
-                })
-              )
+              onPress: () => handleGoBack(navigation)
             }} />
             <Button props={{
               color: 'blue',

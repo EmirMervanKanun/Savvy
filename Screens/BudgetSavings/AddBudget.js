@@ -13,9 +13,26 @@ import Budget from './Budget';
 import { CommonActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import App from '../../App';
+
 const Stack = createNativeStackNavigator();
 
-const categories = [{
+//const categoriesBackend = App.
+
+/*
+
+const categories = categoriesBackend.map((category, index) => {
+  return {
+    label: category.label,
+    value: index.toString(), // Konvertieren des Index in einen String
+    icon: iconMapping[category.icon] || null, // Verwenden der Zuordnung, um das Icon zu erhalten
+  };
+});
+
+*/
+
+
+const categoriesResult = [{
   label: 'Wähle eine Kategorie aus...',
   value: '0',
   icon: null,
@@ -48,6 +65,15 @@ const categories = [{
   value: '7',
   icon: require('../../Icons/Categories/pets.png'),
 }];
+
+const handleGoBack = (navigation) => {
+
+  console.log(categoriesBackend);
+
+  //console.log(categories);
+
+  //navigation.goBack();
+};
 
 function AddBudget({ navigation }) {
   return (
@@ -83,11 +109,7 @@ function AddBudget({ navigation }) {
               size: 'mid',
               text: 'Abbrechen',
               img: require('../../Icons/Button/cancel.png'),
-              onPress: () => navigation.dispatch(
-                CommonActions.navigate({
-                  name: 'Budget'
-                })
-              )
+              onPress: () => handleGoBack(navigation)
             }} />
             <Button props={{
               color: 'blue',

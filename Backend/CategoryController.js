@@ -1,8 +1,9 @@
 class Category {
-    title;
-    img;
-    constructor(title, img) {
-        this.title = title;
-        this.img = img;
+    constructor(label, icon) {
+      this.label = label;
+      this.icon = icon;
     }
-}
+  }
+  
+  export default Category;
+  
