@@ -104,12 +104,12 @@ export default function OnboardingScreen() {
         onMomentumScrollEnd={updateCurrentSlideIndex}
         pagingEnabled
         data={slides}
-        contentContainerStyle={{ height: height * 0.83 }}
+        contentContainerStyle={{ height: height * 0.9 }}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <Slides item={item} />}
       />
-      <View style={{backgroundColor : 'red', flex: 1}}>
+      <View style={{flex: 1}}>
         <Footer />
       </View>
     </SafeAreaView>
@@ -126,8 +126,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: 70,
-    width: 390,
+    width: width,
   },
   image: {
     height: 432,
