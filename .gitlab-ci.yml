@@ -29,7 +29,7 @@ unit-test:
     reports:
       junit:
         - junit.xml
-when: manual
+  when: manual
 
 #$KEYSTORE_PASSWORD in gitlab-settings unter Einstellungen -> Variablen
 deploy-android:
