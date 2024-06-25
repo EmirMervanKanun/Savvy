@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image, Text } from "react-native";
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import TitleAmountText from '../TextComponents/TitelAmountText';
 import NavText from '../TextComponents/NavText';
 import DateText from '../TextComponents/DateText';

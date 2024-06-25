@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { TextInput, StyleSheet, View } from "react-native";
-import COLORS from "../Farben"
+import COLORS from "../Colors"
 
 export default function InputText({placeholder, keyboardType}) {
     const [input, setInput] = useState('');

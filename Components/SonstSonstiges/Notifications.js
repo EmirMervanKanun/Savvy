@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, FlatList } from "react-native";
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import ButtonToggle from '../Buttons/ButtonToggle';
 

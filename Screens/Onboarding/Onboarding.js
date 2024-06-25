@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, Dimensions, View, Text, FlatList, Image } from 'react-native';
 import Header from '../../Components/TextComponents/Header';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
-import COLORS from '../../Components/Farben';
+import COLORS from '../../Components/Colors';
 import Button from '../../Components/Buttons/Button';
 import { useNavigation } from '@react-navigation/native';
 

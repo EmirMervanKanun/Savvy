@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import * as Progress from 'react-native-progress';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 
