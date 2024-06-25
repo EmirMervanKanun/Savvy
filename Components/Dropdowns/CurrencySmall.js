@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         height: 48,
         width: 90,
-        paddingLeft: 12, 
+        paddingLeft: 12,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         gap: 4,

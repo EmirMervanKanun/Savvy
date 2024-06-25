@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         height: 48,
         width: 292,
-        paddingLeft: 16, 
+        paddingLeft: 16,
         paddingRight: 16,
         flexDirection: 'row',
         justifyContent: 'space-between',

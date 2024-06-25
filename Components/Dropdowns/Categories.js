@@ -69,13 +69,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 8,
         alignItems: 'center',
-    },    
+    },
     dropdownSelector: {
         backgroundColor: COLORS.primaryLight,
         borderRadius: 15,
         height: 48,
         width: 292,
-        paddingLeft: 16, 
+        paddingLeft: 16,
         paddingRight: 16,
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     dropdownItem: {
         width: 260,
         height: 48,
+        justifyContent: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
         borderBottomWidth: 0.2,
