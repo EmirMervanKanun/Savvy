@@ -6,18 +6,6 @@ import Savvy from './Backend/SavvyController.js';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
-import OnboardingScreen from './Screens/Onboarding/Onboarding.js';
-import Settings from './Screens/Settings/Settings.js';
-import AddBudget from './Screens/BudgetSavings/AddBudget.js';
-import EditTransaction from './Screens/AddTransaction/EditTransaction.js';
-import AddSaving from './Screens/BudgetSavings/AddSaving.js';
-import AddCategory from './Screens/Settings/AddCategory.js';
-import Registry from './Screens/Onboarding/Registry.js';
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MyTabs from './Components/Navigation/MyTabs.js';
 import Navbar from './Components/Navigation/Navbar.js';
 
 // Hook für Lade- und Speicherlogik
