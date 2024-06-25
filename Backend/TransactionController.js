@@ -13,3 +13,5 @@ class Transaction {
         this.category = category;
     }
 }
+
+export default Transaction;

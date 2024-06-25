@@ -10,3 +10,5 @@ class Savings {
         this.amount = amount;
     }
 }
+
+export default Savings;
