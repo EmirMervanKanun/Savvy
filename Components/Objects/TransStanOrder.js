@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 
 import DateText from '../TextComponents/DateText';
 import TitelAmountText from '../TextComponents/TitelAmountText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 export default Transaction = ({ props }) => {
 

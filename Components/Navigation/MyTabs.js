@@ -6,7 +6,7 @@ import Home from '../../Screens/Home/Home';
 import FixedTransactions from '../../Screens/FixedTransactions/FixedTransactions';
 import AddTransaction from '../../Screens/AddTransaction/AddTransaction';
 import NavText from '../TextComponents/NavText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import BudgetSavingWrapper from './TabbarBudgetSavingWrapper';
 import Transactionswrapper from './TabbarTransactionsWrapper';
 

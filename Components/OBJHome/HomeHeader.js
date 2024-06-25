@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image, Text } from "react-native";
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import Header from '../TextComponents/Header';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import ButtonSettings from "../Buttons/ButtonSettings";

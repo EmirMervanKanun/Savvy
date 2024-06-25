@@ -2,7 +2,7 @@ import { StyleSheet, View, Text} from 'react-native';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import { ButtonSmall } from '../Buttons/Buttons';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 export const DeleteOverlay = ({title}) => {
 

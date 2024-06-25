@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Pressable, StyleSheet,Text } from 'react-native';
 import TitelAmountText from '../TextComponents/TitelAmountText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 const ButtonFilter = ({selected, onPress, label}) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Image, Pressable, Text } from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 
 // größe, farbe rot oder blau, icon an oder aus, text an oder aus aber nur wenn icon an

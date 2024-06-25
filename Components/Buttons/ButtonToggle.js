@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Pressable, StyleSheet } from 'react-native';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 const ToggleButton = () => {
   // Initial state ist 'false' (aus)

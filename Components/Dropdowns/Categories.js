@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
-import COLORS from "../Farben";
+import COLORS from "../Colors";
 
 const CategoriesDropdown = ({ props }) => {
     const placeholder = props[0].label; // "Wähle eine Kategorie aus..." ist standardmäßig ausgewählt

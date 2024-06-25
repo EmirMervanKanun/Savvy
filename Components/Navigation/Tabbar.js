@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Text, View, StyleSheet } from 'react-native';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import HeaderText from '../TextComponents/Header';
 
 const Tab = createMaterialTopTabNavigator();

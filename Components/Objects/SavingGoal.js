@@ -3,7 +3,7 @@ import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import SavingsAmountText from '../TextComponents/SavingsAmountText';
 import * as Progress from 'react-native-progress';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 export default SavingGoal = ({ props }) => {
 

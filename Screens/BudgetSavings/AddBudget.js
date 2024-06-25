@@ -3,7 +3,7 @@ import React from 'react';
 
 import Header from '../../Components/TextComponents/Header';
 import InputText from '../../Components/Inputfelder/InputText';
-import COLORS from '../../Components/Farben';
+import COLORS from '../../Components/Colors';
 import CategoriesDropdown from '../../Components/Dropdowns/Categories';
 import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';

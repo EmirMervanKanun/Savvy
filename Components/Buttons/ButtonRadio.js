@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Pressable, StyleSheet, Text} from 'react-native';
 import RadioDefaultText from '../TextComponents/RadioDefaultText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 const ButtonRadio = ({selected, onPress, label}) => {
   return (
