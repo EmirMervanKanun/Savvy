@@ -1,3 +1,16 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+
+import App from '../App';
+
+
+it('renders App correctly', () => {
+  renderer.create(<App />);
+});
+
+
+
+/*
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -8,4 +21,4 @@ import {it} from '@jest/globals';
 
 it('renders App correctly', () => {
     renderer.create(<App />);
-});
+});*/

@@ -62,7 +62,7 @@ const Button = ({ props }) => {
 export default Button;
 
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     button: {
         flex: null,
         flexDirection: 'row',

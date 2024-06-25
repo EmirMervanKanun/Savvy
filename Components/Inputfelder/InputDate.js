@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { TextInput, StyleSheet, View, Pressable, Image, Platform } from "react-native";
-import COLORS from "../Colors"
+import COLORS from "../Colors";
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function InputDate () {
