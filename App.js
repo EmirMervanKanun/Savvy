@@ -1,4 +1,3 @@
-// Verwendung von useSavvyStorage Hook
 import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navigation/Navbar.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,8 +7,31 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 
+
+export const storeData = async (key, value) => {
+  try {
+    const jsonValue = JSON.stringify(value);
+    await AsyncStorage.setItem(key, jsonValue);
+    console.log(`Data successfully saved for key: ${key}`);
+  } catch (e) {
+    console.error(`Error saving data for key ${key}:`, e);
+  }
+};
+
+export const getData = async (key) => {
+  try {
+    const jsonValue = await AsyncStorage.getItem(key);
+    console.log(`Data successfully loaded for key: ${key}`);
+    return jsonValue !== null ? JSON.parse(jsonValue) : null;
+  } catch (e) {
+    console.error(`Error loading data for key ${key}:`, e);
+    return null;
+  }
+};
+
+
 // Hook für Lade- und Speicherlogik
-function useSavvyStorage() {
+export function useSavvyStorage() {
   const [savvy, setSavvy] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -17,12 +39,11 @@ function useSavvyStorage() {
     const initializeApp = async () => {
       try {
         // AsyncStorage.clear();
-        const storedSavvyJson = await getData();
+        const storedSavvyJson = await getData('AppData');
         if (storedSavvyJson === null) {
           console.log("No data found, initializing new Savvy instance.");
           const newSavvy = new Savvy();
-          // newSavvy.initTest();
-          await storeData(newSavvy);
+          await storeData('AppData', newSavvy.toJSON());
           setSavvy(newSavvy);
         } else {
           console.log("Data found, loading Savvy instance.");
@@ -42,7 +63,7 @@ function useSavvyStorage() {
     const saveData = async () => {
       if (savvy !== null) {
         console.log("Saving data:", JSON.stringify(savvy));
-        await storeData(savvy);
+        await storeData('AppData', savvy.toJSON());
       }
     };
 
@@ -73,23 +94,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
-const storeData = async (savvy) => {
-  try {
-    const jsonValue = JSON.stringify(savvy.toJSON());
-    await AsyncStorage.setItem('AppData', jsonValue);
-    console.log("Data successfully saved.");
-  } catch (e) {
-    console.error("Error saving data:", e);
-  }
-};
-
-const getData = async () => {
-  try {
-    const jsonValue = await AsyncStorage.getItem('AppData');
-    console.log("Data successfully loaded:", jsonValue);
-    return jsonValue != null ? JSON.parse(jsonValue) : null;
-  } catch (e) {
-    console.error("Error loading data:", e);
-  }
-};

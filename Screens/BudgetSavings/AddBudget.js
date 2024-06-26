@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Header from '../../Components/TextComponents/Header';
 import InputText from '../../Components/Inputfelder/InputText';
@@ -9,28 +10,9 @@ import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';
 
 import Budget from './Budget';
-
-import { CommonActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import App from '../../App';
-
 const Stack = createNativeStackNavigator();
-
-//const categoriesBackend = App.
-
-/*
-
-const categories = categoriesBackend.map((category, index) => {
-  return {
-    label: category.label,
-    value: index.toString(), // Konvertieren des Index in einen String
-    icon: iconMapping[category.icon] || null, // Verwenden der Zuordnung, um das Icon zu erhalten
-  };
-});
-
-*/
-
 
 const categoriesResult = [{
   label: 'Wähle eine Kategorie aus...',
@@ -67,15 +49,33 @@ const categoriesResult = [{
 }];
 
 const handleGoBack = (navigation) => {
-
-  console.log(categoriesBackend);
-
-  //console.log(categories);
-
-  //navigation.goBack();
+  navigation.goBack();
 };
 
 function AddBudget({ navigation }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const loadCategories = async () => {
+      try {
+        const storedData = await AsyncStorage.getItem('AppData');
+        if (storedData) {
+          const parsedData = JSON.parse(storedData);
+          const loadedCategories = parsedData.categories;
+          setCategories(loadedCategories);
+          console.log('Loaded categories:', loadedCategories);
+        } else {
+          console.warn('No data found in AsyncStorage.');
+          setCategories(categoriesResult); // Fallback to categoriesResult if no data found
+        }
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      }
+    };
+
+    loadCategories();
+  }, []);
+
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -92,7 +92,7 @@ function AddBudget({ navigation }) {
 
           <View style={styles.item}>
             <Text style={styles.itemHeader}><Header>Kategorie</Header></Text>
-            <CategoriesDropdown props={categories} />
+            <CategoriesDropdown categories={categories} />
           </View>
 
           <View style={styles.item}>
@@ -116,7 +116,7 @@ function AddBudget({ navigation }) {
               size: 'mid',
               text: 'Speichern',
               img: require('../../Icons/Button/save.png'),
-              //onPress: 
+              // onPress: hier die Funktion für Speichern einfügen
             }} />
           </View>
         </View>
@@ -161,10 +161,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     gap: 32,
-  },
-  content: {
-    flexDirection: 'column',
-    gap: 8,
   },
 
   item: {
