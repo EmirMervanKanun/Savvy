@@ -76,6 +76,7 @@ function AddBudget({ navigation }) {
     loadCategories();
   }, []);
 
+
   return (
     <ScrollView>
       <View style={styles.container}>

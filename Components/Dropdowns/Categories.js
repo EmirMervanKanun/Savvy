@@ -9,7 +9,7 @@ const CategoriesDropdown = ({ categories }) => {
   const [selectedData, setSelectedData] = useState(placeholder);
   const [selectedIcon, setSelectedIcon] = useState(categories[0].icon);
   const [isClicked, setIsClicked] = useState(false);
-  console.log('Received categories:', categories);
+  // console.log('Received categories:', categories);
 
   return (
     <View style={styles.container}>
