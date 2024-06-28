@@ -68,9 +68,9 @@ export default function App() {
   const { savvy, loading } = useSavvyStorage();
 
   const [fontsLoaded, fontError] = useFonts({
-    'Sora-Regular': require('../Budget/assets/Fonts/Sora-Regular.ttf'),
-    'Sora-Bold': require('../Budget/assets/Fonts/Sora-Bold.ttf'),
-    'Sora-SemiBold': require('../Budget/assets/Fonts/Sora-SemiBold.ttf')
+    'Sora-Regular': require('./assets/Fonts/Sora-Regular.ttf'),
+    'Sora-Bold': require('./assets/Fonts/Sora-Bold.ttf'),
+    'Sora-SemiBold': require('./assets/Fonts/Sora-SemiBold.ttf')
   });
 
   if (loading || (!fontsLoaded && !fontError)) {
