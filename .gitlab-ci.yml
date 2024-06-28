@@ -19,6 +19,7 @@ unit-test:
   dependencies:
     - build
   script:
+    - npm install
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   artifacts:
