@@ -7,7 +7,7 @@ build:
   stage: build
   image: node:latest
   artifacts:
-    untreacked: true
+    untracked: true
   script:
     - npm install
 #  only:
