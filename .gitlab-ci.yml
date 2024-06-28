@@ -6,13 +6,11 @@ stages:
 build:
   stage: build
   image: node:latest
-  artifacts:
-    untracked: true
   script:
     - npm install
 #  only:
 #    - main
-#    - dev 
+#    - dev
 
 unit-test:
   image: node:latest
@@ -25,11 +23,10 @@ unit-test:
   artifacts:
     paths:
       - coverage/
-    when: always
+    when: on_success
     reports:
       junit:
         - junit.xml
-  when: manual
 
 #$KEYSTORE_PASSWORD in gitlab-settings unter Einstellungen -> Variablen
 deploy-android:
@@ -47,3 +44,5 @@ deploy-android:
       - $CI_PROJECT_NAME-$CI_COMMIT_REF_NAME.apk
     expire_in: 7 days
   when: manual
+
+#test
