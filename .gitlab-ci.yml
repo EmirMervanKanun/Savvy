@@ -5,7 +5,6 @@ stages:
 
 build:
   stage: build
-  image: node:latest
   cache:
     paths:
       - node_modules/
@@ -16,7 +15,6 @@ build:
 #    - dev
 
 unit-test:
-  image: node:latest
   stage: test
   dependencies:
     - build
