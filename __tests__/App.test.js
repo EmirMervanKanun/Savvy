@@ -2,6 +2,9 @@ import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import App from '../App';
+import Navbar from '../Components/Navigation/Navbar';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Mock AsyncStorage
 jest.mock('@react-native-async-storage/async-storage', () => ({
@@ -15,23 +18,35 @@ jest.mock('expo-font', () => ({
   useFonts: () => [true, null],
 }));
 
-it('renders App correctly', async () => {
-  await act(async () => {
-    renderer.create(<App />);
+// Mock other components
+jest.mock('../Components/Navigation/Navbar', () => 'Navbar');
+jest.mock('@react-navigation/native', () => ({
+  NavigationContainer: jest.fn(({ children }) => children)
+}));
+jest.mock('react-native-safe-area-context', () => ({
+  SafeAreaProvider: jest.fn(({ children }) => children)
+}));
+
+describe('App Component', () => {
+  it('renders App correctly', async () => {
+    await act(async () => {
+      renderer.create(<App />);
+    });
+  });
+
+  it('contains NavigationContainer and Navbar', async () => {
+    let tree;
+    await act(async () => {
+      tree = renderer.create(<App />);
+    });
+
+    const navigationContainerInstance = tree.root.findByType(NavigationContainer);
+    expect(navigationContainerInstance).not.toBeNull();
+
+    const navbarInstance = tree.root.findByType(Navbar);
+    expect(navbarInstance).not.toBeNull();
+
+    const safeAreaProviderInstance = tree.root.findByType(SafeAreaProvider);
+    expect(safeAreaProviderInstance).not.toBeNull();
   });
 });
-
-
-
-/*
-import 'react-native';
-import React from 'react';
-import renderer from 'react-test-renderer';
-import App from '../App';
-
-// Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
-
-it('renders App correctly', () => {
-    renderer.create(<App />);
-});*/
