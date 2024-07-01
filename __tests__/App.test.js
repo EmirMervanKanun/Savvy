@@ -1,11 +1,24 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-
+import renderer, { act } from 'react-test-renderer';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import App from '../App';
 
+// Mock AsyncStorage
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  setItem: jest.fn(() => Promise.resolve()),
+  getItem: jest.fn(() => Promise.resolve(null)),
+  removeItem: jest.fn(() => Promise.resolve()),
+}));
 
-it('renders App correctly', () => {
-  renderer.create(<App />);
+// Mock useFonts
+jest.mock('expo-font', () => ({
+  useFonts: () => [true, null],
+}));
+
+it('renders App correctly', async () => {
+  await act(async () => {
+    renderer.create(<App />);
+  });
 });
 
 
