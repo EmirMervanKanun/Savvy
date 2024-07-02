@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableHighlight } from "react-native";
+import { View, StyleSheet, TouchableHighlight, ScrollView } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import TransStanOrder from "./TransStanOrder";
 import Button from "../Buttons/Button";
 import { useNavigation } from '@react-navigation/native';
 
-const TransactionSwipeList = ({ transactions }) => {
+const TransactionSwipeList = ({ transactions, height }) => {
 
     const navigation = useNavigation();
 
@@ -61,20 +61,23 @@ const TransactionSwipeList = ({ transactions }) => {
     };
 
     return (
-        <SwipeListView
-            contentContainerStyle={styles.container}
-            data={listData}
-            renderItem={renderItem}
-            renderHiddenItem={renderHiddenItem}
-            rightOpenValue={-100}
-            disableRightSwipe
-        />
+        <View style={{height}}>
+            <SwipeListView
+                contentContainerStyle={styles.listContainer}
+                data={listData}
+                renderItem={renderItem}
+                renderHiddenItem={renderHiddenItem}
+                rightOpenValue={-100}
+                disableRightSwipe
+                showsVerticalScrollIndicator={false}
+            />
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        display: "flex",
+    listContainer: {
+        flexGrow: 1,
     },
     itemContainer: {
         marginBottom: 24,
