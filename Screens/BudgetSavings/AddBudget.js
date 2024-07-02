@@ -8,14 +8,6 @@ import CategoriesDropdown from '../../Components/Dropdowns/Categories';
 import CurrencySmallDropdown from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';
 
-import Budget from './Budget';
-
-import { CommonActions } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import App from '../../App';
-
-const Stack = createNativeStackNavigator();
 
 //const categoriesBackend = App.
 

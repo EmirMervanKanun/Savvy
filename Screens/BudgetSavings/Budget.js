@@ -3,16 +3,12 @@ import React from 'react';
 import Button from '../../Components/Buttons/Button';
 import BudgetSwipeList from '../../Components/Objects/BudgetSwipeList';
 
-import AddBudget from './AddBudget';
 
 import Budgets from "./Budgets";
 
 import { CommonActions } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator();
-
-function Budget({ navigation }) {
+export default function Budget({ navigation }) {
   return (
     <ScrollView >
       <View style={styles.container}>
@@ -32,21 +28,6 @@ function Budget({ navigation }) {
         }} />
       </View>
     </ScrollView>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Budget" component={Budget} options={{ headerShown: false }} />
-      <Stack.Screen name="AddBudget" component={AddBudget} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function BudgetScreen() {
-  return (
-    <MyStack />
   );
 }
 

@@ -14,6 +14,14 @@ import EditTransaction from './Screens/AddTransaction/EditTransaction.js';
 import AddSaving from './Screens/BudgetSavings/AddSaving.js';
 import AddCategory from './Screens/Settings/AddCategory.js';
 import Registry from './Screens/Onboarding/Registry.js';
+import EditProfile from './Screens/Settings/EditProfile.js';
+import Categories from './Screens/Settings/Categories.js';
+import Notifications from './Screens/Settings/Notifications.js';
+import AGB from './Screens/Settings/Agb.js';
+import DataProtection from './Screens/Settings/DataProtection.js';
+import Imprint from './Screens/Settings/Imprint.js';
+import Budget from './Screens/BudgetSavings/Budget.js';
+import Saving from './Screens/BudgetSavings/Saving.js';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Navbar from './Components/Navigation/Navbar.js';
@@ -122,6 +130,14 @@ export default function App() {
               component={AddCategory}
               options={{ headerShown: false }}
             />
+            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />
+            <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
+            <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
+            <Stack.Screen name="AGB" component={AGB} options={{ headerShown: false }} />
+            <Stack.Screen name="DataProtection" component={DataProtection} options={{ headerShown: false }} />
+            <Stack.Screen name="Imprint" component={Imprint} options={{ headerShown: false }} />
+            <Stack.Screen name="Budget" component={Budget} options={{ headerShown: false }} />
+            <Stack.Screen name="Saving" component={Saving} options={{ headerShown: false }} />
           </Stack.Navigator>
         </GestureHandlerRootView>
       </NavigationContainer>

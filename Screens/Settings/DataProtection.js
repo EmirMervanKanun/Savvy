@@ -3,13 +3,10 @@ import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
 import ButtonBack from '../../Components/Buttons/ButtonBack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import Settings from '../Settings/Settings';
 
-const Stack = createNativeStackNavigator();
 
-function DataProtectionStart({ navigation }) {
+export default function DataProtectionStart({ navigation }) {
   return (
     <View style={styles.container}>
 
@@ -30,21 +27,6 @@ function DataProtectionStart({ navigation }) {
         Datenschutzerklärungen stehen</PlaceholderText>
       </View>
     </View>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="DataProtection" component={DataProtectionStart} options={{headerShown: false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  );
-}
-
-export default function DataProtection() {
-  return (
-    <MyStack/>
   );
 }
 

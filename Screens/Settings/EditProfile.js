@@ -6,13 +6,9 @@ import InputText from '../../Components/Inputfelder/InputText';
 import SelectionProfile from '../../Components/Selection/SelectProfilePicture';
 import CurrencyBigDropdown from '../../Components/Dropdowns/CurrencyBig';
 import Button from '../../Components/Buttons/Button';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import Settings from '../Settings/Settings';
 
-const Stack = createNativeStackNavigator();
-
-function EditProfileStart({ navigation }) {
+export default function EditProfileStart({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -71,21 +67,6 @@ function EditProfileStart({ navigation }) {
       </View>
     </ScrollView>
   );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="EditProfile" component={EditProfileStart} options={{headerShown:false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown:false}}/>
-    </Stack.Navigator>
-  );
-}
-
-export default function EditProfile(){
-  return(
-    <MyStack/>
-  )
 }
 
 const styles = StyleSheet.create({

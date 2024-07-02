@@ -3,13 +3,9 @@ import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
 import ButtonBack from '../../Components/Buttons/ButtonBack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import Settings from '../Settings/Settings';
 
-const Stack = createNativeStackNavigator();
-
-function AgbStart({ navigation }) {
+export default function AgbStart({ navigation }) {
   return (
     <View style={styles.container}>
 
@@ -29,21 +25,6 @@ function AgbStart({ navigation }) {
         <PlaceholderText>Hier könnte ein Text zu den AGBs stehen</PlaceholderText>
       </View>
     </View>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Agb" component={AgbStart} options={{headerShown: false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  );
-}
-
-export default function Agb() {
-  return (
-    <MyStack/>
   );
 }
 

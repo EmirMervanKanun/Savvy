@@ -3,13 +3,10 @@ import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import PlaceholderText from '../../Components/TextComponents/PlaceholderText';
 import ButtonBack from '../../Components/Buttons/ButtonBack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import Settings from '../Settings/Settings';
 
-const Stack = createNativeStackNavigator();
 
-function ImprintStart({ navigation }) {
+export default function ImprintStart({ navigation }) {
   return (
     <View style={styles.container}>
 
@@ -29,21 +26,6 @@ function ImprintStart({ navigation }) {
         <PlaceholderText>Hier könnte ein Text zum Impressum stehen</PlaceholderText>
       </View>
     </View>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Imprint" component={ImprintStart} options={{headerShown: false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  );
-}
-
-export default function Imprint() {
-  return (
-    <MyStack/>
   );
 }
 

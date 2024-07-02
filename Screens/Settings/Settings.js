@@ -1,18 +1,9 @@
 import { Text, Pressable, Image, View, StyleSheet } from 'react-native';
 import ButtonSettingsItem from '../../Components/Buttons/SettingsItem';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import EditProfile from '../Settings/EditProfile';
-import Notifications from '../Settings/Notifications';
-import DataProtection from '../Settings/DataProtection';
-import AGB from '../Settings/Agb';
-import Imprint from '../Settings/Imprint';
-import Categories from '../Settings/Categories';
 import Header from '../../Components/TextComponents/Header';
 
-const Stack = createNativeStackNavigator();
-
-function SettingsStart({ navigation }) {
+export default function Settings({ navigation }) {
   return (
     <View style={styles.container}>
 
@@ -80,26 +71,6 @@ function SettingsStart({ navigation }) {
       </View>
     </View>
   );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="SettingsMain" component={SettingsStart} options={{ headerShown: false }} />
-      <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />
-      <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
-      <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
-      <Stack.Screen name="AGB" component={AGB} options={{ headerShown: false }} />
-      <Stack.Screen name="DataProtection" component={DataProtection} options={{ headerShown: false }} />
-      <Stack.Screen name="Imprint" component={Imprint} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function Settings() {
-  return (
-    <MyStack />
-  )
 }
 
 const styles = StyleSheet.create({
