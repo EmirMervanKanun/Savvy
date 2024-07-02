@@ -17,8 +17,9 @@ import AddCategory from './Screens/Settings/AddCategory.js';
 import Registry from './Screens/Onboarding/Registry.js';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MyTabs from './Components/Navigation/MyTabs.js';
 import Navbar from './Components/Navigation/Navbar.js';
+
+const Stack = createNativeStackNavigator();
 
 // Hook für Lade- und Speicherlogik
 function useSavvyStorage() {
@@ -80,7 +81,50 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Navbar />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Onboarding"
+              component={OnboardingScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Registry"
+              component={Registry}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="MainTabs"
+              component={Navbar}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Settings"
+              component={Settings}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddBudget"
+              component={AddBudget}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="EditTransaction"
+              component={EditTransaction}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddSaving"
+              component={AddSaving}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddCategory"
+              component={AddCategory}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </GestureHandlerRootView>
       </NavigationContainer>
     </SafeAreaProvider>
   );
