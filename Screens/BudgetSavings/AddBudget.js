@@ -75,7 +75,7 @@ const handleGoBack = (navigation) => {
   //navigation.goBack();
 };
 
-function AddBudget({ navigation }) {
+export default function AddBudget({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
