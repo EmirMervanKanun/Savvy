@@ -10,12 +10,12 @@ const dropdownData = [
     { label: 'USD $', value: '2' },
 ];
 
-const CurrencySmallDropdown = () => {
-    const placeholder = dropdownData[1].label;      //"Euro €" ist standardmäßig ausgewählt
+const CurrencySmallDropdown = ({ currencyData }) => {
+    const placeholder = currencyData[1].label;      //"Euro €" ist standardmäßig ausgewählt
 
     const [selectedData, setSelectedData] = useState(placeholder);
     const [isClicked, setIsClicked] = useState(false);
-    const [data, setData] = useState(dropdownData);
+    const [data, setData] = useState(currencyData);
 
     return (
         <View style={styles.container}>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         height: 48,
         width: 90,
-        paddingLeft: 12, 
+        paddingLeft: 12,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         gap: 4,

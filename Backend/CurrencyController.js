@@ -1,26 +1,22 @@
 class Currency {
-    symbol;
-    name;
-    short;
-  
-    constructor(symbol, name, short) {
-      this.symbol = symbol;
-      this.name = name;
-      this.short = short;
-    }
-  
-    toJSON() {
-      return {
-        symbol: this.symbol,
-        name: this.name,
-        short: this.short
-      };
-    }
-  
-    static fromJSON(json) {
-      return new Currency(json.symbol, json.name, json.short);
-    }
+  label;
+  value;
+
+  constructor(label, value) {
+    this.label = label;
+    this.value = value;
   }
-  
-  export default Currency;
-  
+
+  toJSON() {
+    return {
+      label: this.label,
+      value: this.value
+    };
+  }
+
+  static fromJSON(json) {
+    return new Currency(json.label, json.value);
+  }
+}
+
+export default Currency;

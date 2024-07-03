@@ -42,10 +42,14 @@ class Savvy {
     this.categories.push(new Category(label, iconKey));
   }
 
+  getCurrencies() {
+    return this.currency;
+  }
+
   initCurrency() {
-    this.currency.push(new Currency(" ", " ", " ")); // Placeholder für Dropdown
-    this.currency.push(new Currency("€", "Euro", "EUR"));
-    this.currency.push(new Currency("$", "Dollar", "USD"));
+    this.currency.push(new Currency(" ", "0" )); // Placeholder für Dropdown
+    this.currency.push(new Currency("Euro €", "1"));
+    this.currency.push(new Currency("USD $", "2"));
   }
 
   initSettings() {
