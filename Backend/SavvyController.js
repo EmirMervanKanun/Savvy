@@ -7,7 +7,6 @@ import Settings from './SettingsController.js';
 import Transaction from './TransactionController.js';
 import User from './UserController.js';
 
-
 class Savvy {
   user;
   transactions = [];
@@ -21,7 +20,6 @@ class Savvy {
     this.initCategories();
     this.initSettings();
     this.initCurrency();
-    this.initSettings();
   }
 
   registerUser(firstname, lastname, amount, currency, img) {
@@ -40,8 +38,8 @@ class Savvy {
     this.savings.push(new Savings(title, endDate, category, new Amount(amount, currency)));
   }
 
-  addCategory(label, icon) {
-    this.categories.push(new Category(label, icon));
+  addCategory(label, iconKey) {
+    this.categories.push(new Category(label, iconKey));
   }
 
   initCurrency() {
@@ -56,17 +54,17 @@ class Savvy {
 
   initCategories() {
     this.categories.push(new Category("Wähle eine Kategorie aus...", null)); // Placeholder für Dropdown
-    this.categories.push(new Category("Klamotten", "../../Icons/Categories/clothes.png"));
-    this.categories.push(new Category("Technik", "../../Icons/Categories/devices.png"));
-    this.categories.push(new Category("Lebensmittel", "../../Icons/Categories/groceries.png"));
-    this.categories.push(new Category("Medikamente", "../../Icons/Categories/medication.png"));
-    this.categories.push(new Category("Haustier", "../../Icons/Categories/pets.png"));
-    this.categories.push(new Category("Miete", "../../Icons/Categories/rent.png"));
-    this.categories.push(new Category("Transportmittel", "../../Icons/Categories/transportation.png"));
+    this.categories.push(new Category("Klamotten", "clothes"));
+    this.categories.push(new Category("Technik", "devices"));
+    this.categories.push(new Category("Lebensmittel", "groceries"));
+    this.categories.push(new Category("Medikamente", "medication"));
+    this.categories.push(new Category("Haustier", "pets"));
+    this.categories.push(new Category("Miete", "rent"));
+    this.categories.push(new Category("Transportmittel", "transportation"));
   }
 
   initTest() {
-    this.registerUser("Max", "Mustermann", 5000, this.currency[0], "../../Icons/ProfilePictures/profilePicture4.png");
+    this.registerUser("Max", "Mustermann", 5000, this.currency[0], "profilePicture4");
     this.addTransaction("Ausgabe", "Einmalig", "2021-06-01", 50, this.currency[0], this.categories[1]);
     this.addTransaction("Einnahme", "Monatlich", "2021-06-01", 500, this.currency[0], this.categories[1]);
     this.addBudget("Lebensmittel", "2021-06-01", "2021-06-30", this.categories[2], 1000, this.currency[0]);
@@ -104,7 +102,7 @@ class Savvy {
             t.repeat,
             t.date,
             new Amount(t.amount.value, t.amount.currency),
-            new Category(t.category.label, t.category.icon)
+            new Category(t.category.label, t.category.iconKey)
           )
         );
       }
@@ -115,7 +113,7 @@ class Savvy {
             b.title,
             b.startDate,
             b.endDate,
-            new Category(b.category.label, b.category.icon),
+            new Category(b.category.label, b.category.iconKey),
             new Amount(b.amount.value, b.amount.currency)
           )
         );
@@ -126,7 +124,7 @@ class Savvy {
           new Savings(
             s.title,
             s.endDate,
-            new Category(s.category.label, s.category.icon),
+            new Category(s.category.label, s.category.iconKey),
             new Amount(s.amount.value, s.amount.currency)
           )
         );
@@ -134,7 +132,7 @@ class Savvy {
 
       if (json.categories) {
         savvy.categories = json.categories.map(c =>
-          new Category(c.label, c.icon)
+          new Category(c.label, c.iconKey)
         );
       }
 
@@ -158,7 +156,6 @@ class Savvy {
     }
     return savvy;
   }
-
 }
 
 export default Savvy;

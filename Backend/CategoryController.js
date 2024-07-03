@@ -1,9 +1,15 @@
+// CategoryController.js
+import { iconMappings } from './iconMappings';
+
 class Category {
-    constructor(label, icon) {
-      this.label = label;
-      this.icon = icon;
-    }
+  constructor(label, iconKey) {
+    this.label = label;
+    this.iconKey = iconKey;
   }
-  
-  export default Category;
-  
+
+  getIcon() {
+    return this.iconKey ? iconMappings[this.iconKey] : null;
+  }
+}
+
+export default Category;

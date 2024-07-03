@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
 import COLORS from "../Farben";
 
-const CategoriesDropdown = ({ categories }) => {
+const categories = [
+  { label: 'Wähle eine Kategorie aus...', icon: null },
+  { label: 'Gaming', icon: require('../../Icons/Categories/gaming.png') },
+  { label: 'Geräte', icon: require('../../Icons/Categories/devices.png') },
+  { label: 'Haustiere', icon: require('../../Icons/Categories/pets.png') },
+  { label: 'Kleidung', icon: require('../../Icons/Categories/clothes.png') },
+  { label: 'Lebensmittel', icon: require('../../Icons/Categories/groceries.png') },
+  { label: 'Medikamente', icon: require('../../Icons/Categories/medication.png') },
+  { label: 'Miete', icon: require('../../Icons/Categories/rent.png') },
+  { label: 'Musik', icon: require('../../Icons/Categories/music.png') },
+  { label: 'Party', icon: require('../../Icons/Categories/party.png') },
+  { label: 'Reisen', icon: require('../../Icons/Categories/traveling.png') },
+  { label: 'Sport', icon: require('../../Icons/Categories/sports.png') },
+  { label: 'Transportation', icon: require('../../Icons/Categories/transportation.png') },
+];
+
+const CategoriesDropdown = () => {
   const placeholder = categories[0].label;
   const [selectedData, setSelectedData] = useState(placeholder);
-  const [selectedIcon, setSelectedIcon] = useState(categories[0].icon);
+  const [selectedIcon, setSelectedIcon] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
-  // console.log('Received categories:', categories);
 
   return (
     <View style={styles.container}>
@@ -18,9 +33,7 @@ const CategoriesDropdown = ({ categories }) => {
         onPress={() => setIsClicked(!isClicked)}
       >
         <View style={styles.dropdownAuswahl}>
-          <View>
-            {selectedIcon && <Image source={selectedIcon} style={{ width: 32, height: 32 }} />}
-          </View>
+          {selectedIcon && <Image source={selectedIcon} style={{ width: 32, height: 32 }} />}
           <Text style={styles.fontColor}>
             <ButtonText style={styles.text}>{selectedData}</ButtonText>
           </Text>
@@ -36,9 +49,9 @@ const CategoriesDropdown = ({ categories }) => {
       </TouchableOpacity>
       {isClicked && (
         <View style={styles.dropdownArea}>
-          {categories.map((item, index) => ( // Füge den Index als key hinzu
+          {categories.map((item, index) => (
             <TouchableOpacity
-              key={index} // Verwende den Index als key
+              key={index}
               style={styles.dropdownItem}
               onPress={() => {
                 setSelectedData(item.label);
