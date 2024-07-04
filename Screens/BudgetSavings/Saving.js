@@ -5,14 +5,9 @@ import SavingSwipeList from '../../Components/Objects/SavingSwipeList';
 
 import Savings from "./Savings";
 
-import AddSaving from "./AddSaving";
-
 import { CommonActions } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator();
-
-function Saving({ navigation }) {
+export default function Saving({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -32,21 +27,6 @@ function Saving({ navigation }) {
         }} />
       </View>
     </ScrollView>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Saving" component={Saving} options={{ headerShown: false }} />
-      <Stack.Screen name="AddSaving" component={AddSaving} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  );
-}
-
-export default function BudgetScreen() {
-  return (
-    <MyStack />
   );
 }
 

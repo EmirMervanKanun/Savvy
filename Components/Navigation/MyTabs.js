@@ -1,7 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View, Text, Image, Platform } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import Home from '../../Screens/Home/Home';
 import FixedTransactions from '../../Screens/FixedTransactions/FixedTransactions';
@@ -26,9 +25,9 @@ const screenOptions = {
     }
 };
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     container: {
-      lex: 1,
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
     },
@@ -57,7 +56,7 @@ const styles = StyleSheet.create ({
       borderRadius: 25, 
       top: -21,
     },
-})
+});
 
 function MyTabs() {
   return (
@@ -70,7 +69,7 @@ function MyTabs() {
             return (
               <View style={styles.container}>
                 <Image
-                  source={ focused ? require('../../Icons/NavBar/HauptmenüFocused.png'): require('../../Icons/NavBar/HauptmenüUnfocused.png')}
+                  source={focused ? require('../../Icons/NavBar/HauptmenüFocused.png') : require('../../Icons/NavBar/HauptmenüUnfocused.png')}
                   style={styles.icons}
                 />
                 <Text style={{color: focused ? COLORS.primaryDark : COLORS.primaryMid}}><NavText>Hauptmenü</NavText></Text>
@@ -87,7 +86,7 @@ function MyTabs() {
             return (
               <View style={styles.container}>
                 <Image
-                  source={ focused ? require('../../Icons/NavBar/SparzieleFocused.png'): require('../../Icons/NavBar/SparzieleUnfocused.png')}
+                  source={focused ? require('../../Icons/NavBar/SparzieleFocused.png') : require('../../Icons/NavBar/SparzieleUnfocused.png')}
                   style={styles.icons}
                 />
                 <Text style={{color: focused ? COLORS.primaryDark : COLORS.primaryMid}}><NavText>Sparziele</NavText></Text>
@@ -96,7 +95,6 @@ function MyTabs() {
           }
         }}
       />
-      {/*Plus anschauen, evtl anders*/}
       <Tab.Screen 
         name="AddTransaction"
         component={AddTransaction}
@@ -117,7 +115,7 @@ function MyTabs() {
                   <View style={styles.plus}>
                     <View style={{...styles.plusBack, backgroundColor: focused ? COLORS.primaryDark : COLORS.primaryMid}}>
                       <Image
-                        source={ focused ? require('../../Icons/NavBar/PlusFocused.png'): require('../../Icons/NavBar/PlusUnfocused.png')}
+                        source={focused ? require('../../Icons/NavBar/PlusFocused.png') : require('../../Icons/NavBar/PlusUnfocused.png')}
                         style={styles.icons}
                       />
                     </View>
@@ -136,7 +134,7 @@ function MyTabs() {
             return (
               <View style={styles.container}>
                 <Image
-                  source={ focused ? require('../../Icons/NavBar/DauerauftragFocused.png'): require('../../Icons/NavBar/DauerauftragUnfocused.png')}
+                  source={focused ? require('../../Icons/NavBar/DauerauftragFocused.png') : require('../../Icons/NavBar/DauerauftragUnfocused.png')}
                   style={{...styles.icons, width: 33}}
                 />
                 <Text style={{color: focused ? COLORS.primaryDark : COLORS.primaryMid}}><NavText>Dauerauftrag</NavText></Text>
@@ -153,7 +151,7 @@ function MyTabs() {
             return (
               <View style={styles.container}>
                 <Image
-                  source={ focused ? require('../../Icons/NavBar/AusgabenFocused.png'): require('../../Icons/NavBar/AusgabenUnfocused.png')}
+                  source={focused ? require('../../Icons/NavBar/AusgabenFocused.png') : require('../../Icons/NavBar/AusgabenUnfocused.png')}
                   style={styles.icons}
                 />
                 <Text style={{color: focused ? COLORS.primaryDark : COLORS.primaryMid}}><NavText>Transaktionen</NavText></Text>
@@ -166,17 +164,4 @@ function MyTabs() {
   );
 }
 
-export default function Navbar() {
-  const insets = useSafeAreaInsets();
-  return (
-    <View 
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        flex: 1,
-      }}
-    >
-      <MyTabs />
-    </View>
-  );
-}
+export default MyTabs;

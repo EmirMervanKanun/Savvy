@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Components/Navigation/Navbar.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Savvy from './Backend/SavvyController.js';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import OnboardingScreen from './Screens/Onboarding/Onboarding.js';
+import Settings from './Screens/Settings/Settings.js';
+import AddBudget from './Screens/BudgetSavings/AddBudget.js';
+import EditTransaction from './Screens/AddTransaction/EditTransaction.js';
+import AddSaving from './Screens/BudgetSavings/AddSaving.js';
+import AddCategory from './Screens/Settings/AddCategory.js';
+import Registry from './Screens/Onboarding/Registry.js';
+import EditProfile from './Screens/Settings/EditProfile.js';
+import Categories from './Screens/Settings/Categories.js';
+import Notifications from './Screens/Settings/Notifications.js';
+import AGB from './Screens/Settings/Agb.js';
+import DataProtection from './Screens/Settings/DataProtection.js';
+import Imprint from './Screens/Settings/Imprint.js';
+import Budget from './Screens/BudgetSavings/Budget.js';
+import Saving from './Screens/BudgetSavings/Saving.js';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Navbar from './Components/Navigation/Navbar.js';
+
+const Stack = createNativeStackNavigator();
 
 
 export const storeData = async (key, value) => {
@@ -89,7 +109,58 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Navbar />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Onboarding"
+              component={OnboardingScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Registry"
+              component={Registry}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="MainTabs"
+              component={Navbar}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Settings"
+              component={Settings}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddBudget"
+              component={AddBudget}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="EditTransaction"
+              component={EditTransaction}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddSaving"
+              component={AddSaving}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddCategory"
+              component={AddCategory}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />
+            <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
+            <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
+            <Stack.Screen name="AGB" component={AGB} options={{ headerShown: false }} />
+            <Stack.Screen name="DataProtection" component={DataProtection} options={{ headerShown: false }} />
+            <Stack.Screen name="Imprint" component={Imprint} options={{ headerShown: false }} />
+            <Stack.Screen name="Budget" component={Budget} options={{ headerShown: false }} />
+            <Stack.Screen name="Saving" component={Saving} options={{ headerShown: false }} />
+          </Stack.Navigator>
+        </GestureHandlerRootView>
       </NavigationContainer>
     </SafeAreaProvider>
   );

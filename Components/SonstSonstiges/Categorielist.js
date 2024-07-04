@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image, Text, FlatList } from 'react-native';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 
 const Categories = ({ props }) => {

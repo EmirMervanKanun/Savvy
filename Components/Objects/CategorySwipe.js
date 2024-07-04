@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image, Text} from 'react-native';
 import PlaceholderText from '../TextComponents/PlaceholderText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 
 export default CategorySwipe =({ props }) => {

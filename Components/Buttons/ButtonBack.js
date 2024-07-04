@@ -1,6 +1,6 @@
 import { Text, Pressable, Image, StyleSheet } from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 const ButtonBack = ({ onPress }) => {
     return (

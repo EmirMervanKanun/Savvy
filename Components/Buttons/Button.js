@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, View, Image, Pressable, Text } from 'react-native';
 import ButtonText from '../TextComponents/ButtonText';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 
 
 // größe, farbe rot oder blau, icon an oder aus, text an oder aus aber nur wenn icon an
 
 // button mit icon und text
 
-//button mit Text
+//button mit Text 
 
 //button nur Icon
 const Button = ({ props }) => {
@@ -62,7 +62,7 @@ const Button = ({ props }) => {
 export default Button;
 
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     button: {
         flex: null,
         flexDirection: 'row',

@@ -5,29 +5,27 @@ stages:
 
 build:
   stage: build
-  image: node:latest
-  artifacts:
-    untracked: true
+  cache:
+    paths:
+      - node_modules/
   script:
     - npm install
-    - npm update
-    - npx expo start
 #  only:
 #    - main
 #    - dev
 
 unit-test:
-  image: node:latest
   stage: test
   dependencies:
     - build
   script:
+    - npm install
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   artifacts:
     paths:
       - coverage/
-    when: always
+    when: on_success
     reports:
       junit:
         - junit.xml
@@ -48,3 +46,5 @@ deploy-android:
       - $CI_PROJECT_NAME-$CI_COMMIT_REF_NAME.apk
     expire_in: 7 days
   when: manual
+
+#test

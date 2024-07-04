@@ -1,5 +1,5 @@
 import { StyleSheet, Image, Pressable, Text } from 'react-native';
-import COLORS from '../Farben';
+import COLORS from '../Colors';
 import ButtonText from '../TextComponents/ButtonText';
 
 export const ButtonSettingsItem = ({ children, onPress }) => {

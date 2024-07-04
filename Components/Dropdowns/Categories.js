@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
 import ButtonText from "../TextComponents/ButtonText";
 import PlaceholderText from "../TextComponents/PlaceholderText";
-import COLORS from "../Farben";
+import COLORS from "../Colors";
 
 const categories = [
   { label: 'Wähle eine Kategorie aus...', icon: null },

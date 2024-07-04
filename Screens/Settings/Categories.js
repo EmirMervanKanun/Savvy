@@ -2,15 +2,11 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import ButtonBack from '../../Components/Buttons/ButtonBack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import Settings from '../Settings/Settings';
-import AddCategory from '../Settings/AddCategory';
 import Button from '../../Components/Buttons/Button';
 
-const Stack = createNativeStackNavigator();
 
-function CategoriesStart({ navigation }) {
+export default function CategoriesStart({ navigation }) {
   return (
     <View style={styles.container}>
 
@@ -42,22 +38,6 @@ function CategoriesStart({ navigation }) {
         }/>
         </View>
     </View>
-  );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Categories" component={CategoriesStart} options={{headerShown: false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
-      <Stack.Screen name="AddCategory" component={AddCategory} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  );
-}
-
-export default function Categories() {
-  return (
-    <MyStack/>
   );
 }
 

@@ -1,3 +1,4 @@
+let COLORS;
 export default COLORS = {
     schriftDark: '#2D3142',
     schriftMid: '#7D8091',

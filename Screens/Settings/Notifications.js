@@ -3,11 +3,7 @@ import React from 'react';
 import Header from '../../Components/TextComponents/Header';
 import ButtonBack from '../../Components/Buttons/ButtonBack';
 import Notification from '../../Components/SonstSonstiges/Notifications';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CommonActions } from '@react-navigation/native';
-import Settings from '../Settings/Settings';
-
-const Stack = createNativeStackNavigator();
 
 const notifications = [
     { label: 'Mitteilungen erhalten' },
@@ -16,7 +12,7 @@ const notifications = [
     { label: 'Banner' },
 ];
 
-function NotificationStart ({ navigation }) {
+export default function NotificationStart ({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
@@ -36,21 +32,6 @@ function NotificationStart ({ navigation }) {
       </View>
     </View>
   );
-}
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Notifications" component={NotificationStart} options={{headerShown:false}}/>
-      <Stack.Screen name="Settings" component={Settings} options={{headerShown:false}}/>
-    </Stack.Navigator>
-  );
-}
-
-export default function Notifications(){
-  return(
-    <MyStack/>
-  )
 }
 
 const styles = StyleSheet.create({

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Image, TouchableOpacity, View } from "react-native";
-import COLORS from "../Farben";
+import COLORS from "../Colors";
 import Header from "../TextComponents/Header";
-import Button from '../Buttons/Button/';
+import Button from '../Buttons/Button';
 
 const ProfilePictureSelector = () => {
     const [isClicked, setIsClicked] = useState(false);
