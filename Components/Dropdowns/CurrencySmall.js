@@ -10,12 +10,12 @@ const dropdownData = [
     { label: 'USD $', value: '2' },
 ];
 
-const CurrencySmallDropdown = ({ currencyData }) => {
-    const placeholder = currencyData[1].label;      //"Euro €" ist standardmäßig ausgewählt
+const CurrencySmallDropdown = () => {
+    const placeholder = dropdownData[1].label;      //"Euro €" ist standardmäßig ausgewählt
 
     const [selectedData, setSelectedData] = useState(placeholder);
     const [isClicked, setIsClicked] = useState(false);
-    const [data, setData] = useState(currencyData);
+    const [data, setData] = useState(dropdownData);
 
     return (
         <View style={styles.container}>

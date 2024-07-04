@@ -65,7 +65,7 @@ function AddBudget({ navigation }) {
               {/* son dreck hier */}
               {/* ich kann das alles nicht mehr */}
 
-              <CurrencySmallDropdown currencyData={currencies} />
+              <CurrencySmallDropdown />
             </View>
           </View>
 
