@@ -4,7 +4,7 @@ const Budgets = [
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
-            amount2: "2000",
+            amount2: "1200",
             dateStart: "25.06.2024",
             dateEnd: "25.07.2024"
         }
@@ -13,7 +13,7 @@ const Budgets = [
         title: "Games2",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
-            amount1: "1000",
+            amount1: "500",
             amount2: "2000",
             dateStart: "25.06.2024",
             dateEnd: "25.07.2024"
@@ -34,7 +34,7 @@ const Budgets = [
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
-            amount2: "2000",
+            amount2: "5000",
             dateStart: "25.06.2024",
             dateEnd: "25.07.2024"
         }
@@ -44,7 +44,7 @@ const Budgets = [
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
-            amount2: "2000",
+            amount2: "1200",
             dateStart: "25.06.2024",
             dateEnd: "25.07.2024"
         }
@@ -53,7 +53,7 @@ const Budgets = [
         title: "Games2",
         details: {
             img: require('../../Icons/Categories/gaming.png'),
-            amount1: "1000",
+            amount1: "500",
             amount2: "2000",
             dateStart: "25.06.2024",
             dateEnd: "25.07.2024"
@@ -74,11 +74,11 @@ const Budgets = [
         details: {
             img: require('../../Icons/Categories/gaming.png'),
             amount1: "1000",
-            amount2: "2000",
+            amount2: "5000",
             dateStart: "25.06.2024",
             dateEnd: "25.07.2024"
         }
-    },
+    }
    
 ];
 

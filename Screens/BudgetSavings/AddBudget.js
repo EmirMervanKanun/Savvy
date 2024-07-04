@@ -16,7 +16,7 @@ const handleGoBack = (navigation) => {
   navigation.goBack();
 };
 
-function AddBudget({ navigation }) {
+export default function AddBudget({ navigation }) {
   const [currencies, setCurrencies] = useState([]);
 
   useEffect(() => {
