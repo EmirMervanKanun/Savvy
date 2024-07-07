@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionScreen Komponente rendert korrekt 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "display": "flex",
+          "gap": 32,
+          "paddingBottom": 220,
+          "paddingTop": 24,
+        }
+      }
+    >
+      <div
+        data-testid="mocked-button-filter"
+        options={
+          [
+            "Gesamt",
+            "Einnahmen",
+            "Ausgaben",
+          ]
+        }
+        selectedAtStart="Gesamt"
+      />
+      <View
+        style={
+          {
+            "display": "flex",
+            "flexDirection": "column",
+            "paddingTop": 8,
+          }
+        }
+      >
+        <div
+          data-testid="mocked-transaction-swipe-list"
+          transactions={
+            [
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": false,
+                  "isStan": false,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": false,
+                  "isStan": false,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+              {
+                "details": {
+                  "amount": 1000,
+                  "date": "01.01.2021",
+                  "img": 1,
+                  "isIncome": true,
+                  "isStan": true,
+                  "stan": "Monthly",
+                },
+                "title": "Transaction1",
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

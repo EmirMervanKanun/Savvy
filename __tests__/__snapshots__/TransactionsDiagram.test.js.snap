@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionDiagramm Component changes filter when ButtonFilter is interacted with 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "display": "flex",
+      "gap": 32,
+      "paddingBottom": 220,
+      "paddingTop": 24,
+    }
+  }
+>
+  <div
+    data-testid="mocked-button-filter"
+    options={
+      [
+        "Gesamt",
+        "Einnahmen",
+        "Ausgaben",
+      ]
+    }
+    selectedAtStart="Gesamt"
+  />
+  <View
+    style={
+      {
+        "borderColor": "black",
+        "borderWidth": 1,
+        "height": 400,
+        "width": 292,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`TransactionDiagramm Component renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "display": "flex",
+      "gap": 32,
+      "paddingBottom": 220,
+      "paddingTop": 24,
+    }
+  }
+>
+  <div
+    data-testid="mocked-button-filter"
+    options={
+      [
+        "Gesamt",
+        "Einnahmen",
+        "Ausgaben",
+      ]
+    }
+    selectedAtStart="Gesamt"
+  />
+  <View
+    style={
+      {
+        "borderColor": "black",
+        "borderWidth": 1,
+        "height": 400,
+        "width": 292,
+      }
+    }
+  />
+</View>
+`;
