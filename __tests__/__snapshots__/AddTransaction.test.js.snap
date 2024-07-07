@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTransaction Component renders correctly 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flex": 1,
+          "paddingBottom": 160,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "paddingBottom": 48,
+            "paddingTop": 48,
+          }
+        }
+      >
+        <TextHeader>
+          Transaktion hinufügen
+        </TextHeader>
+      </View>
+      <View
+        style={
+          {
+            "paddingBottom": 32,
+          }
+        }
+      >
+        <RadioButtonGroup
+          options={
+            [
+              "Einnahme",
+              "Ausgabe",
+              "Sparen",
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "gap": 32,
+          }
+        }
+      >
+        <View>
+          <InputDate />
+        </View>
+        <View>
+          <Repition />
+        </View>
+        <View
+          style={
+            {
+              "gap": 8,
+              "width": "auto",
+            }
+          }
+        >
+          <TextHeader>
+            Betrag
+          </TextHeader>
+          <InputText
+            keyboardType="numeric"
+            placeholder="Gib einen Betrag ein..."
+          />
+          <View
+            style={
+              {
+                "display": "flex",
+                "flexDirection": "row-reverse",
+              }
+            }
+          >
+            <CurrencySmall />
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "gap": 8,
+              "width": "auto",
+            }
+          }
+        >
+          <TextHeader>
+            Kategorie
+          </TextHeader>
+          <CategoriesDropdown
+            props={
+              [
+                {
+                  "icon": null,
+                  "label": "Wähle eine Kategorie aus...",
+                  "value": "0",
+                },
+                {
+                  "icon": 1,
+                  "label": "Lebensmittel",
+                  "value": "1",
+                },
+                {
+                  "icon": 1,
+                  "label": "Miete",
+                  "value": "2",
+                },
+                {
+                  "icon": 1,
+                  "label": "Klamotten",
+                  "value": "3",
+                },
+                {
+                  "icon": 1,
+                  "label": "Technik",
+                  "value": "4",
+                },
+                {
+                  "icon": 1,
+                  "label": "Transportmittel",
+                  "value": "5",
+                },
+                {
+                  "icon": 1,
+                  "label": "Medikamente",
+                  "value": "6",
+                },
+                {
+                  "icon": 1,
+                  "label": "Haustier",
+                  "value": "7",
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Button
+            props={
+              {
+                "color": "blue",
+                "img": 1,
+                "size": "mid",
+                "text": "Abrechen",
+              }
+            }
+          />
+          <Button
+            props={
+              {
+                "color": "blue",
+                "img": 1,
+                "size": "mid",
+                "text": "Speichern",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

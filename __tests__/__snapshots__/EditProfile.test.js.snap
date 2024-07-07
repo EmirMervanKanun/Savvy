@@ -1,0 +1,626 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfileStart Komponente rendert korrekt 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "paddingBottom": 160,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "left": 16,
+            "position": "absolute",
+            "top": 16,
+          }
+        }
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 24,
+              "justifyContent": "flex-start",
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 24,
+                "resizeMode": "stretch",
+                "width": 24,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "alignContent": "center",
+                "color": "#2D3142",
+                "height": 24,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-SemiBold",
+                    "fontSize": 15,
+                  }
+                }
+              >
+                zurück
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "marginTop": 40,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Regular",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-Bold",
+                "fontSize": 20,
+                "lineHeight": 24,
+              }
+            }
+          >
+            Profil bearbeiten
+          </Text>
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginTop": 20,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "gap": 24,
+            }
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "opacity": 1,
+              }
+            }
+          >
+            <Image
+              source={1}
+              style={
+                {
+                  "height": 120,
+                  "width": 120,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "marginBottom": 20,
+            "marginTop": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "flex-start",
+              "paddingLeft": 35,
+              "width": "100%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-Regular",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Bold",
+                  "fontSize": 20,
+                  "lineHeight": 24,
+                }
+              }
+            >
+              Vorname
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            [
+              {
+                "borderRadius": 15,
+                "height": 48,
+                "padding": 15,
+                "width": 292,
+              },
+              {
+                "backgroundColor": "#DCDEE4",
+              },
+            ]
+          }
+        >
+          <TextInput
+            keyboardType="default"
+            onChangeText={[Function]}
+            placeholder="Vorname"
+            value=""
+          />
+        </View>
+        <View
+          style={
+            {
+              "height": 35,
+            }
+          }
+        />
+        <View
+          style={
+            {
+              "alignItems": "flex-start",
+              "paddingLeft": 35,
+              "width": "100%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-Regular",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Bold",
+                  "fontSize": 20,
+                  "lineHeight": 24,
+                }
+              }
+            >
+              Nachname
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            [
+              {
+                "borderRadius": 15,
+                "height": 48,
+                "padding": 15,
+                "width": 292,
+              },
+              {
+                "backgroundColor": "#DCDEE4",
+              },
+            ]
+          }
+        >
+          <TextInput
+            keyboardType="default"
+            onChangeText={[Function]}
+            placeholder="Nachname"
+            value=""
+          />
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "marginTop": 20,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "flex-start",
+              "paddingLeft": 35,
+              "width": "100%",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-Regular",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Bold",
+                  "fontSize": 20,
+                  "lineHeight": 24,
+                }
+              }
+            >
+              Währung
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "display": "flex",
+            }
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#D5DFF4",
+                "borderRadius": 15,
+                "elevation": 5,
+                "flexDirection": "row",
+                "height": 48,
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "shadowColor": "#424874",
+                "shadowOffset": {
+                  "height": 3,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.25,
+                "shadowRadius": 1.41,
+                "width": 292,
+                "zIndex": 10,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2D3142",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Regular",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "fontFamily": "Sora-SemiBold",
+                      "fontSize": 15,
+                    }
+                  }
+                >
+                  Euro €
+                </Text>
+              </Text>
+            </Text>
+            <Image
+              source={1}
+              style={
+                {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "flexDirection": "row",
+            "gap": 50,
+            "marginTop": 30,
+          }
+        }
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#A1A6CC",
+              "borderRadius": 8,
+              "flex": null,
+              "flexDirection": "row",
+              "height": 32,
+              "justifyContent": "center",
+              "width": 116,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 24,
+                "resizeMode": "stretch",
+                "width": 24,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-SemiBold",
+                    "fontSize": 15,
+                  }
+                }
+              >
+                Abbrechen
+              </Text>
+            </Text>
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#A1A6CC",
+              "borderRadius": 8,
+              "flex": null,
+              "flexDirection": "row",
+              "height": 32,
+              "justifyContent": "center",
+              "width": 116,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 24,
+                "resizeMode": "stretch",
+                "width": 24,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-SemiBold",
+                    "fontSize": 15,
+                  }
+                }
+              >
+                Speichern
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

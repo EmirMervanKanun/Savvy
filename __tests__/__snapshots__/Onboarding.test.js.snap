@@ -1,0 +1,537 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardingScreen Komponente rendert korrekt 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "backgroundColor": "white",
+      "display": "flex",
+    }
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "height": 1200.6000000000001,
+      }
+    }
+    data={
+      [
+        {
+          "description": "Nie wieder den Überblick verlieren - mit unserer App behältst du deine Ausgaben im Griff!",
+          "id": "1",
+          "image": 1,
+          "title": "Ausgaben tracken",
+        },
+        {
+          "description": "Trage deine Daueraufträge ein und behalte stets im Blick, was du zahlst und wann du Geld erhältst - nie wieder vergisst du, was wichtig ist!",
+          "id": "2",
+          "image": 1,
+          "title": "Daueraufträge festlegen",
+        },
+        {
+          "description": "Erreiche deine finanziellen Träume, indem du klare Sparziele setzt und sie mit unserer App spielend leicht erreichst!",
+          "id": "3",
+          "image": 1,
+          "title": "Sparziele bestimmen",
+        },
+        {
+          "description": "Dein Budget im Griff mit Savvy – Finanzielle Freiheit leicht gemacht!",
+          "id": "4",
+          "image": 1,
+          "title": "Ausgaben tracken",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={true}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    showsHorizontalScrollIndicator={false}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "paddingTop": 70,
+              "width": 750,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 432,
+                "resizeMode": "contain",
+                "width": 292,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Ausgaben tracken
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 10,
+                "textAlign": "center",
+                "width": 292,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontSize": 15,
+                  }
+                }
+              >
+                Nie wieder den Überblick verlieren - mit unserer App behältst du deine Ausgaben im Griff!
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "paddingTop": 70,
+              "width": 750,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 432,
+                "resizeMode": "contain",
+                "width": 292,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Daueraufträge festlegen
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 10,
+                "textAlign": "center",
+                "width": 292,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontSize": 15,
+                  }
+                }
+              >
+                Trage deine Daueraufträge ein und behalte stets im Blick, was du zahlst und wann du Geld erhältst - nie wieder vergisst du, was wichtig ist!
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "paddingTop": 70,
+              "width": 750,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 432,
+                "resizeMode": "contain",
+                "width": 292,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Sparziele bestimmen
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 10,
+                "textAlign": "center",
+                "width": 292,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontSize": 15,
+                  }
+                }
+              >
+                Erreiche deine finanziellen Träume, indem du klare Sparziele setzt und sie mit unserer App spielend leicht erreichst!
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "paddingTop": 70,
+              "width": 750,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              {
+                "height": 432,
+                "resizeMode": "contain",
+                "width": 292,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Ausgaben tracken
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+                "marginTop": 10,
+                "textAlign": "center",
+                "width": 292,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontSize": 15,
+                  }
+                }
+              >
+                Dein Budget im Griff mit Savvy – Finanzielle Freiheit leicht gemacht!
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "white",
+          "flex": 1,
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      />
+      <View
+        style={
+          {
+            "flexDirection": "row",
+            "marginTop": 66,
+            "position": "absolute",
+            "right": 343,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "backgroundColor": "#D5DFF4",
+                "borderRadius": 5,
+                "height": 10,
+                "marginHorizontal": 3,
+                "width": 10,
+              },
+              {
+                "backgroundColor": "#424874",
+              },
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "backgroundColor": "#D5DFF4",
+                "borderRadius": 5,
+                "height": 10,
+                "marginHorizontal": 3,
+                "width": 10,
+              },
+              false,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "backgroundColor": "#D5DFF4",
+                "borderRadius": 5,
+                "height": 10,
+                "marginHorizontal": 3,
+                "width": 10,
+              },
+              false,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "backgroundColor": "#D5DFF4",
+                "borderRadius": 5,
+                "height": 10,
+                "marginHorizontal": 3,
+                "width": 10,
+              },
+              false,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

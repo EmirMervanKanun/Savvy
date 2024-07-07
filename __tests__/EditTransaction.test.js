@@ -1,6 +1,7 @@
 import React from 'react';
-import renderer, { act } from 'react-test-renderer';
-import AddTransaction from '../Screens/AddTransaction/AddTransaction';
+import { act } from 'react-test-renderer';
+import renderer from 'react-test-renderer';
+import EditTransaction from '../Screens/AddTransaction/EditTransaction';
 import InputDate from '../Components/Inputfelder/InputDate';
 import Repition from '../Components/Dropdowns/Repetition';
 import CurrencySmall from '../Components/Dropdowns/CurrencySmall';
@@ -19,12 +20,12 @@ jest.mock('../Components/Inputfelder/InputText', () => 'InputText');
 jest.mock('../Components/TextComponents/Header', () => 'TextHeader');
 jest.mock('../Components/Buttons/Button', () => 'Button');
 
-describe('AddTransaction Component', () => {
+describe('EditTransaction Component', () => {
   let tree;
 
   beforeEach(async () => {
     await act(async () => {
-      tree = renderer.create(<AddTransaction />);
+      tree = renderer.create(<EditTransaction />);
     });
   });
 
@@ -41,7 +42,7 @@ describe('AddTransaction Component', () => {
     expect(root.findByType(CategoriesDropdown)).toBeTruthy();
     expect(root.findByType(RadioButtonGroup)).toBeTruthy();
     expect(root.findByType(InputText)).toBeTruthy();
-    expect(root.findAllByType(TextHeader)).toHaveLength(3);
+    expect(root.findAllByType(TextHeader)).toHaveLength(3); 
     expect(root.findAllByType(Button)).toHaveLength(2);
   });
 
@@ -56,7 +57,7 @@ describe('AddTransaction Component', () => {
       color: 'blue',
       size: 'mid',
       text: 'Abrechen',
-      img: require("../Icons/Button/cancel.png")
+      img: require('../Icons/Button/cancel.png')
     });
     expect(buttons[1].props.props).toMatchObject({
       color: 'blue',
@@ -82,9 +83,8 @@ describe('AddTransaction Component', () => {
 
   it('renders correct text headers', () => {
     const textHeaders = tree.root.findAllByType(TextHeader);
-    expect(textHeaders[0].children).toEqual(['Transaktion hinufügen']);
+    expect(textHeaders[0].children).toEqual(['Transaktion bearbeiten']);
     expect(textHeaders[1].children).toEqual(['Betrag']);
     expect(textHeaders[2].children).toEqual(['Kategorie']);
   });
 });
-
