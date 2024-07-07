@@ -1,0 +1,619 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddSaving Komponente rendert korrekt 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "display": "flex",
+          "paddingBottom": 160,
+          "paddingTop": 48,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#2D3142",
+            "marginBottom": 48,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Regular",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-Bold",
+                "fontSize": 20,
+                "lineHeight": 24,
+              }
+            }
+          >
+            Sparziel hinzufügen
+          </Text>
+        </Text>
+      </Text>
+      <View
+        style={
+          {
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": 32,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#2D3142",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-Regular",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Bold",
+                  "fontSize": 20,
+                  "lineHeight": 24,
+                }
+              }
+            >
+              Datum
+            </Text>
+          </Text>
+        </Text>
+        <View
+          style={
+            {
+              "flexDirection": "column",
+              "gap": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Titel
+              </Text>
+            </Text>
+          </Text>
+          <View
+            style={
+              [
+                {
+                  "borderRadius": 15,
+                  "height": 48,
+                  "padding": 15,
+                  "width": 292,
+                },
+                {
+                  "backgroundColor": "#DCDEE4",
+                },
+              ]
+            }
+          >
+            <TextInput
+              keyboardType="default"
+              onChangeText={[Function]}
+              placeholder="Gib einen Titel ein..."
+              value=""
+            />
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "column",
+              "gap": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Kategorie
+              </Text>
+            </Text>
+          </Text>
+          <View
+            style={
+              {
+                "display": "flex",
+              }
+            }
+          >
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#D5DFF4",
+                  "borderRadius": 15,
+                  "elevation": 5,
+                  "flexDirection": "row",
+                  "height": 48,
+                  "justifyContent": "space-between",
+                  "opacity": 1,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "shadowColor": "#424874",
+                  "shadowOffset": {
+                    "height": 3,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 1.41,
+                  "width": 292,
+                  "zIndex": 10,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "color": "#2D3142",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "fontFamily": "Sora-Regular",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        {
+                          "fontFamily": "Sora-SemiBold",
+                          "fontSize": 15,
+                        }
+                      }
+                    >
+                      Wähle eine Kategorie aus...
+                    </Text>
+                  </Text>
+                </Text>
+              </View>
+              <Image
+                source={1}
+                style={
+                  {
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "column",
+              "gap": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2D3142",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Sora-Regular",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Bold",
+                    "fontSize": 20,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Betrag
+              </Text>
+            </Text>
+          </Text>
+          <View
+            style={
+              {
+                "alignItems": "flex-end",
+                "flexDirection": "column",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "borderRadius": 15,
+                    "height": 48,
+                    "padding": 15,
+                    "width": 292,
+                  },
+                  {
+                    "backgroundColor": "#DCDEE4",
+                  },
+                ]
+              }
+            >
+              <TextInput
+                keyboardType="numeric"
+                onChangeText={[Function]}
+                placeholder="Gib einen Betrag ein..."
+                value=""
+              />
+            </View>
+            <View
+              style={
+                {
+                  "display": "flex",
+                }
+              }
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#D5DFF4",
+                    "borderRadius": 15,
+                    "elevation": 5,
+                    "flexDirection": "row",
+                    "gap": 4,
+                    "height": 48,
+                    "justifyContent": "flex-start",
+                    "opacity": 1,
+                    "paddingLeft": 12,
+                    "shadowColor": "#424874",
+                    "shadowOffset": {
+                      "height": 3,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.25,
+                    "shadowRadius": 1.41,
+                    "width": 90,
+                    "zIndex": 10,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "color": "#2D3142",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "fontFamily": "Sora-Regular",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        {
+                          "fontFamily": "Sora-SemiBold",
+                          "fontSize": 15,
+                        }
+                      }
+                    >
+                      Euro €
+                    </Text>
+                  </Text>
+                </Text>
+                <Image
+                  source={1}
+                  style={
+                    {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "display": "flex",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#A1A6CC",
+                "borderRadius": 8,
+                "flex": null,
+                "flexDirection": "row",
+                "height": 32,
+                "justifyContent": "center",
+                "width": 136,
+              }
+            }
+          >
+            <Image
+              source={1}
+              style={
+                {
+                  "height": 24,
+                  "resizeMode": "stretch",
+                  "width": 24,
+                }
+              }
+            />
+            <Text
+              style={
+                {
+                  "color": "#2D3142",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Regular",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "fontFamily": "Sora-SemiBold",
+                      "fontSize": 15,
+                    }
+                  }
+                >
+                  Abbrechen
+                </Text>
+              </Text>
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#A1A6CC",
+                "borderRadius": 8,
+                "flex": null,
+                "flexDirection": "row",
+                "height": 32,
+                "justifyContent": "center",
+                "width": 136,
+              }
+            }
+          >
+            <Image
+              source={1}
+              style={
+                {
+                  "height": 24,
+                  "resizeMode": "stretch",
+                  "width": 24,
+                }
+              }
+            />
+            <Text
+              style={
+                {
+                  "color": "#2D3142",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "fontFamily": "Sora-Regular",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "fontFamily": "Sora-SemiBold",
+                      "fontSize": 15,
+                    }
+                  }
+                >
+                  Speichern
+                </Text>
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

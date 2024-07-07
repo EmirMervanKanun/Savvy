@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FixedTransactions Component renders correctly 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "display": "flex",
+          "gap": 48,
+          "height": "100%",
+          "paddingBottom": 220,
+          "paddingTop": 48,
+        }
+      }
+    >
+      <Header>
+        Daueraufträge
+      </Header>
+      <View
+        style={
+          {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <TransactionsSwipeList
+          transactions={[]}
+        />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import FixedTransactions from '../Screens/FixedTransactions/FixedTransactions'; // Pfad zur FixedTransactions-Komponente
+import FixedTransactions from '../Screens/FixedTransactions/FixedTransactions';
 import Header from '../Components/TextComponents/Header';
 import TransactionsSwipeList from '../Components/Objects/TransactionSwipeList';
 
@@ -11,6 +11,7 @@ jest.mock('../Components/Objects/Transactions', () => []);
 describe('FixedTransactions Component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(<FixedTransactions />);
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('contains Header with correct text', () => {

@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesStart Komponente rendert korrekt 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "100%",
+      "justifyContent": "flex-start",
+      "paddingBottom": 160,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "left": 16,
+        "position": "absolute",
+        "top": 16,
+      }
+    }
+  >
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 24,
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 24,
+            "resizeMode": "stretch",
+            "width": 24,
+          }
+        }
+      />
+      <Text
+        style={
+          {
+            "alignContent": "center",
+            "color": "#2D3142",
+            "height": 24,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Regular",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-SemiBold",
+                "fontSize": 15,
+              }
+            }
+          >
+            zurück
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "marginTop": 40,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "fontFamily": "Sora-Regular",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontFamily": "Sora-Bold",
+            "fontSize": 20,
+            "lineHeight": 24,
+          }
+        }
+      >
+        Kategorien
+      </Text>
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "marginTop": 40,
+      }
+    }
+  >
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#A1A6CC",
+          "borderRadius": 8,
+          "flex": null,
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+          "width": 175,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 24,
+            "resizeMode": "stretch",
+            "width": 24,
+          }
+        }
+      />
+      <Text
+        style={
+          {
+            "color": "#2D3142",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Regular",
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontFamily": "Sora-SemiBold",
+                "fontSize": 15,
+              }
+            }
+          >
+            Hinzufügen
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;

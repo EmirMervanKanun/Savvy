@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Komponente rendert korrekt 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "white",
+      "height": "100%",
+      "paddingBottom": 160,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "marginTop": 40,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "fontFamily": "Sora-Regular",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontFamily": "Sora-Bold",
+            "fontSize": 20,
+            "lineHeight": 24,
+          }
+        }
+      >
+        Einstellungen
+      </Text>
+    </Text>
+  </View>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "marginBottom": 5,
+          "marginTop": 40,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontFamily": "Sora-Regular",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Bold",
+              "fontSize": 20,
+              "lineHeight": 24,
+            }
+          }
+        >
+          Profil
+        </Text>
+      </Text>
+    </View>
+    <View
+      sytle={
+        {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <ButtonSettingsItem
+        onPress={[Function]}
+      >
+        Profil bearbeiten
+      </ButtonSettingsItem>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "marginBottom": 5,
+          "marginTop": 40,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontFamily": "Sora-Regular",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Bold",
+              "fontSize": 20,
+              "lineHeight": 24,
+            }
+          }
+        >
+          Allgemeines
+        </Text>
+      </Text>
+    </View>
+    <View
+      sytle={
+        {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <ButtonSettingsItem
+        onPress={[Function]}
+      >
+        Kategorien
+      </ButtonSettingsItem>
+    </View>
+    <View
+      sytle={
+        {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <ButtonSettingsItem
+        onPress={[Function]}
+      >
+        Mitteilungen
+      </ButtonSettingsItem>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "marginBottom": 5,
+          "marginTop": 40,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontFamily": "Sora-Regular",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontFamily": "Sora-Bold",
+              "fontSize": 20,
+              "lineHeight": 24,
+            }
+          }
+        >
+          Sonstiges
+        </Text>
+      </Text>
+    </View>
+    <View
+      sytle={
+        {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <ButtonSettingsItem
+        onPress={[Function]}
+      >
+        AGB
+      </ButtonSettingsItem>
+    </View>
+    <View
+      sytle={
+        {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <ButtonSettingsItem
+        onPress={[Function]}
+      >
+        Datenschutz
+      </ButtonSettingsItem>
+    </View>
+    <View
+      sytle={
+        {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <ButtonSettingsItem
+        onPress={[Function]}
+      >
+        Impressum
+      </ButtonSettingsItem>
+    </View>
+  </View>
+</View>
+`;
