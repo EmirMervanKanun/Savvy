@@ -12,8 +12,8 @@ const Notification = ({ props }) => {
                 renderItem={({ item, index }) => {
                     const isLastItem = index === props.length - 1;
                     return (
-                        <View style={[styles.mitteilung, isLastItem && styles.lastItem]}>
-                            <Text style={styles.text}><TitelAmountText>{item.label}</TitelAmountText></Text>
+                        <View testID={`notification-item-${index}`} style={[styles.mitteilung, isLastItem && styles.lastItem]}>
+                            <Text testID={`notification-label-${index}`} style={styles.text}><TitelAmountText>{item.label}</TitelAmountText></Text>
                             <ButtonToggle img={require('../../Icons/Button/add.png')} />
                         </View>
                     );

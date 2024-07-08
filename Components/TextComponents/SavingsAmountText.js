@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 import OurFont from './OurFont';
 
-
-const SavingsAmountText=({children}) => {
+const SavingsAmountText = ({ children }) => {
   return (
-      <OurFont>
-        <Text style={styles.savam}>{children}</Text>
-      </OurFont>
+    <OurFont>
+      <Text style={styles.savam}>{children}</Text>
+    </OurFont>
   );
-}
+};
 
 const styles = StyleSheet.create({
   savam: {

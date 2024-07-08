@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, View, Image, Text, FlatList } from 'react-native';
 import COLORS from '../Colors';
 import PlaceholderText from '../TextComponents/PlaceholderText';
@@ -12,8 +13,8 @@ const Categories = ({ props }) => {
             const isLastItem = index === props.length - 1;
             return (
               <View style={[styles.categories, isLastItem && styles.lastItem]}>
-                <Image source={item.icon} style={styles.icon} />
-                <Text style={{ color: COLORS.schriftDark }}>
+                <Image source={item.icon} style={styles.icon} testID={`category-icon-${index}`} />
+                <Text style={{ color: COLORS.schriftDark }} testID={`category-item-${index}`}>
                   <PlaceholderText>{item.label}</PlaceholderText>
                 </Text>
               </View>
@@ -25,8 +26,6 @@ const Categories = ({ props }) => {
     </View>
   );
 };
-
-export default Categories;
 
 const styles = StyleSheet.create({
   container: {
@@ -55,3 +54,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
   },
 });
+
+export default Categories;

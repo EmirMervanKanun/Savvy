@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 import OurFont from './OurFont';
 
-
-const TitelAmountText=({children}) => {
+const TitelAmountText = ({ children }) => {
   return (
-      <OurFont>
-        <Text style={styles.titelAmount}>{children}</Text>
-      </OurFont>
+    <OurFont>
+      <Text style={styles.titelAmount}>{children}</Text>
+    </OurFont>
   );
-}
+};
 
 const styles = StyleSheet.create({
   titelAmount: {

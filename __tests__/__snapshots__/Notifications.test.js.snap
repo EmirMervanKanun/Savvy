@@ -204,6 +204,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                   false,
                 ]
               }
+              testID="notification-item-0"
             >
               <Text
                 style={
@@ -211,6 +212,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     "color": "#2D3142",
                   }
                 }
+                testID="notification-label-0"
               >
                 <Text
                   style={
@@ -318,6 +320,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                   false,
                 ]
               }
+              testID="notification-item-1"
             >
               <Text
                 style={
@@ -325,6 +328,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     "color": "#2D3142",
                   }
                 }
+                testID="notification-label-1"
               >
                 <Text
                   style={
@@ -432,6 +436,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                   false,
                 ]
               }
+              testID="notification-item-2"
             >
               <Text
                 style={
@@ -439,6 +444,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     "color": "#2D3142",
                   }
                 }
+                testID="notification-label-2"
               >
                 <Text
                   style={
@@ -548,6 +554,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                   },
                 ]
               }
+              testID="notification-item-3"
             >
               <Text
                 style={
@@ -555,6 +562,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     "color": "#2D3142",
                   }
                 }
+                testID="notification-label-3"
               >
                 <Text
                   style={

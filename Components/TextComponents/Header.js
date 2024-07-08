@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 import OurFont from './OurFont';
 
-
-const Header=({children}) => {
+const Header = ({ children }) => {
   return (
-      <OurFont>
-        <Text style={styles.header}>{children}</Text>
-      </OurFont>
+    <OurFont>
+      <Text style={styles.header}>{children}</Text>
+    </OurFont>
   );
-}
+};
 
 const styles = StyleSheet.create({
   header: {

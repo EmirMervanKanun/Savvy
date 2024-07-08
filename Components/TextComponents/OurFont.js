@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 
-const OurFont= ({children}) => {
+const OurFont = ({ children }) => {
   return (
-      <Text style={styles.text}>{children}</Text>
+    <Text style={styles.text}>{children}</Text>
   );
-}
+};
 
 const styles = StyleSheet.create({
   text: {
