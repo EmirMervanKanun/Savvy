@@ -180,6 +180,7 @@ exports[`CategoriesStart Komponente rendert korrekt 1`] = `
           "width": 175,
         }
       }
+      testID="icon-text-button"
     >
       <Image
         source={1}

@@ -7,7 +7,7 @@ import DateText from '../TextComponents/DateText';
 
 const BudgetSwipe = ({ props }) => {
     return (
-        <View >
+        <View>
             <View style={styles.container}>
                 <View style={styles.containerDate}>
                     <View style={styles.containerImage}>
@@ -24,6 +24,7 @@ const BudgetSwipe = ({ props }) => {
                                 color={COLORS.primaryDark} 
                                 width={225}
                                 height={15}
+                                testID="progress-bar" // Hier wird die testID hinzugefügt
                             />
                         </View>
                     </View>

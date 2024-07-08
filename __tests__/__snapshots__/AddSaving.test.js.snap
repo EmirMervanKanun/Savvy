@@ -493,6 +493,7 @@ exports[`AddSaving Komponente rendert korrekt 1`] = `
                 "width": 136,
               }
             }
+            testID="icon-text-button"
           >
             <Image
               source={1}
@@ -573,6 +574,7 @@ exports[`AddSaving Komponente rendert korrekt 1`] = `
                 "width": 136,
               }
             }
+            testID="icon-text-button"
           >
             <Image
               source={1}

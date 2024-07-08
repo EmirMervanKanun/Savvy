@@ -3,17 +3,22 @@ import { View, Pressable, StyleSheet } from 'react-native';
 import COLORS from '../Colors';
 
 const ToggleButton = () => {
-  // Initial state ist 'false' (aus)
   const [isOn, setIsOn] = useState(false);
 
-  // Funktion zum Umschalten des Zustands
   const toggleSwitch = () => {
     setIsOn(previousState => !previousState);
   };
 
   return (
-    <Pressable style={[styles.button, isOn ? styles.buttonOn : styles.buttonOff]} onPress={toggleSwitch}>
-        <View style={[styles.nob, isOn? styles.nobOn : styles.nobOff]}></View>
+    <Pressable
+      style={[styles.button, isOn ? styles.buttonOn : styles.buttonOff]}
+      onPress={toggleSwitch}
+      testID="toggle-button"
+    >
+      <View
+        style={[styles.nob, isOn ? styles.nobOn : styles.nobOff]}
+        testID="toggle-nob"
+      ></View>
     </Pressable>
   );
 };
@@ -41,12 +46,10 @@ const styles = StyleSheet.create({
     height: 18,
     borderRadius: 18,
   },
-    nobOn: {
-        backgroundColor: COLORS.primaryLight,
-    },
-    nobOff: {
-        backgroundColor: COLORS.primaryDark,
-    },
+  nobOn: {
+    backgroundColor: COLORS.primaryLight,
+  },
+  nobOff: {
+    backgroundColor: COLORS.primaryDark,
+  },
 });
-
-

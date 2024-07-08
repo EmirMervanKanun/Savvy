@@ -4,15 +4,25 @@ import ButtonText from '../TextComponents/ButtonText';
 
 export const ButtonSettingsItem = ({ children, onPress }) => {
     return (
-        <Pressable onPress={onPress} style={styles.containerSettingsItem}>
-            <Text style={styles.buttonText}><ButtonText>{children}</ButtonText></Text>
-            <Image style={styles.image} source={require('../../Icons/Objects/arrowRight.png')} />
+        <Pressable
+            onPress={onPress}
+            style={styles.containerSettingsItem}
+            testID="button-settings-item"
+        >
+            <Text style={styles.buttonText}>
+                <ButtonText>{children}</ButtonText>
+            </Text>
+            <Image
+                style={styles.image}
+                source={require('../../Icons/Objects/arrowRight.png')}
+                testID="button-settings-item-image"
+            />
         </Pressable>
     );
-}
+};
 export default ButtonSettingsItem;
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     containerSettingsItem: {
         flexDirection: 'row',
         justifyContent: 'space-between',

@@ -277,6 +277,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     },
                   ]
                 }
+                testID="toggle-button"
               >
                 <View
                   style={
@@ -291,6 +292,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                       },
                     ]
                   }
+                  testID="toggle-nob"
                 />
               </View>
             </View>
@@ -389,6 +391,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     },
                   ]
                 }
+                testID="toggle-button"
               >
                 <View
                   style={
@@ -403,6 +406,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                       },
                     ]
                   }
+                  testID="toggle-nob"
                 />
               </View>
             </View>
@@ -501,6 +505,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     },
                   ]
                 }
+                testID="toggle-button"
               >
                 <View
                   style={
@@ -515,6 +520,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                       },
                     ]
                   }
+                  testID="toggle-nob"
                 />
               </View>
             </View>
@@ -615,6 +621,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                     },
                   ]
                 }
+                testID="toggle-button"
               >
                 <View
                   style={
@@ -629,6 +636,7 @@ exports[`NotificationStart Komponente rendert korrekt 1`] = `
                       },
                     ]
                   }
+                  testID="toggle-nob"
                 />
               </View>
             </View>
