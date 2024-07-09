@@ -52,7 +52,7 @@ export default function InputDate () {
 
             {!showPicker && (
                 <View style={styles.container}>
-                    <Image source={require('../../Icons/Objects/calendar.png')} style={styles.icon} />
+                    <Image source={require('../../Icons/Objects/calendar.png')} style={styles.icon} testID="calendar-icon" /> {/* Hier wird das testID-Attribut hinzugefügt */}
                     <Pressable
                         onPress={toggleDatePicker}
                     >

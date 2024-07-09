@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, View, Image, Text } from "react-native";
 import COLORS from '../Colors';
 import Header from '../TextComponents/Header';
@@ -6,7 +7,6 @@ import ButtonSettings from "../Buttons/ButtonSettings";
 import { useNavigation } from '@react-navigation/native';
 
 const HomeHeader = ({ props }) => {
-
     const navigation = useNavigation();
 
     return (
@@ -15,18 +15,16 @@ const HomeHeader = ({ props }) => {
                 <View style={styles.personalData}>
                     <Image source={props.profilePicture} style={styles.imagePerson} />
                     <Text style={styles.name}><Header>Hallo, {props.name}!</Header></Text>
-                    <ButtonSettings onPress={() => navigation.navigate('Settings')}/>
+                    <ButtonSettings onPress={() => navigation.navigate('Settings')} testID="button-settings" />
                 </View>
-
             </View>
             <View style={styles.money}>
                 <Text style={{ color: COLORS.schriftLight }}><Header>{props.amount}€</Header></Text>
-                <Text style={{ color: COLORS.schriftMid }}><PlaceholderText>Gesamtsaldo</PlaceholderText></Text>
+                <Text style={{ color: COLORS.schriftMid }} testID="placeholder-text"><PlaceholderText>Gesamtsaldo</PlaceholderText></Text>
             </View>
         </View>
     );
 }
-export default HomeHeader;
 
 const styles = StyleSheet.create({
     container: {
@@ -64,3 +62,5 @@ const styles = StyleSheet.create({
         paddingLeft: 40,
     },
 });
+
+export default HomeHeader;

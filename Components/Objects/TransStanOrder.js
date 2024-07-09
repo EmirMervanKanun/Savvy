@@ -5,11 +5,10 @@ import DateText from '../TextComponents/DateText';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import COLORS from '../Colors';
 
-export default Transaction = ({ props }) => {
-
+const Transaction = ({ props }) => {
     return (
         <View style={styles.container}>
-            <View style={[styles.containerImage, props.details.isIncome ? styles.containerPositive : styles.containerNegative]}>
+            <View style={[styles.containerImage, props.details.isIncome ? styles.containerPositive : styles.containerNegative]} testID="transaction-image">
                 <Image style={styles.image} source={props.details.img} />
             </View>
 
@@ -17,19 +16,20 @@ export default Transaction = ({ props }) => {
                 <View style={styles.containerTitleAmount}>
                     <TitelAmountText style={styles.placeholderText}>{props.title}</TitelAmountText>
                     <Text style={[styles.amountText, props.details.isIncome ? styles.greenText : styles.redText]}>
-                    <TitelAmountText>{props.details.isIncome ? '' : '- '}{props.details.amount}€</TitelAmountText>
+                        <TitelAmountText>{props.details.isIncome ? '' : '- '}{props.details.amount}€</TitelAmountText>
                     </Text>
                 </View>
 
                 <View style={styles.containerDateRepeat}>
-                    <Text style={{color: COLORS.schriftMid}}><DateText>{props.details.date}</DateText></Text>
-                    <View style={styles.containerRepeat}>
-                        <Image style={styles.imageRepeat} source={props.details.isStan ? require('../../Icons/Sonstiges/repeat.png') : null} />
-                        <Text style={{ color: COLORS.schriftMid }}><DateText>{props.details.isStan ? props.details.stan : null}</DateText></Text>
-                    </View>
+                    <Text style={{ color: COLORS.schriftMid }}><DateText>{props.details.date}</DateText></Text>
+                    {props.details.isStan && (
+                        <View style={styles.containerRepeat}>
+                            <Image style={styles.imageRepeat} source={require('../../Icons/Sonstiges/repeat.png')} />
+                            <Text style={{ color: COLORS.schriftMid }}><DateText>{props.details.stan}</DateText></Text>
+                        </View>
+                    )}
                 </View>
             </View>
-
         </View>
     );
 };
@@ -37,7 +37,7 @@ export default Transaction = ({ props }) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        alighItems: 'center',
+        alignItems: 'center',
         justifyContent: 'center',
         gap: 11,
     },
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     containerDateRepeat: {
-        flexDirection: 'row',        
+        flexDirection: 'row',
         justifyContent: 'space-between',
     },
     amountText: {
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
         height: 12,
     },
 
-
     containerPositive: {
         backgroundColor: COLORS.greenLight,
     },
@@ -94,3 +93,4 @@ const styles = StyleSheet.create({
     },
 });
 
+export default Transaction;

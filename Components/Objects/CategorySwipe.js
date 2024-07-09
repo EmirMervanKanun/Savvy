@@ -1,13 +1,19 @@
+import React from 'react';
 import { StyleSheet, View, Image, Text} from 'react-native';
 import PlaceholderText from '../TextComponents/PlaceholderText';
 import COLORS from '../Colors';
 
-
-export default CategorySwipe =({ props }) => {
-    return(
+const CategorySwipe = ({ props }) => {
+    return (
         <View style={styles.container}>
-            <Image style={styles.image} source={props.details.img} />
-            <Text style={{color: COLORS.schriftDark}}><PlaceholderText>{props.title}</PlaceholderText></Text>
+            <Image
+                style={styles.image}
+                source={props.details.img}
+                testID="category-image" // Set the testID for the image component
+            />
+            <Text style={{color: COLORS.schriftDark}}>
+                <PlaceholderText>{props.title}</PlaceholderText>
+            </Text>
         </View>
     );
 }
@@ -28,3 +34,5 @@ const styles = StyleSheet.create({
         height: 32,
     },
 });
+
+export default CategorySwipe;

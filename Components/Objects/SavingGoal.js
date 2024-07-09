@@ -1,12 +1,12 @@
-import { StyleSheet, View, Image, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Image, Text } from 'react-native';
 import TitelAmountText from '../TextComponents/TitelAmountText';
 import DateText from '../TextComponents/DateText';
 import SavingsAmountText from '../TextComponents/SavingsAmountText';
 import * as Progress from 'react-native-progress';
 import COLORS from '../Colors';
 
-export default SavingGoal = ({ props }) => {
-
+const SavingGoal = ({ props }) => {
     return (
         <View style={styles.container}>
             <View style={styles.containerObject}>
@@ -19,6 +19,7 @@ export default SavingGoal = ({ props }) => {
                         thickness={16}
                         animated={true}
                         borderWidth={0}
+                        testID="progress-circle" // Hier wird die Test-ID hinzugefügt
                     />
 
                     <Image style={styles.image} source={props.details.img} />
@@ -71,3 +72,5 @@ const styles = StyleSheet.create({
         color: COLORS.schriftMid,
     },
 });
+
+export default SavingGoal;

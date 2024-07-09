@@ -27,7 +27,8 @@ const ProfilePictureSelector = () => {
         <View style={styles.container}>
             <TouchableOpacity
                 style={styles.selectedProfilePicture}
-                onPress={() => setIsClicked(!isClicked)}>
+                onPress={() => setIsClicked(!isClicked)}
+                testID="selected-picture">
                 <Image source={defaultPicture} style={styles.selImg}></Image>
             </TouchableOpacity>
 
@@ -52,7 +53,8 @@ const ProfilePictureSelector = () => {
                         ].map((pb, index) => (
                             <TouchableOpacity
                                 key={index}
-                                onPress={() => setSelectedPicture(pb)}>
+                                onPress={() => setSelectedPicture(pb)}
+                                testID={`picture-${index}`}>
                                 <Image source={pb} style={styles.image}></Image>
                                 {selectedPicture === pb && <View style={styles.pbSelected}></View>}
                             </TouchableOpacity>
@@ -60,20 +62,23 @@ const ProfilePictureSelector = () => {
                     </View>
 
                     <View style={styles.btns}>
-                    <Button props={{
+                        <Button props={{
                             img: require('../../Icons/Button/cancel.png'),
                             text: 'Abbrechen',
                             color: 'blue',
                             size: 'small',
-                            onPress: () => onCancel()
+                            onPress: () => onCancel(),
+                            testID: 'cancel-button'
                         }} />
                         <Button props={{
                             img: require('../../Icons/Button/save.png'),
                             text: 'Speichern',
                             color: 'blue',
                             size: 'small',
-                            onPress: () => onSave()
+                            onPress: () => onSave(),
+                            testID: 'save-button' // sicherstellen, dass dieser testID richtig gesetzt ist
                         }} />
+
                     </View>
                 </View>
             )}

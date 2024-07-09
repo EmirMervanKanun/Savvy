@@ -46,19 +46,21 @@ const CatIconSelector = () => {
         <View style={styles.container}>
             <TouchableOpacity
                 style={styles.selIconBg}
-                onPress={() => setIsClicked(!isClicked)}>
+                onPress={() => setIsClicked(!isClicked)}
+                testID="selected-icon">
                 <Image source={defaultIcon} style={styles.selIcon}></Image>
             </TouchableOpacity>
 
             {isClicked && (
-                <View style={styles.selectionArea}>
+                <View style={styles.selectionArea} testID="selection-area">
                     <Header>Kategorieicon wählen</Header>
 
                     <View style={styles.icons}>
                         {icons.map((icon, index) => (
                             <TouchableOpacity
                                 key={index}
-                                onPress={() => selectIcon(icon)}>
+                                onPress={() => selectIcon(icon)}
+                                testID={`icon-${index}`}>
                                 <View style={styles.iconContainer}>
                                     <Image source={icon} style={styles.icon}></Image>
                                     {selectedIcon !== icon && <View style={styles.iconOverlay}></View>}
@@ -73,14 +75,16 @@ const CatIconSelector = () => {
                             text: 'Abbrechen',
                             color: 'blue',
                             size: 'small',
-                            onPress: () => onCancel()
+                            onPress: () => onCancel(),
+                            testID: 'cancel-button'
                         }} />
                         <Button props={{
                             img: require('../../Icons/Button/save.png'),
                             text: 'Speichern',
                             color: 'blue',
                             size: 'small',
-                            onPress: () => onSave()
+                            onPress: () => onSave(),
+                            testID: 'save-button'
                         }} />
                     </View>
                 </View>

@@ -6,7 +6,6 @@ import Button from "../Buttons/Button";
 import { useNavigation } from '@react-navigation/native';
 
 const CategorySwipeList = ({ categories }) => {
-
     const navigation = useNavigation();
 
     const [listData, setListData] = useState(
@@ -44,6 +43,7 @@ const CategorySwipeList = ({ categories }) => {
                             img: require("../../Icons/Button/edit.png"),
                             onPress: () => navigation.navigate('AddCategory')
                         }}
+                        testID="edit-button" // Test-ID für den Edit-Button hinzugefügt
                     />
                 </View>
 
@@ -54,6 +54,7 @@ const CategorySwipeList = ({ categories }) => {
                             img: require("../../Icons/Button/delete.png"), 
                             onPress: () => console.log("Delete button clicked")
                         }}
+                        testID="delete-button" // Test-ID für den Delete-Button hinzugefügt
                     />
                 </View>
             </View>

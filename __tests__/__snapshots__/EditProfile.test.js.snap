@@ -182,6 +182,7 @@ exports[`EditProfileStart Komponente rendert korrekt 1`] = `
                 "opacity": 1,
               }
             }
+            testID="selected-picture"
           >
             <Image
               source={1}
