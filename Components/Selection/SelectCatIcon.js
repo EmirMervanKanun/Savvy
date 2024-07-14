@@ -75,7 +75,7 @@ const CatIconSelector = () => {
                             text: 'Abbrechen',
                             color: 'blue',
                             size: 'small',
-                            onPress: () => onCancel(),
+                            onPress: onCancel,
                             testID: 'cancel-button'
                         }} />
                         <Button props={{
@@ -83,7 +83,7 @@ const CatIconSelector = () => {
                             text: 'Speichern',
                             color: 'blue',
                             size: 'small',
-                            onPress: () => onSave(),
+                            onPress: onSave,
                             testID: 'save-button'
                         }} />
                     </View>

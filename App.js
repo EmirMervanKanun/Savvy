@@ -11,7 +11,6 @@ import Settings from './Screens/Settings/Settings.js';
 import AddBudget from './Screens/BudgetSavings/AddBudget.js';
 import EditTransaction from './Screens/AddTransaction/EditTransaction.js';
 import AddSaving from './Screens/BudgetSavings/AddSaving.js';
-import AddCategory from './Screens/Settings/AddCategory.js';
 import Registry from './Screens/Onboarding/Registry.js';
 import EditProfile from './Screens/Settings/EditProfile.js';
 import Categories from './Screens/Settings/Categories.js';
@@ -144,11 +143,6 @@ export default function App() {
             <Stack.Screen
               name="AddSaving"
               component={AddSaving}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AddCategory"
-              component={AddCategory}
               options={{ headerShown: false }}
             />
             <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />

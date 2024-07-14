@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="139" failures="0" errors="0" time="5.252">
+  <testsuite name="NotificationStart Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="1.875" tests="3">
+    <testcase classname="NotificationStart Komponente rendert korrekt" name="NotificationStart Komponente rendert korrekt" time="0.836">
+    </testcase>
+    <testcase classname="NotificationStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" name="NotificationStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" time="0.037">
+    </testcase>
+    <testcase classname="NotificationStart Komponente render die Notifications korrekt" name="NotificationStart Komponente render die Notifications korrekt" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="OnboardingScreen Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="1.97" tests="5">
+    <testcase classname="OnboardingScreen Komponente rendert korrekt" name="OnboardingScreen Komponente rendert korrekt" time="0.801">
+    </testcase>
+    <testcase classname="OnboardingScreen Komponente rendert den letzten Slide mit dem richtigen Button" name="OnboardingScreen Komponente rendert den letzten Slide mit dem richtigen Button" time="0.121">
+    </testcase>
+    <testcase classname="OnboardingScreen Komponente rendert die Page Indicators korrekt" name="OnboardingScreen Komponente rendert die Page Indicators korrekt" time="0.05">
+    </testcase>
+    <testcase classname="OnboardingScreen Komponente zeigt eine Fallback-Nachricht an, wenn slides leer ist" name="OnboardingScreen Komponente zeigt eine Fallback-Nachricht an, wenn slides leer ist" time="0.029">
+    </testcase>
+    <testcase classname="OnboardingScreen Komponente funktioniert korrekt mit nur einem Slide" name="OnboardingScreen Komponente funktioniert korrekt mit nur einem Slide" time="0.032">
+    </testcase>
+  </testsuite>
+  <testsuite name="InputDate Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.063" tests="3">
+    <testcase classname="InputDate Component renders calendar icon and input field" name="InputDate Component renders calendar icon and input field" time="0.952">
+    </testcase>
+    <testcase classname="InputDate Component opens date picker on calendar icon press and updates date" name="InputDate Component opens date picker on calendar icon press and updates date" time="0.007">
+    </testcase>
+    <testcase classname="InputDate Component closes date picker on cancel" name="InputDate Component closes date picker on cancel" time="0.025">
+    </testcase>
+  </testsuite>
+  <testsuite name="&lt;CatIconSelector /&gt;" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.368" tests="1">
+    <testcase classname="&lt;CatIconSelector /&gt; selects a different icon on press" name="&lt;CatIconSelector /&gt; selects a different icon on press" time="1.3">
+    </testcase>
+  </testsuite>
+  <testsuite name="CategoriesDropdown Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.409" tests="3">
+    <testcase classname="CategoriesDropdown Component displays placeholder as default" name="CategoriesDropdown Component displays placeholder as default" time="1.149">
+    </testcase>
+    <testcase classname="CategoriesDropdown Component opens dropdown on press" name="CategoriesDropdown Component opens dropdown on press" time="0.163">
+    </testcase>
+    <testcase classname="CategoriesDropdown Component selects a category on item press" name="CategoriesDropdown Component selects a category on item press" time="0.088">
+    </testcase>
+  </testsuite>
+  <testsuite name="BudgetSwipe" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.502" tests="1">
+    <testcase classname="BudgetSwipe rendert korrekt mit den Props" name="BudgetSwipe rendert korrekt mit den Props" time="0.734">
+    </testcase>
+  </testsuite>
+  <testsuite name="&lt;ProfilePictureSelector /&gt;" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.482" tests="2">
+    <testcase classname="&lt;ProfilePictureSelector /&gt; wählt ein anderes Profilbild aus und speichert es" name="&lt;ProfilePictureSelector /&gt; wählt ein anderes Profilbild aus und speichert es" time="1.244">
+    </testcase>
+    <testcase classname="&lt;ProfilePictureSelector /&gt; schließt den Auswahlbereich ohne Speichern beim Drücken von Abbrechen" name="&lt;ProfilePictureSelector /&gt; schließt den Auswahlbereich ohne Speichern beim Drücken von Abbrechen" time="0.086">
+    </testcase>
+  </testsuite>
+  <testsuite name="TransactionSwipeList Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.462" tests="1">
+    <testcase classname="TransactionSwipeList Component renders correctly" name="TransactionSwipeList Component renders correctly" time="1.357">
+    </testcase>
+  </testsuite>
+  <testsuite name="CategorySwipeList Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.692" tests="1">
+    <testcase classname="CategorySwipeList Komponente wird korrekt gerendert" name="CategorySwipeList Komponente wird korrekt gerendert" time="1.228">
+    </testcase>
+  </testsuite>
+  <testsuite name="BudgetSwipeList Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.785" tests="1">
+    <testcase classname="BudgetSwipeList Komponente wird korrekt gerendert" name="BudgetSwipeList Komponente wird korrekt gerendert" time="0.908">
+    </testcase>
+  </testsuite>
+  <testsuite name="SavingSwipeList Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="2.823" tests="1">
+    <testcase classname="SavingSwipeList Component renders correctly" name="SavingSwipeList Component renders correctly" time="0.885">
+    </testcase>
+  </testsuite>
+  <testsuite name="CategoryList" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.801" tests="2">
+    <testcase classname="CategoryList renders categories correctly" name="CategoryList renders categories correctly" time="0.441">
+    </testcase>
+    <testcase classname="CategoryList applies correct styles to categories" name="CategoryList applies correct styles to categories" time="0.096">
+    </testcase>
+  </testsuite>
+  <testsuite name="Transaction Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.538" tests="1">
+    <testcase classname="Transaction Component renders correctly" name="Transaction Component renders correctly" time="0.216">
+    </testcase>
+  </testsuite>
+  <testsuite name="Notification Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.59" tests="2">
+    <testcase classname="Notification Component renders notifications correctly" name="Notification Component renders notifications correctly" time="0.289">
+    </testcase>
+    <testcase classname="Notification Component renders correct labels" name="Notification Component renders correct labels" time="0.032">
+    </testcase>
+  </testsuite>
+  <testsuite name="CurrencyBigDropdown Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.539" tests="3">
+    <testcase classname="CurrencyBigDropdown Component displays default selected currency correctly" name="CurrencyBigDropdown Component displays default selected currency correctly" time="0.189">
+    </testcase>
+    <testcase classname="CurrencyBigDropdown Component opens dropdown on press" name="CurrencyBigDropdown Component opens dropdown on press" time="0.024">
+    </testcase>
+    <testcase classname="CurrencyBigDropdown Component selects a currency on item press" name="CurrencyBigDropdown Component selects a currency on item press" time="0.04">
+    </testcase>
+  </testsuite>
+  <testsuite name="RepetitionDropdown Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:35" time="1.052" tests="3">
+    <testcase classname="RepetitionDropdown Component displays default selected option correctly" name="RepetitionDropdown Component displays default selected option correctly" time="0.48">
+    </testcase>
+    <testcase classname="RepetitionDropdown Component opens dropdown on press" name="RepetitionDropdown Component opens dropdown on press" time="0.043">
+    </testcase>
+    <testcase classname="RepetitionDropdown Component selects an option on item press" name="RepetitionDropdown Component selects an option on item press" time="0.041">
+    </testcase>
+  </testsuite>
+  <testsuite name="Saving Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="3.086" tests="4">
+    <testcase classname="Saving Komponente rendert korrekt" name="Saving Komponente rendert korrekt" time="0.907">
+    </testcase>
+    <testcase classname="Saving Komponente rendert die SavingSwipeList korrekt" name="Saving Komponente rendert die SavingSwipeList korrekt" time="0.193">
+    </testcase>
+    <testcase classname="Saving Komponente navigiert zu AddSaving bei Klick auf den &quot;Hinzufügen&quot; Button" name="Saving Komponente navigiert zu AddSaving bei Klick auf den &quot;Hinzufügen&quot; Button" time="0.183">
+    </testcase>
+    <testcase classname="Saving Komponente der &quot;Hinzufügen&quot; Button hat die richtigen Props" name="Saving Komponente der &quot;Hinzufügen&quot; Button hat die richtigen Props" time="0.145">
+    </testcase>
+  </testsuite>
+  <testsuite name="RadioButtonGroup Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.548" tests="1">
+    <testcase classname="RadioButtonGroup Component selects an option in the radio button group" name="RadioButtonGroup Component selects an option in the radio button group" time="0.211">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddSaving Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.7" tests="5">
+    <testcase classname="AddSaving Komponente rendert korrekt" name="AddSaving Komponente rendert korrekt" time="0.273">
+    </testcase>
+    <testcase classname="AddSaving Komponente rendert den Header korrekt" name="AddSaving Komponente rendert den Header korrekt" time="0.029">
+    </testcase>
+    <testcase classname="AddSaving Komponente rendert die Eingabefelder und Dropdowns korrekt" name="AddSaving Komponente rendert die Eingabefelder und Dropdowns korrekt" time="0.024">
+    </testcase>
+    <testcase classname="AddSaving Komponente navigiert zurück bei Klick auf den &quot;Abbrechen&quot; Button" name="AddSaving Komponente navigiert zurück bei Klick auf den &quot;Abbrechen&quot; Button" time="0.02">
+    </testcase>
+    <testcase classname="AddSaving Komponente Speichern Button hat die richtigen Props" name="AddSaving Komponente Speichern Button hat die richtigen Props" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="SavingGoal Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:35" time="1.301" tests="1">
+    <testcase classname="SavingGoal Component renders correctly" name="SavingGoal Component renders correctly" time="0.321">
+    </testcase>
+  </testsuite>
+  <testsuite name="EditProfileStart Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.515" tests="2">
+    <testcase classname="EditProfileStart Komponente rendert korrekt" name="EditProfileStart Komponente rendert korrekt" time="0.183">
+    </testcase>
+    <testcase classname="EditProfileStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" name="EditProfileStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" time="0.055">
+    </testcase>
+  </testsuite>
+  <testsuite name="ButtonFilter Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.501" tests="1">
+    <testcase classname="ButtonFilter Component changes filter option on button press" name="ButtonFilter Component changes filter option on button press" time="0.229">
+    </testcase>
+  </testsuite>
+  <testsuite name="TitelAmountText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.507" tests="2">
+    <testcase classname="TitelAmountText renders the children text correctly" name="TitelAmountText renders the children text correctly" time="0.174">
+    </testcase>
+    <testcase classname="TitelAmountText applies the correct title amount style" name="TitelAmountText applies the correct title amount style" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="HomeIE component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.461" tests="1">
+    <testcase classname="HomeIE component renders correctly" name="HomeIE component renders correctly" time="0.173">
+    </testcase>
+  </testsuite>
+  <testsuite name="SavingsAmountText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.439" tests="2">
+    <testcase classname="SavingsAmountText renders the children text correctly" name="SavingsAmountText renders the children text correctly" time="0.182">
+    </testcase>
+    <testcase classname="SavingsAmountText applies the correct savings amount style" name="SavingsAmountText applies the correct savings amount style" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="Registry Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="3.459" tests="1">
+    <testcase classname="Registry Komponente rendert korrekt" name="Registry Komponente rendert korrekt" time="1.033">
+    </testcase>
+  </testsuite>
+  <testsuite name="ButtonSettings" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:36" time="0.444" tests="1">
+    <testcase classname="ButtonSettings calls onPress when pressed" name="ButtonSettings calls onPress when pressed" time="0.191">
+    </testcase>
+  </testsuite>
+  <testsuite name="App Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="3.485" tests="3">
+    <testcase classname="App Component renders App correctly" name="App Component renders App correctly" time="0.062">
+    </testcase>
+    <testcase classname="App Component contains NavigationContainer, SafeAreaProvider, and Navbar" name="App Component contains NavigationContainer, SafeAreaProvider, and Navbar" time="0.013">
+    </testcase>
+    <testcase classname="App Component loads and saves data correctly" name="App Component loads and saves data correctly" time="0.019">
+    </testcase>
+  </testsuite>
+  <testsuite name="RadioDefaultText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.493" tests="2">
+    <testcase classname="RadioDefaultText renders the children text correctly" name="RadioDefaultText renders the children text correctly" time="0.209">
+    </testcase>
+    <testcase classname="RadioDefaultText applies the correct radio default text style" name="RadioDefaultText applies the correct radio default text style" time="0.018">
+    </testcase>
+  </testsuite>
+  <testsuite name="DateText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.449" tests="2">
+    <testcase classname="DateText renders the children text correctly" name="DateText renders the children text correctly" time="0.174">
+    </testcase>
+    <testcase classname="DateText applies the correct styles" name="DateText applies the correct styles" time="0.022">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddBudget Screen" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:33" time="3.566" tests="1">
+    <testcase classname="AddBudget Screen renders correctly" name="AddBudget Screen renders correctly" time="0.683">
+    </testcase>
+  </testsuite>
+  <testsuite name="&lt;HomeHeader /&gt;" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.503" tests="2">
+    <testcase classname="&lt;HomeHeader /&gt; renders correctly" name="&lt;HomeHeader /&gt; renders correctly" time="0.187">
+    </testcase>
+    <testcase classname="&lt;HomeHeader /&gt; navigates to settings screen on button click" name="&lt;HomeHeader /&gt; navigates to settings screen on button click" time="0.022">
+    </testcase>
+  </testsuite>
+  <testsuite name="InputText Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.467" tests="2">
+    <testcase classname="InputText Component renders correctly with placeholder and keyboardType" name="InputText Component renders correctly with placeholder and keyboardType" time="0.183">
+    </testcase>
+    <testcase classname="InputText Component updates value on text change" name="InputText Component updates value on text change" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.483" tests="2">
+    <testcase classname="NavText renders the children text correctly" name="NavText renders the children text correctly" time="0.171">
+    </testcase>
+    <testcase classname="NavText applies the correct styles" name="NavText applies the correct styles" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="Header" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.455" tests="2">
+    <testcase classname="Header renders the children text correctly" name="Header renders the children text correctly" time="0.203">
+    </testcase>
+    <testcase classname="Header applies the correct styles" name="Header applies the correct styles" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="ToggleButton" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.421" tests="1">
+    <testcase classname="ToggleButton toggles from off to on" name="ToggleButton toggles from off to on" time="0.174">
+    </testcase>
+  </testsuite>
+  <testsuite name="&lt;DeleteOverlay /&gt;" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.539" tests="1">
+    <testcase classname="&lt;DeleteOverlay /&gt; renders text correctly" name="&lt;DeleteOverlay /&gt; renders text correctly" time="0.191">
+    </testcase>
+  </testsuite>
+  <testsuite name="OurFont" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.399" tests="2">
+    <testcase classname="OurFont renders the children text correctly" name="OurFont renders the children text correctly" time="0.159">
+    </testcase>
+    <testcase classname="OurFont applies the correct font style" name="OurFont applies the correct font style" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.355" tests="3">
+    <testcase classname="Button renders text button correctly and responds to press" name="Button renders text button correctly and responds to press" time="0.139">
+    </testcase>
+    <testcase classname="Button renders icon and text button correctly and responds to press" name="Button renders icon and text button correctly and responds to press" time="0.006">
+    </testcase>
+    <testcase classname="Button renders icon button correctly and responds to press" name="Button renders icon button correctly and responds to press" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="TransactionScreen Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.267" tests="2">
+    <testcase classname="TransactionScreen Komponente rendert korrekt" name="TransactionScreen Komponente rendert korrekt" time="0.098">
+    </testcase>
+    <testcase classname="TransactionScreen Komponente überprüft den Filterwechsel in ButtonFilter" name="TransactionScreen Komponente überprüft den Filterwechsel in ButtonFilter" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="PlaceholderText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.417" tests="2">
+    <testcase classname="PlaceholderText renders the children text correctly" name="PlaceholderText renders the children text correctly" time="0.155">
+    </testcase>
+    <testcase classname="PlaceholderText applies the correct placeholder style" name="PlaceholderText applies the correct placeholder style" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="CurrencySmallDropdown Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.499" tests="3">
+    <testcase classname="CurrencySmallDropdown Component displays default selected currency correctly" name="CurrencySmallDropdown Component displays default selected currency correctly" time="0.185">
+    </testcase>
+    <testcase classname="CurrencySmallDropdown Component opens dropdown on press" name="CurrencySmallDropdown Component opens dropdown on press" time="0.045">
+    </testcase>
+    <testcase classname="CurrencySmallDropdown Component selects a currency on item press" name="CurrencySmallDropdown Component selects a currency on item press" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddTransaction Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.33" tests="6">
+    <testcase classname="AddTransaction Component renders correctly" name="AddTransaction Component renders correctly" time="0.093">
+    </testcase>
+    <testcase classname="AddTransaction Component contains all required components" name="AddTransaction Component contains all required components" time="0.019">
+    </testcase>
+    <testcase classname="AddTransaction Component passes correct props to RadioButtonGroup" name="AddTransaction Component passes correct props to RadioButtonGroup" time="0.005">
+    </testcase>
+    <testcase classname="AddTransaction Component renders buttons with correct props" name="AddTransaction Component renders buttons with correct props" time="0.007">
+    </testcase>
+    <testcase classname="AddTransaction Component renders categories dropdown with correct options" name="AddTransaction Component renders categories dropdown with correct options" time="0.007">
+    </testcase>
+    <testcase classname="AddTransaction Component renders correct text headers" name="AddTransaction Component renders correct text headers" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="ButtonBack Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.862" tests="1">
+    <testcase classname="ButtonBack Component calls onPress callback when pressed" name="ButtonBack Component calls onPress callback when pressed" time="0.376">
+    </testcase>
+  </testsuite>
+  <testsuite name="EditTransaction Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.344" tests="6">
+    <testcase classname="EditTransaction Component renders correctly" name="EditTransaction Component renders correctly" time="0.115">
+    </testcase>
+    <testcase classname="EditTransaction Component contains all required components" name="EditTransaction Component contains all required components" time="0.006">
+    </testcase>
+    <testcase classname="EditTransaction Component passes correct props to RadioButtonGroup" name="EditTransaction Component passes correct props to RadioButtonGroup" time="0.004">
+    </testcase>
+    <testcase classname="EditTransaction Component renders buttons with correct props" name="EditTransaction Component renders buttons with correct props" time="0.005">
+    </testcase>
+    <testcase classname="EditTransaction Component renders categories dropdown with correct options" name="EditTransaction Component renders categories dropdown with correct options" time="0.006">
+    </testcase>
+    <testcase classname="EditTransaction Component renders correct text headers" name="EditTransaction Component renders correct text headers" time="0.019">
+    </testcase>
+  </testsuite>
+  <testsuite name="DataProtectionStart Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.249" tests="2">
+    <testcase classname="DataProtectionStart Komponente rendert korrekt" name="DataProtectionStart Komponente rendert korrekt" time="0.035">
+    </testcase>
+    <testcase classname="DataProtectionStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" name="DataProtectionStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="ButtonText" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.434" tests="2">
+    <testcase classname="ButtonText renders the children text correctly" name="ButtonText renders the children text correctly" time="0.165">
+    </testcase>
+    <testcase classname="ButtonText applies the correct styles" name="ButtonText applies the correct styles" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="ButtonSettingsItem" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.453" tests="1">
+    <testcase classname="ButtonSettingsItem calls onPress when pressed" name="ButtonSettingsItem calls onPress when pressed" time="0.177">
+    </testcase>
+  </testsuite>
+  <testsuite name="FixedTransactions Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.324" tests="3">
+    <testcase classname="FixedTransactions Component renders correctly" name="FixedTransactions Component renders correctly" time="0.093">
+    </testcase>
+    <testcase classname="FixedTransactions Component contains Header with correct text" name="FixedTransactions Component contains Header with correct text" time="0.003">
+    </testcase>
+    <testcase classname="FixedTransactions Component contains TransactionsSwipeList with correct transactions" name="FixedTransactions Component contains TransactionsSwipeList with correct transactions" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Settings Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.3" tests="7">
+    <testcase classname="Settings Komponente rendert korrekt" name="Settings Komponente rendert korrekt" time="0.033">
+    </testcase>
+    <testcase classname="Settings Komponente navigiert zu &quot;EditProfile&quot; bei Klick auf den &quot;Profil bearbeiten&quot; Button" name="Settings Komponente navigiert zu &quot;EditProfile&quot; bei Klick auf den &quot;Profil bearbeiten&quot; Button" time="0.019">
+    </testcase>
+    <testcase classname="Settings Komponente navigiert zu &quot;Categories&quot; bei Klick auf den &quot;Kategorien&quot; Button" name="Settings Komponente navigiert zu &quot;Categories&quot; bei Klick auf den &quot;Kategorien&quot; Button" time="0.005">
+    </testcase>
+    <testcase classname="Settings Komponente navigiert zu &quot;Notifications&quot; bei Klick auf den &quot;Mitteilungen&quot; Button" name="Settings Komponente navigiert zu &quot;Notifications&quot; bei Klick auf den &quot;Mitteilungen&quot; Button" time="0.006">
+    </testcase>
+    <testcase classname="Settings Komponente navigiert zu &quot;AGB&quot; bei Klick auf den &quot;AGB&quot; Button" name="Settings Komponente navigiert zu &quot;AGB&quot; bei Klick auf den &quot;AGB&quot; Button" time="0.006">
+    </testcase>
+    <testcase classname="Settings Komponente navigiert zu &quot;DataProtection&quot; bei Klick auf den &quot;Datenschutz&quot; Button" name="Settings Komponente navigiert zu &quot;DataProtection&quot; bei Klick auf den &quot;Datenschutz&quot; Button" time="0.006">
+    </testcase>
+    <testcase classname="Settings Komponente navigiert zu &quot;Imprint&quot; bei Klick auf den &quot;Impressum&quot; Button" name="Settings Komponente navigiert zu &quot;Imprint&quot; bei Klick auf den &quot;Impressum&quot; Button" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="Budget Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.38" tests="4">
+    <testcase classname="Budget Komponente rendert korrekt" name="Budget Komponente rendert korrekt" time="0.142">
+    </testcase>
+    <testcase classname="Budget Komponente rendert die BudgetSwipeList korrekt" name="Budget Komponente rendert die BudgetSwipeList korrekt" time="0.004">
+    </testcase>
+    <testcase classname="Budget Komponente navigiert zu &quot;AddBudget&quot; bei Klick auf den &quot;Hinzufügen&quot; Button" name="Budget Komponente navigiert zu &quot;AddBudget&quot; bei Klick auf den &quot;Hinzufügen&quot; Button" time="0.004">
+    </testcase>
+    <testcase classname="Budget Komponente Hinzufügen Button hat die richtigen Props" name="Budget Komponente Hinzufügen Button hat die richtigen Props" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="HomeStart Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.216" tests="4">
+    <testcase classname="HomeStart Component renders correctly" name="HomeStart Component renders correctly" time="0.025">
+    </testcase>
+    <testcase classname="HomeStart Component renders HomeHeader with correct props" name="HomeStart Component renders HomeHeader with correct props" time="0.003">
+    </testcase>
+    <testcase classname="HomeStart Component renders HomeIE with correct props" name="HomeStart Component renders HomeIE with correct props" time="0.002">
+    </testcase>
+    <testcase classname="HomeStart Component renders TransactionSwipeList with correct transactions" name="HomeStart Component renders TransactionSwipeList with correct transactions" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Budgets Datenstruktur" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.163" tests="4">
+    <testcase classname="Budgets Datenstruktur hat die richtige Anzahl an Budget-Einträgen" name="Budgets Datenstruktur hat die richtige Anzahl an Budget-Einträgen" time="0.002">
+    </testcase>
+    <testcase classname="Budgets Datenstruktur alle Budget-Einträge haben die richtige Struktur" name="Budgets Datenstruktur alle Budget-Einträge haben die richtige Struktur" time="0.013">
+    </testcase>
+    <testcase classname="Budgets Datenstruktur der erste Budget-Eintrag hat die richtigen Werte" name="Budgets Datenstruktur der erste Budget-Eintrag hat die richtigen Werte" time="0.002">
+    </testcase>
+    <testcase classname="Budgets Datenstruktur der zweite Budget-Eintrag hat die richtigen Werte" name="Budgets Datenstruktur der zweite Budget-Eintrag hat die richtigen Werte" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="TransactionDiagramm Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.211" tests="2">
+    <testcase classname="TransactionDiagramm Component renders correctly" name="TransactionDiagramm Component renders correctly" time="0.014">
+    </testcase>
+    <testcase classname="TransactionDiagramm Component changes filter when ButtonFilter is interacted with" name="TransactionDiagramm Component changes filter when ButtonFilter is interacted with" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="ImprintStart Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.241" tests="2">
+    <testcase classname="ImprintStart Komponente rendert korrekt" name="ImprintStart Komponente rendert korrekt" time="0.046">
+    </testcase>
+    <testcase classname="ImprintStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" name="ImprintStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="AgbStart Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.327" tests="2">
+    <testcase classname="AgbStart Komponente rendert korrekt" name="AgbStart Komponente rendert korrekt" time="0.075">
+    </testcase>
+    <testcase classname="AgbStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" name="AgbStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="COLORS" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.098" tests="1">
+    <testcase classname="COLORS should have correct color values" name="COLORS should have correct color values" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Savings Datenstruktur" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.158" tests="4">
+    <testcase classname="Savings Datenstruktur hat die richtige Anzahl an Savings-Einträgen" name="Savings Datenstruktur hat die richtige Anzahl an Savings-Einträgen" time="0.001">
+    </testcase>
+    <testcase classname="Savings Datenstruktur alle Savings-Einträge haben die richtige Struktur" name="Savings Datenstruktur alle Savings-Einträge haben die richtige Struktur" time="0.009">
+    </testcase>
+    <testcase classname="Savings Datenstruktur der erste Saving-Eintrag hat die richtigen Werte" name="Savings Datenstruktur der erste Saving-Eintrag hat die richtigen Werte" time="0.001">
+    </testcase>
+    <testcase classname="Savings Datenstruktur der zweite Saving-Eintrag hat die richtigen Werte" name="Savings Datenstruktur der zweite Saving-Eintrag hat die richtigen Werte" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="CategoriesStart Komponente" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.27" tests="3">
+    <testcase classname="CategoriesStart Komponente rendert korrekt" name="CategoriesStart Komponente rendert korrekt" time="0.048">
+    </testcase>
+    <testcase classname="CategoriesStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" name="CategoriesStart Komponente navigiert zu &quot;Settings&quot; bei Klick auf den Zurück-Button" time="0.004">
+    </testcase>
+    <testcase classname="CategoriesStart Komponente navigiert zu &quot;AddCategory&quot; bei Klick auf den &quot;Hinzufügen&quot; Button" name="CategoriesStart Komponente navigiert zu &quot;AddCategory&quot; bei Klick auf den &quot;Hinzufügen&quot; Button" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="CategorySwipe Component" errors="0" failures="0" skipped="0" timestamp="2024-07-14T11:12:37" time="0.722" tests="1">
+    <testcase classname="CategorySwipe Component renders correctly" name="CategorySwipe Component renders correctly" time="0.254">
+    </testcase>
+  </testsuite>
+</testsuites>

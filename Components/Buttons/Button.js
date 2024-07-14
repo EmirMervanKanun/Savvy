@@ -32,7 +32,7 @@ const Button = ({ props }) => {
             <Pressable
                 onPress={props.onPress}
                 style={useStyle}
-                testID="text-button"
+                testID={props.testID || "text-button"} // Set testID
             >
                 <Text style={styles.buttonText}>
                     <ButtonText>{props.text}</ButtonText>
@@ -47,7 +47,7 @@ const Button = ({ props }) => {
             <Pressable
                 onPress={props.onPress}
                 style={useStyle}
-                testID="icon-text-button"
+                testID={props.testID || "icon-text-button"} // Set testID
             >
                 <Image style={styles.image} source={props.img} />
                 <Text style={styles.buttonText}>
@@ -64,7 +64,7 @@ const Button = ({ props }) => {
             <Pressable
                 onPress={props.onPress}
                 style={useStyle}
-                testID="icon-button"
+                testID={props.testID || "icon-button"} // Set testID
             >
                 <Image style={styles.image} source={props.img} />
             </Pressable>

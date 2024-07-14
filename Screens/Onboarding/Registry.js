@@ -1,17 +1,14 @@
-import { StyleSheet, View, ScrollView } from 'react-native';
 import React from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import Header from '../../Components/TextComponents/Header';
 import SelectProfilePicture from '../../Components/Selection/SelectProfilePicture';
-import InputText from '../../Components/Inputfelder/InputText'
+import InputText from '../../Components/Inputfelder/InputText';
 import CurrencySmall from '../../Components/Dropdowns/CurrencySmall';
 import Button from '../../Components/Buttons/Button';
-
 import { useNavigation } from '@react-navigation/native';
 
-export default function Registry () {
-
+export default function Registry() {
   const navigation = useNavigation();
 
   return (
@@ -22,7 +19,6 @@ export default function Registry () {
         </View>
 
         <View style={styles.containerInput}>
-
           <View style={styles.input}>
             <Header>Vorname</Header>
             <InputText placeholder="Vorname" />
@@ -35,7 +31,7 @@ export default function Registry () {
 
           <View style={styles.input}>
             <Header>Startkapital</Header>
-            <InputText placeholder="Gib dein Startkapital ein" keyboardType='numeric'/>
+            <InputText placeholder="Gib dein Startkapital ein" keyboardType='numeric' />
             <View style={styles.currency}>
               <CurrencySmall />
             </View>
@@ -43,23 +39,28 @@ export default function Registry () {
         </View>
 
         <View style={styles.containerButton}>
-          <Button props={{
-            size: 'mid',
-            color: 'blue',
-            img: require('../../Icons/Button/cancel.png'),
-            text: 'Abbrechen',
-            onPress: () => navigation.navigate('Onboarding'),
-          }}
+          <Button
+            testID="cancel-button" // Test-ID für Abbrechen-Button hinzugefügt
+            props={{
+              size: 'mid',
+              color: 'blue',
+              img: require('../../Icons/Button/cancel.png'),
+              text: 'Abbrechen',
+              onPress: () => navigation.navigate('Onboarding'),
+            }}
           />
 
-          <Button props={{
-            size: 'mid',
-            color: 'blue',
-            img: require('../../Icons/Button/save.png'),
-            text: 'Speichern',
-            onPress: () => navigation.navigate('MainTabs'),
-          }}
+          <Button
+            testID="save-button" // Test-ID für Speichern-Button hinzugefügt
+            props={{
+              size: 'mid',
+              color: 'blue',
+              img: require('../../Icons/Button/save.png'),
+              text: 'Speichern',
+              onPress: () => navigation.navigate('MainTabs'),
+            }}
           />
+
         </View>
       </ScrollView>
     </SafeAreaProvider>
@@ -67,8 +68,7 @@ export default function Registry () {
 }
 
 const styles = StyleSheet.create({
-  contentContainer:
-  {
+  contentContainer: {
     flex: 1,
   },
   container: {

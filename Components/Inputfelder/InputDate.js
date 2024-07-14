@@ -4,13 +4,15 @@ import { TextInput, StyleSheet, View, Pressable, Image, Platform } from "react-n
 import COLORS from "../Colors";
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default function InputDate () {
+export default function InputDate() {
     const [dateofTransaction, setDateofTransaction] = useState('');
     const [date, setDate] = useState(new Date());
     const [showPicker, setShowPicker] = useState(false);
+
     const toggleDatePicker = () => {
         setShowPicker(!showPicker);
     };
+
     const onChange = ({ type }, selectedDate) => {
         if (type === 'set') {
             const currentDate = selectedDate;
@@ -20,11 +22,10 @@ export default function InputDate () {
                 toggleDatePicker();
                 setDateofTransaction(formatDate(currentDate));
             }
-        } 
-        else {
+        } else {
             toggleDatePicker();
         }
-    }
+    };
 
     const formatDate = (rawDate) => {
         let date = new Date(rawDate);
@@ -39,7 +40,7 @@ export default function InputDate () {
         return `${day}.${month}.${year}`;
     };
 
-    return(
+    return (
         <View>
             {showPicker && (
                 <DateTimePicker
@@ -47,16 +48,15 @@ export default function InputDate () {
                     display="calendar"
                     value={date}
                     onChange={onChange}
+                    testID="date-picker"
                 />
             )}
 
             {!showPicker && (
                 <View style={styles.container}>
-                    <Image source={require('../../Icons/Objects/calendar.png')} style={styles.icon} testID="calendar-icon" /> {/* Hier wird das testID-Attribut hinzugefügt */}
-                    <Pressable
-                        onPress={toggleDatePicker}
-                    >
-                        <TextInput 
+                    <Image source={require('../../Icons/Objects/calendar.png')} style={styles.icon} testID="calendar-icon" />
+                    <Pressable onPress={toggleDatePicker}>
+                        <TextInput
                             style={styles.input}
                             placeholder="DD.MM.YYYY"
                             value={dateofTransaction}

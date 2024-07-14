@@ -33,7 +33,7 @@ const ProfilePictureSelector = () => {
             </TouchableOpacity>
 
             {isClicked && (
-                <View style={styles.selectionArea}>
+                <View style={styles.selectionArea} testID="selection-area">
                     <Header>Profilbild auswählen</Header>
 
                     <View style={styles.images}>
@@ -76,7 +76,7 @@ const ProfilePictureSelector = () => {
                             color: 'blue',
                             size: 'small',
                             onPress: () => onSave(),
-                            testID: 'save-button' // sicherstellen, dass dieser testID richtig gesetzt ist
+                            testID: 'save-button'
                         }} />
 
                     </View>
